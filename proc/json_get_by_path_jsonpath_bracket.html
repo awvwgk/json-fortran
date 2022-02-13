@@ -124,15 +124,15 @@
     <div class="list-group">
       <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-create~3">create</a>
       <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-created~2">created</a>
-      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-i~11">i</a>
+      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-i~17">i</a>
       <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-iend~2">iend</a>
-      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-ilen~6">ilen</a>
+      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-ilen~13">ilen</a>
       <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-istart~2">istart</a>
-      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-ival~2">ival</a>
-      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-j~3">j</a>
+      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-ival~4">ival</a>
+      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-j~4">j</a>
       <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-real_quotes">real_quotes</a>
-      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-status_ok~5">status_ok</a>
-      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-tmp~11">tmp</a>
+      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-status_ok~8">status_ok</a>
+      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-tmp~14">tmp</a>
       <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-token">token</a>
     </div>
   </div>
@@ -196,13 +196,13 @@
   <td><strong>json</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-me~24"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
+  <td><span class="anchor" id="variable-me~124"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
 <td>intent(in),</td>
   <td></td>  <td>pointer</td><td>::</td>
   <td><strong>me</strong></td><td><p>a <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> linked list</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-path~25"></span>character(kind=CK,len=*),</td>
+  <td><span class="anchor" id="variable-path~101"></span>character(kind=CK,len=*),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>path</strong></td><td><p>path to the variable
@@ -210,14 +210,14 @@
 &ldquo;bracket-notation&rdquo;)</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-p~25"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
+  <td><span class="anchor" id="variable-p~32"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
 <td>intent(out),</td>
   <td></td>  <td>pointer</td><td>::</td>
   <td><strong>p</strong></td><td><p>pointer to the variable
 specify by <code>path</code></p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-found~25"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-found~99"></span>logical(kind=LK),</td>
 <td>intent(out),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>found</strong></td><td><p>true if it was found</p></td>
@@ -233,7 +233,7 @@ a <code>null</code> json type and can be
 changed by the caller.</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-was_created~18"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-was_created~44"></span>logical(kind=LK),</td>
 <td>intent(out),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>was_created</strong></td><td><p>if <code>create_it</code> is true, this
@@ -267,35 +267,35 @@ it will be false.</p></td>
 <polygon fill="none" stroke="black" points="201,-45 0,-45 0,-21 201,-21 201,-45"/>
 <text text-anchor="middle" x="100.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">json_get_by_path_jsonpath_bracket</text>
 </g>
-<!-- proc~json_value_create -->
-<g id="proc~~json_get_by_path_jsonpath_bracket~~CallsGraph_node2" class="node">
-<title>proc~json_value_create</title>
-<g id="a_proc~~json_get_by_path_jsonpath_bracket~~CallsGraph_node2"><a xlink:href=".././proc/json_value_create.html" xlink:title="json_value_create">
-<polygon fill="#d9534f" stroke="#d9534f" points="345,-66 237,-66 237,-42 345,-42 345,-66"/>
-<text text-anchor="middle" x="291" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">json_value_create</text>
-</a>
-</g>
-</g>
-<!-- proc~json_get_by_path_jsonpath_bracket&#45;&gt;proc~json_value_create -->
-<g id="proc~~json_get_by_path_jsonpath_bracket~~CallsGraph_edge1" class="edge">
-<title>proc~json_get_by_path_jsonpath_bracket&#45;&gt;proc~json_value_create</title>
-<path fill="none" stroke="#ff0000" d="M201.27,-44.11C209.84,-45.07 218.35,-46.02 226.51,-46.93"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="226.31,-50.43 236.64,-48.06 227.09,-43.47 226.31,-50.43"/>
-</g>
 <!-- proc~string_to_integer -->
-<g id="proc~~json_get_by_path_jsonpath_bracket~~CallsGraph_node3" class="node">
+<g id="proc~~json_get_by_path_jsonpath_bracket~~CallsGraph_node2" class="node">
 <title>proc~string_to_integer</title>
-<g id="a_proc~~json_get_by_path_jsonpath_bracket~~CallsGraph_node3"><a xlink:href=".././proc/string_to_integer.html" xlink:title="string_to_integer">
-<polygon fill="#d9534f" stroke="#d9534f" points="342,-24 240,-24 240,0 342,0 342,-24"/>
-<text text-anchor="middle" x="291" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">string_to_integer</text>
+<g id="a_proc~~json_get_by_path_jsonpath_bracket~~CallsGraph_node2"><a xlink:href=".././proc/string_to_integer.html" xlink:title="string_to_integer">
+<polygon fill="#d9534f" stroke="#d9534f" points="342,-66 240,-66 240,-42 342,-42 342,-66"/>
+<text text-anchor="middle" x="291" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">string_to_integer</text>
 </a>
 </g>
 </g>
 <!-- proc~json_get_by_path_jsonpath_bracket&#45;&gt;proc~string_to_integer -->
-<g id="proc~~json_get_by_path_jsonpath_bracket~~CallsGraph_edge2" class="edge">
+<g id="proc~~json_get_by_path_jsonpath_bracket~~CallsGraph_edge1" class="edge">
 <title>proc~json_get_by_path_jsonpath_bracket&#45;&gt;proc~string_to_integer</title>
-<path fill="none" stroke="#ff0000" d="M201.27,-21.89C211.02,-20.8 220.7,-19.72 229.87,-18.7"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="230.44,-22.16 240,-17.57 229.67,-15.2 230.44,-22.16"/>
+<path fill="none" stroke="#ff0000" d="M201.27,-44.11C211.02,-45.2 220.7,-46.28 229.87,-47.3"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="229.67,-50.8 240,-48.43 230.44,-43.84 229.67,-50.8"/>
+</g>
+<!-- proc~json_value_create -->
+<g id="proc~~json_get_by_path_jsonpath_bracket~~CallsGraph_node3" class="node">
+<title>proc~json_value_create</title>
+<g id="a_proc~~json_get_by_path_jsonpath_bracket~~CallsGraph_node3"><a xlink:href=".././proc/json_value_create.html" xlink:title="json_value_create">
+<polygon fill="#d9534f" stroke="#d9534f" points="345,-24 237,-24 237,0 345,0 345,-24"/>
+<text text-anchor="middle" x="291" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">json_value_create</text>
+</a>
+</g>
+</g>
+<!-- proc~json_get_by_path_jsonpath_bracket&#45;&gt;proc~json_value_create -->
+<g id="proc~~json_get_by_path_jsonpath_bracket~~CallsGraph_edge2" class="edge">
+<title>proc~json_get_by_path_jsonpath_bracket&#45;&gt;proc~json_value_create</title>
+<path fill="none" stroke="#ff0000" d="M201.27,-21.89C209.84,-20.93 218.35,-19.98 226.51,-19.07"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="227.09,-22.53 236.64,-17.94 226.31,-15.57 227.09,-22.53"/>
 </g>
 </g>
 </svg>
@@ -371,15 +371,15 @@ it will be false.</p></td>
     <div class="list-group">
       <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-create~3">create</a>
       <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-created~2">created</a>
-      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-i~11">i</a>
+      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-i~17">i</a>
       <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-iend~2">iend</a>
-      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-ilen~6">ilen</a>
+      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-ilen~13">ilen</a>
       <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-istart~2">istart</a>
-      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-ival~2">ival</a>
-      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-j~3">j</a>
+      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-ival~4">ival</a>
+      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-j~4">j</a>
       <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-real_quotes">real_quotes</a>
-      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-status_ok~5">status_ok</a>
-      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-tmp~11">tmp</a>
+      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-status_ok~8">status_ok</a>
+      <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-tmp~14">tmp</a>
       <a class="list-group-item" href="../proc/json_get_by_path_jsonpath_bracket.html#variable-token">token</a>
     </div>
   </div>
@@ -406,7 +406,7 @@ it will be false.</p></td>
 true if the leaf object had to be created</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-i~11"></span>integer(kind=IK),</td>
+  <td><span class="anchor" id="variable-i~17"></span>integer(kind=IK),</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>i</strong></td><td></td><td></td><td><p>counter</p></td>
 </tr>
@@ -417,7 +417,7 @@ true if the leaf object had to be created</p></td>
 character in the path</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-ilen~6"></span>integer(kind=IK),</td>
+  <td><span class="anchor" id="variable-ilen~13"></span>integer(kind=IK),</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>ilen</strong></td><td></td><td></td><td><p>length of <code>path</code> string</p></td>
 </tr>
@@ -428,12 +428,12 @@ character in the path</p></td>
 character in the path</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-ival~2"></span>integer(kind=IK),</td>
+  <td><span class="anchor" id="variable-ival~4"></span>integer(kind=IK),</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>ival</strong></td><td></td><td></td><td><p>integer array index value</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-j~3"></span>integer(kind=IK),</td>
+  <td><span class="anchor" id="variable-j~4"></span>integer(kind=IK),</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>j</strong></td><td></td><td></td><td><p>counter of children when creating object</p></td>
 </tr>
@@ -444,12 +444,12 @@ character in the path</p></td>
 rather than <code>'</code> tokens.</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-status_ok~5"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-status_ok~8"></span>logical(kind=LK),</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>status_ok</strong></td><td></td><td></td><td><p>error flag</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-tmp~11"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
+  <td><span class="anchor" id="variable-tmp~14"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
 <td>private,</td>  <td>pointer</td><td>::</td>
   <td><strong>tmp</strong></td><td></td><td></td><td><p>temporary variable for
 traversing the structure</p></td>
@@ -490,7 +490,7 @@ traversing the structure</p></td>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-02-02 07:05            </p>
+ on 2022-02-13 18:17            </p>
         </div>
       </div>
       <br>
