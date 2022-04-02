@@ -55,7 +55,6 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
             <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
                    <li><a href="../lists/types.html">Derived Types</a></li>
-            <li><a href="../lists/programs.html">Programs</a></li>
        
             </ul>
         
@@ -65,7 +64,6 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
                              <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
           </ul>
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
@@ -116,7 +114,12 @@
     <div id="sidebar">
   <h3>Contents</h3>
  
-<em>None</em>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/wrap_json_add_logical_vec_by_path.html#src">wrap_json_add_logical_vec_by_path</a>
+  </div>
+</div>
 
 </div>
 
@@ -145,7 +148,7 @@
   <td><strong>me</strong></td><td><p>the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> structure</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-path~133"></span>character(kind=CDK,len=*),</td>
+  <td><span class="anchor" id="variable-path~130"></span>character(kind=CDK,len=*),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>path</strong></td><td><p>the path to the variable</p></td>
@@ -157,7 +160,7 @@
   <td><strong>value</strong></td><td><p>the vector to add</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-found~132"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-found~130"></span>logical(kind=LK),</td>
 <td>intent(out),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>found</strong></td><td><p>if the variable was found</p></td>
@@ -209,35 +212,35 @@
 <path fill="none" stroke="#ff0000" d="M203.45,-33C212.2,-33 220.73,-33 228.65,-33"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="228.68,-36.5 238.67,-33 228.67,-29.5 228.68,-36.5"/>
 </g>
-<!-- proc~to_uni_vec -->
-<g id="proc~~wrap_json_add_logical_vec_by_path~~CallsGraph_node3" class="node">
-<title>proc~to_uni_vec</title>
-<g id="a_proc~~wrap_json_add_logical_vec_by_path~~CallsGraph_node3"><a xlink:href=".././proc/to_uni_vec.html" xlink:title="to_uni_vec">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="415,-66 346,-66 346,-42 415,-42 415,-66"/>
-<text text-anchor="middle" x="380.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_uni_vec</text>
-</a>
-</g>
-</g>
-<!-- interface~to_unicode&#45;&gt;proc~to_uni_vec -->
-<g id="proc~~wrap_json_add_logical_vec_by_path~~CallsGraph_edge2" class="edge">
-<title>interface~to_unicode&#45;&gt;proc~to_uni_vec</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M310.13,-39.99C318.37,-41.66 327.27,-43.45 335.85,-45.19"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="335.23,-48.63 345.73,-47.18 336.62,-41.77 335.23,-48.63"/>
-</g>
 <!-- proc~to_uni -->
-<g id="proc~~wrap_json_add_logical_vec_by_path~~CallsGraph_node4" class="node">
+<g id="proc~~wrap_json_add_logical_vec_by_path~~CallsGraph_node3" class="node">
 <title>proc~to_uni</title>
-<g id="a_proc~~wrap_json_add_logical_vec_by_path~~CallsGraph_node4"><a xlink:href=".././proc/to_uni.html" xlink:title="to_uni">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="407.5,-24 353.5,-24 353.5,0 407.5,0 407.5,-24"/>
-<text text-anchor="middle" x="380.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_uni</text>
+<g id="a_proc~~wrap_json_add_logical_vec_by_path~~CallsGraph_node3"><a xlink:href=".././proc/to_uni.html" xlink:title="to_uni">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="407.5,-66 353.5,-66 353.5,-42 407.5,-42 407.5,-66"/>
+<text text-anchor="middle" x="380.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_uni</text>
 </a>
 </g>
 </g>
 <!-- interface~to_unicode&#45;&gt;proc~to_uni -->
-<g id="proc~~wrap_json_add_logical_vec_by_path~~CallsGraph_edge3" class="edge">
+<g id="proc~~wrap_json_add_logical_vec_by_path~~CallsGraph_edge2" class="edge">
 <title>interface~to_unicode&#45;&gt;proc~to_uni</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M310.13,-26.01C320.79,-23.86 332.54,-21.48 343.3,-19.31"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="344.14,-22.71 353.25,-17.3 342.75,-15.85 344.14,-22.71"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M310.13,-39.99C320.79,-42.14 332.54,-44.52 343.3,-46.69"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="342.75,-50.15 353.25,-48.7 344.14,-43.29 342.75,-50.15"/>
+</g>
+<!-- proc~to_uni_vec -->
+<g id="proc~~wrap_json_add_logical_vec_by_path~~CallsGraph_node4" class="node">
+<title>proc~to_uni_vec</title>
+<g id="a_proc~~wrap_json_add_logical_vec_by_path~~CallsGraph_node4"><a xlink:href=".././proc/to_uni_vec.html" xlink:title="to_uni_vec">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="415,-24 346,-24 346,0 415,0 415,-24"/>
+<text text-anchor="middle" x="380.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_uni_vec</text>
+</a>
+</g>
+</g>
+<!-- interface~to_unicode&#45;&gt;proc~to_uni_vec -->
+<g id="proc~~wrap_json_add_logical_vec_by_path~~CallsGraph_edge3" class="edge">
+<title>interface~to_unicode&#45;&gt;proc~to_uni_vec</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M310.13,-26.01C318.37,-24.34 327.27,-22.55 335.85,-20.81"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="336.62,-24.23 345.73,-18.82 335.23,-17.37 336.62,-24.23"/>
 </g>
 </g>
 </svg>
@@ -307,7 +310,12 @@
     <section class="visible-xs visible-sm hidden-md">
       <h3>Contents</h3>
  
-<em>None</em>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/wrap_json_add_logical_vec_by_path.html#src">wrap_json_add_logical_vec_by_path</a>
+  </div>
+</div>
 
     </section>
     <br class="visible-xs visible-sm hidden-md">
@@ -321,6 +329,26 @@
 
 
     
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">wrap_json_add_logical_vec_by_path</span><span class="p">(</span><span class="n">json</span><span class="p">,</span><span class="n">me</span><span class="p">,</span><span class="n">path</span><span class="p">,</span><span class="k">value</span><span class="p">,</span><span class="n">found</span><span class="p">,</span><span class="n">was_created</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="k">    class</span><span class="p">(</span><span class="n">json_core</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">json</span><span class="w"></span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="w">             </span><span class="kd">::</span><span class="w"> </span><span class="n">me</span><span class="w">           </span><span class="c">!! the JSON structure</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CDK</span><span class="p">,</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">path</span><span class="w">         </span><span class="c">!! the path to the variable</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="k">value</span><span class="w">        </span><span class="c">!! the vector to add</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">optional</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">found</span><span class="w">        </span><span class="c">!! if the variable was found</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">optional</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">was_created</span><span class="w">  </span><span class="c">!! if the variable had to be created</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">json_add_logical_vec_by_path</span><span class="p">(</span><span class="n">me</span><span class="p">,</span><span class="n">to_unicode</span><span class="p">(</span><span class="n">path</span><span class="p">),</span><span class="k">value</span><span class="p">,</span><span class="n">found</span><span class="p">,</span><span class="n">was_created</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">end subroutine </span><span class="n">wrap_json_add_logical_vec_by_path</span><span class="w"></span>
+</pre></div>
+
+    </section>
+    <br>
     
     </div>
   </div>
@@ -337,7 +365,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-02-13 18:17            </p>
+ on 2022-04-02 16:40            </p>
         </div>
       </div>
       <br>

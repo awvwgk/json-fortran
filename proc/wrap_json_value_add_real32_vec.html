@@ -55,7 +55,6 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
             <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
                    <li><a href="../lists/types.html">Derived Types</a></li>
-            <li><a href="../lists/programs.html">Programs</a></li>
        
             </ul>
         
@@ -65,7 +64,6 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
                              <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
           </ul>
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
@@ -116,7 +114,12 @@
     <div id="sidebar">
   <h3>Contents</h3>
  
-<em>None</em>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/wrap_json_value_add_real32_vec.html#src">wrap_json_value_add_real32_vec</a>
+  </div>
+</div>
 
 </div>
 
@@ -139,13 +142,13 @@
   <td><strong>json</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-p~130"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
+  <td><span class="anchor" id="variable-p~111"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
 <td></td>
   <td></td>  <td>pointer</td><td>::</td>
   <td><strong>p</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-name~73"></span>character(kind=CDK,len=*),</td>
+  <td><span class="anchor" id="variable-name~62"></span>character(kind=CDK,len=*),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>name</strong></td><td></td>
@@ -197,35 +200,35 @@
 <path fill="none" stroke="#ff0000" d="M189.47,-33C198.23,-33 206.8,-33 214.78,-33"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="214.88,-36.5 224.88,-33 214.88,-29.5 214.88,-36.5"/>
 </g>
-<!-- proc~to_uni_vec -->
-<g id="proc~~wrap_json_value_add_real32_vec~~CallsGraph_node3" class="node">
-<title>proc~to_uni_vec</title>
-<g id="a_proc~~wrap_json_value_add_real32_vec~~CallsGraph_node3"><a xlink:href=".././proc/to_uni_vec.html" xlink:title="to_uni_vec">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="401,-66 332,-66 332,-42 401,-42 401,-66"/>
-<text text-anchor="middle" x="366.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_uni_vec</text>
-</a>
-</g>
-</g>
-<!-- interface~to_unicode&#45;&gt;proc~to_uni_vec -->
-<g id="proc~~wrap_json_value_add_real32_vec~~CallsGraph_edge2" class="edge">
-<title>interface~to_unicode&#45;&gt;proc~to_uni_vec</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M296.13,-39.99C304.37,-41.66 313.27,-43.45 321.85,-45.19"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="321.23,-48.63 331.73,-47.18 322.62,-41.77 321.23,-48.63"/>
-</g>
 <!-- proc~to_uni -->
-<g id="proc~~wrap_json_value_add_real32_vec~~CallsGraph_node4" class="node">
+<g id="proc~~wrap_json_value_add_real32_vec~~CallsGraph_node3" class="node">
 <title>proc~to_uni</title>
-<g id="a_proc~~wrap_json_value_add_real32_vec~~CallsGraph_node4"><a xlink:href=".././proc/to_uni.html" xlink:title="to_uni">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="393.5,-24 339.5,-24 339.5,0 393.5,0 393.5,-24"/>
-<text text-anchor="middle" x="366.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_uni</text>
+<g id="a_proc~~wrap_json_value_add_real32_vec~~CallsGraph_node3"><a xlink:href=".././proc/to_uni.html" xlink:title="to_uni">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="393.5,-66 339.5,-66 339.5,-42 393.5,-42 393.5,-66"/>
+<text text-anchor="middle" x="366.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_uni</text>
 </a>
 </g>
 </g>
 <!-- interface~to_unicode&#45;&gt;proc~to_uni -->
-<g id="proc~~wrap_json_value_add_real32_vec~~CallsGraph_edge3" class="edge">
+<g id="proc~~wrap_json_value_add_real32_vec~~CallsGraph_edge2" class="edge">
 <title>interface~to_unicode&#45;&gt;proc~to_uni</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M296.13,-26.01C306.79,-23.86 318.54,-21.48 329.3,-19.31"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="330.14,-22.71 339.25,-17.3 328.75,-15.85 330.14,-22.71"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M296.13,-39.99C306.79,-42.14 318.54,-44.52 329.3,-46.69"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="328.75,-50.15 339.25,-48.7 330.14,-43.29 328.75,-50.15"/>
+</g>
+<!-- proc~to_uni_vec -->
+<g id="proc~~wrap_json_value_add_real32_vec~~CallsGraph_node4" class="node">
+<title>proc~to_uni_vec</title>
+<g id="a_proc~~wrap_json_value_add_real32_vec~~CallsGraph_node4"><a xlink:href=".././proc/to_uni_vec.html" xlink:title="to_uni_vec">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="401,-24 332,-24 332,0 401,0 401,-24"/>
+<text text-anchor="middle" x="366.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_uni_vec</text>
+</a>
+</g>
+</g>
+<!-- interface~to_unicode&#45;&gt;proc~to_uni_vec -->
+<g id="proc~~wrap_json_value_add_real32_vec~~CallsGraph_edge3" class="edge">
+<title>interface~to_unicode&#45;&gt;proc~to_uni_vec</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M296.13,-26.01C304.37,-24.34 313.27,-22.55 321.85,-20.81"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="322.62,-24.23 331.73,-18.82 321.23,-17.37 322.62,-24.23"/>
 </g>
 </g>
 </svg>
@@ -295,7 +298,12 @@
     <section class="visible-xs visible-sm hidden-md">
       <h3>Contents</h3>
  
-<em>None</em>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/wrap_json_value_add_real32_vec.html#src">wrap_json_value_add_real32_vec</a>
+  </div>
+</div>
 
     </section>
     <br class="visible-xs visible-sm hidden-md">
@@ -309,6 +317,24 @@
 
 
     
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">wrap_json_value_add_real32_vec</span><span class="p">(</span><span class="n">json</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="k">    class</span><span class="p">(</span><span class="n">json_core</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">json</span><span class="w"></span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="w">             </span><span class="kd">::</span><span class="w"> </span><span class="n">p</span><span class="w"></span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CDK</span><span class="p">,</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">name</span><span class="w"></span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">val</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">add</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">to_unicode</span><span class="p">(</span><span class="n">name</span><span class="p">),</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">end subroutine </span><span class="n">wrap_json_value_add_real32_vec</span><span class="w"></span>
+</pre></div>
+
+    </section>
+    <br>
     
     </div>
   </div>
@@ -325,7 +351,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-02-13 18:17            </p>
+ on 2022-04-02 16:40            </p>
         </div>
       </div>
       <br>

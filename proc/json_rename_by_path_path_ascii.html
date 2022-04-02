@@ -55,7 +55,6 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
             <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
                    <li><a href="../lists/types.html">Derived Types</a></li>
-            <li><a href="../lists/programs.html">Programs</a></li>
        
             </ul>
         
@@ -65,7 +64,6 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
                              <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
           </ul>
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
@@ -116,7 +114,12 @@
     <div id="sidebar">
   <h3>Contents</h3>
  
-<em>None</em>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/json_rename_by_path_path_ascii.html#src">json_rename_by_path_path_ascii</a>
+  </div>
+</div>
 
 </div>
 
@@ -145,19 +148,19 @@
   <td><strong>me</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-path~120"></span>character(kind=CDK,len=*),</td>
+  <td><span class="anchor" id="variable-path~118"></span>character(kind=CDK,len=*),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>path</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-name~30"></span>character(kind=CK,len=*),</td>
+  <td><span class="anchor" id="variable-name~19"></span>character(kind=CK,len=*),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>name</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-found~116"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-found~115"></span>logical(kind=LK),</td>
 <td>intent(out),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
@@ -203,35 +206,35 @@
 <path fill="none" stroke="#ff0000" d="M187.43,-33C196.18,-33 204.75,-33 212.72,-33"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="212.83,-36.5 222.83,-33 212.83,-29.5 212.83,-36.5"/>
 </g>
-<!-- proc~to_uni_vec -->
-<g id="proc~~json_rename_by_path_path_ascii~~CallsGraph_node3" class="node">
-<title>proc~to_uni_vec</title>
-<g id="a_proc~~json_rename_by_path_path_ascii~~CallsGraph_node3"><a xlink:href=".././proc/to_uni_vec.html" xlink:title="to_uni_vec">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="399,-66 330,-66 330,-42 399,-42 399,-66"/>
-<text text-anchor="middle" x="364.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_uni_vec</text>
-</a>
-</g>
-</g>
-<!-- interface~to_unicode&#45;&gt;proc~to_uni_vec -->
-<g id="proc~~json_rename_by_path_path_ascii~~CallsGraph_edge2" class="edge">
-<title>interface~to_unicode&#45;&gt;proc~to_uni_vec</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M294.13,-39.99C302.37,-41.66 311.27,-43.45 319.85,-45.19"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="319.23,-48.63 329.73,-47.18 320.62,-41.77 319.23,-48.63"/>
-</g>
 <!-- proc~to_uni -->
-<g id="proc~~json_rename_by_path_path_ascii~~CallsGraph_node4" class="node">
+<g id="proc~~json_rename_by_path_path_ascii~~CallsGraph_node3" class="node">
 <title>proc~to_uni</title>
-<g id="a_proc~~json_rename_by_path_path_ascii~~CallsGraph_node4"><a xlink:href=".././proc/to_uni.html" xlink:title="to_uni">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="391.5,-24 337.5,-24 337.5,0 391.5,0 391.5,-24"/>
-<text text-anchor="middle" x="364.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_uni</text>
+<g id="a_proc~~json_rename_by_path_path_ascii~~CallsGraph_node3"><a xlink:href=".././proc/to_uni.html" xlink:title="to_uni">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="391.5,-66 337.5,-66 337.5,-42 391.5,-42 391.5,-66"/>
+<text text-anchor="middle" x="364.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_uni</text>
 </a>
 </g>
 </g>
 <!-- interface~to_unicode&#45;&gt;proc~to_uni -->
-<g id="proc~~json_rename_by_path_path_ascii~~CallsGraph_edge3" class="edge">
+<g id="proc~~json_rename_by_path_path_ascii~~CallsGraph_edge2" class="edge">
 <title>interface~to_unicode&#45;&gt;proc~to_uni</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M294.13,-26.01C304.79,-23.86 316.54,-21.48 327.3,-19.31"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="328.14,-22.71 337.25,-17.3 326.75,-15.85 328.14,-22.71"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M294.13,-39.99C304.79,-42.14 316.54,-44.52 327.3,-46.69"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="326.75,-50.15 337.25,-48.7 328.14,-43.29 326.75,-50.15"/>
+</g>
+<!-- proc~to_uni_vec -->
+<g id="proc~~json_rename_by_path_path_ascii~~CallsGraph_node4" class="node">
+<title>proc~to_uni_vec</title>
+<g id="a_proc~~json_rename_by_path_path_ascii~~CallsGraph_node4"><a xlink:href=".././proc/to_uni_vec.html" xlink:title="to_uni_vec">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="399,-24 330,-24 330,0 399,0 399,-24"/>
+<text text-anchor="middle" x="364.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_uni_vec</text>
+</a>
+</g>
+</g>
+<!-- interface~to_unicode&#45;&gt;proc~to_uni_vec -->
+<g id="proc~~json_rename_by_path_path_ascii~~CallsGraph_edge3" class="edge">
+<title>interface~to_unicode&#45;&gt;proc~to_uni_vec</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M294.13,-26.01C302.37,-24.34 311.27,-22.55 319.85,-20.81"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="320.62,-24.23 329.73,-18.82 319.23,-17.37 320.62,-24.23"/>
 </g>
 </g>
 </svg>
@@ -301,7 +304,12 @@
     <section class="visible-xs visible-sm hidden-md">
       <h3>Contents</h3>
  
-<em>None</em>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/json_rename_by_path_path_ascii.html#src">json_rename_by_path_path_ascii</a>
+  </div>
+</div>
 
     </section>
     <br class="visible-xs visible-sm hidden-md">
@@ -315,6 +323,25 @@
 
 
     
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">json_rename_by_path_path_ascii</span><span class="p">(</span><span class="n">json</span><span class="p">,</span><span class="w"> </span><span class="n">me</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">found</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="k">    class</span><span class="p">(</span><span class="n">json_core</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">        </span><span class="kd">::</span><span class="w"> </span><span class="n">json</span><span class="w"></span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">me</span><span class="w"></span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CDK</span><span class="p">,</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">path</span><span class="w"></span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">name</span><span class="w"></span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">optional</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">found</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="nb">rename</span><span class="p">(</span><span class="n">me</span><span class="p">,</span><span class="n">to_unicode</span><span class="p">(</span><span class="n">path</span><span class="p">),</span><span class="n">name</span><span class="p">,</span><span class="n">found</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">end subroutine </span><span class="n">json_rename_by_path_path_ascii</span><span class="w"></span>
+</pre></div>
+
+    </section>
+    <br>
     
     </div>
   </div>
@@ -331,7 +358,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-02-13 18:17            </p>
+ on 2022-04-02 16:40            </p>
         </div>
       </div>
       <br>

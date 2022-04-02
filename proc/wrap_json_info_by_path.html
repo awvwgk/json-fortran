@@ -55,7 +55,6 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
             <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
                    <li><a href="../lists/types.html">Derived Types</a></li>
-            <li><a href="../lists/programs.html">Programs</a></li>
        
             </ul>
         
@@ -65,7 +64,6 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
                              <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
           </ul>
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
@@ -91,7 +89,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">11 statements</a>
+    title=" 0.2% of total for procedures.">11 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/json_value_module.F90"> Source File</a></li>
   </ul>
@@ -116,7 +114,12 @@
     <div id="sidebar">
   <h3>Contents</h3>
  
-<em>None</em>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/wrap_json_info_by_path.html#src">wrap_json_info_by_path</a>
+  </div>
+</div>
 
 </div>
 
@@ -139,37 +142,37 @@
   <td><strong>json</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-p~115"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
+  <td><span class="anchor" id="variable-p~96"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
 <td>intent(in),</td>
   <td></td>  <td>pointer</td><td>::</td>
   <td><strong>p</strong></td><td><p>a <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> linked list</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-path~156"></span>character(kind=CDK,len=*),</td>
+  <td><span class="anchor" id="variable-path~153"></span>character(kind=CDK,len=*),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>path</strong></td><td><p>path to the variable</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-found~155"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-found~153"></span>logical(kind=LK),</td>
 <td>intent(out),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>found</strong></td><td><p>true if it was found</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-var_type~20"></span>integer(kind=IK),</td>
+  <td><span class="anchor" id="variable-var_type~11"></span>integer(kind=IK),</td>
 <td>intent(out),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>var_type</strong></td><td><p><abbr title="json_unknown, json_null, json_object, json_array, json_logical, json_integer, json_double, json_string">variable type</abbr></p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-n_children~9"></span>integer(kind=IK),</td>
+  <td><span class="anchor" id="variable-n_children~6"></span>integer(kind=IK),</td>
 <td>intent(out),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>n_children</strong></td><td><p>number of children</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-name~63"></span>character(kind=CK,len=:),</td>
+  <td><span class="anchor" id="variable-name~52"></span>character(kind=CK,len=:),</td>
 <td>intent(out),</td>
   <td>optional</td>  <td>allocatable</td><td>::</td>
   <td><strong>name</strong></td><td><p>variable name</p></td>
@@ -215,35 +218,35 @@
 <path fill="none" stroke="#ff0000" d="M139.19,-33C147.84,-33 156.52,-33 164.67,-33"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="164.68,-36.5 174.68,-33 164.68,-29.5 164.68,-36.5"/>
 </g>
-<!-- proc~to_uni_vec -->
-<g id="proc~~wrap_json_info_by_path~~CallsGraph_node3" class="node">
-<title>proc~to_uni_vec</title>
-<g id="a_proc~~wrap_json_info_by_path~~CallsGraph_node3"><a xlink:href=".././proc/to_uni_vec.html" xlink:title="to_uni_vec">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="351,-66 282,-66 282,-42 351,-42 351,-66"/>
-<text text-anchor="middle" x="316.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_uni_vec</text>
-</a>
-</g>
-</g>
-<!-- interface~to_unicode&#45;&gt;proc~to_uni_vec -->
-<g id="proc~~wrap_json_info_by_path~~CallsGraph_edge2" class="edge">
-<title>interface~to_unicode&#45;&gt;proc~to_uni_vec</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M246.13,-39.99C254.37,-41.66 263.27,-43.45 271.85,-45.19"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="271.23,-48.63 281.73,-47.18 272.62,-41.77 271.23,-48.63"/>
-</g>
 <!-- proc~to_uni -->
-<g id="proc~~wrap_json_info_by_path~~CallsGraph_node4" class="node">
+<g id="proc~~wrap_json_info_by_path~~CallsGraph_node3" class="node">
 <title>proc~to_uni</title>
-<g id="a_proc~~wrap_json_info_by_path~~CallsGraph_node4"><a xlink:href=".././proc/to_uni.html" xlink:title="to_uni">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="343.5,-24 289.5,-24 289.5,0 343.5,0 343.5,-24"/>
-<text text-anchor="middle" x="316.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_uni</text>
+<g id="a_proc~~wrap_json_info_by_path~~CallsGraph_node3"><a xlink:href=".././proc/to_uni.html" xlink:title="to_uni">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="343.5,-66 289.5,-66 289.5,-42 343.5,-42 343.5,-66"/>
+<text text-anchor="middle" x="316.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_uni</text>
 </a>
 </g>
 </g>
 <!-- interface~to_unicode&#45;&gt;proc~to_uni -->
-<g id="proc~~wrap_json_info_by_path~~CallsGraph_edge3" class="edge">
+<g id="proc~~wrap_json_info_by_path~~CallsGraph_edge2" class="edge">
 <title>interface~to_unicode&#45;&gt;proc~to_uni</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M246.13,-26.01C256.79,-23.86 268.54,-21.48 279.3,-19.31"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="280.14,-22.71 289.25,-17.3 278.75,-15.85 280.14,-22.71"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M246.13,-39.99C256.79,-42.14 268.54,-44.52 279.3,-46.69"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="278.75,-50.15 289.25,-48.7 280.14,-43.29 278.75,-50.15"/>
+</g>
+<!-- proc~to_uni_vec -->
+<g id="proc~~wrap_json_info_by_path~~CallsGraph_node4" class="node">
+<title>proc~to_uni_vec</title>
+<g id="a_proc~~wrap_json_info_by_path~~CallsGraph_node4"><a xlink:href=".././proc/to_uni_vec.html" xlink:title="to_uni_vec">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="351,-24 282,-24 282,0 351,0 351,-24"/>
+<text text-anchor="middle" x="316.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_uni_vec</text>
+</a>
+</g>
+</g>
+<!-- interface~to_unicode&#45;&gt;proc~to_uni_vec -->
+<g id="proc~~wrap_json_info_by_path~~CallsGraph_edge3" class="edge">
+<title>interface~to_unicode&#45;&gt;proc~to_uni_vec</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M246.13,-26.01C254.37,-24.34 263.27,-22.55 271.85,-20.81"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="272.62,-24.23 281.73,-18.82 271.23,-17.37 272.62,-24.23"/>
 </g>
 </g>
 </svg>
@@ -313,7 +316,12 @@
     <section class="visible-xs visible-sm hidden-md">
       <h3>Contents</h3>
  
-<em>None</em>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/wrap_json_info_by_path.html#src">wrap_json_info_by_path</a>
+  </div>
+</div>
 
     </section>
     <br class="visible-xs visible-sm hidden-md">
@@ -327,6 +335,27 @@
 
 
     
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">wrap_json_info_by_path</span><span class="p">(</span><span class="n">json</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">path</span><span class="p">,</span><span class="n">found</span><span class="p">,</span><span class="n">var_type</span><span class="p">,</span><span class="n">n_children</span><span class="p">,</span><span class="n">name</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="k">    class</span><span class="p">(</span><span class="n">json_core</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">json</span><span class="w"></span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">p</span><span class="w">          </span><span class="c">!! a JSON linked list</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CDK</span><span class="p">,</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">path</span><span class="w">       </span><span class="c">!! path to the variable</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">optional</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">found</span><span class="w">      </span><span class="c">!! true if it was found</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">optional</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">var_type</span><span class="w">   </span><span class="c">!! variable type</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">optional</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">n_children</span><span class="w"> </span><span class="c">!! number of children</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="c">!! variable name</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">info</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">to_unicode</span><span class="p">(</span><span class="n">path</span><span class="p">),</span><span class="n">found</span><span class="p">,</span><span class="n">var_type</span><span class="p">,</span><span class="n">n_children</span><span class="p">,</span><span class="n">name</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">end subroutine </span><span class="n">wrap_json_info_by_path</span><span class="w"></span>
+</pre></div>
+
+    </section>
+    <br>
     
     </div>
   </div>
@@ -343,7 +372,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-02-13 18:17            </p>
+ on 2022-04-02 16:40            </p>
         </div>
       </div>
       <br>
