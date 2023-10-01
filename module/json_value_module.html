@@ -459,11 +459,11 @@
       <ul class="list-group">
           <li class="list-group-item">
             <ul class="list-inline">
-                <li><a href='<a href="http://fortranwiki.org/fortran/show/ieee_arithmetic">ieee_arithmetic</a>'>ieee_arithmetic</a></li>
                 <li><a href='<a href="https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fFORTRAN_005fENV.html">iso_fortran_env</a>'>iso_fortran_env</a></li>
-                <li><a href='../module/json_parameters.html'>json_parameters</a></li>
                 <li><a href='../module/json_string_utilities.html'>json_string_utilities</a></li>
                 <li><a href='../module/json_kinds.html'>json_kinds</a></li>
+                <li><a href='<a href="http://fortranwiki.org/fortran/show/ieee_arithmetic">ieee_arithmetic</a>'>ieee_arithmetic</a></li>
+                <li><a href='../module/json_parameters.html'>json_parameters</a></li>
             </ul>
           </li>
           <li class="list-group-item">
@@ -1508,7 +1508,7 @@ override this option if necessary].
             <td>
 <p>Note that this option does not affect parsing
 (both escaped and unescaped are still valid in
-all cases).</p><a href="../proc/initialize_json_core.html#variable-escape_solidus~2" class="pull-right"><emph>Read more&hellip;</emph></a>
+all cases).</p><a href="../proc/initialize_json_core.html#variable-escape_solidus" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -1570,7 +1570,7 @@ all cases).</p><a href="../proc/initialize_json_core.html#variable-escape_solidu
             <td>::</td>
             <td><strong>use_quiet_nan</strong></td>
             <td>
-<a href="../proc/initialize_json_core.html#variable-use_quiet_nan~2" class="pull-right"><emph>Read more&hellip;</emph></a>
+<a href="../proc/initialize_json_core.html#variable-use_quiet_nan" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -1912,13 +1912,13 @@ when <code>use_unformatted_stream=True</code></p>
             <td>
 <p>comment tokens when
 <code>allow_comments</code> is true.
-Examples: &lsquo;<code>!</code>&lsquo; or &lsquo;<code>#</code>&rsquo;.
+Examples: &lsquo;<code>!</code>&rsquo; or &lsquo;<code>#</code>&rsquo;.
 Default is <code>CK_'/!#'</code>.</p>
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-compact_real~2"></span>
+              <span class="anchor" id="variable-compact_real"></span>
               logical(kind=LK),
             </td>
               <td>private</td>
@@ -1976,7 +1976,7 @@ this variable is not allocated.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-escape_solidus~4"></span>
+              <span class="anchor" id="variable-escape_solidus~3"></span>
               logical(kind=LK),
             </td>
               <td>private</td>
@@ -2053,7 +2053,7 @@ when <code>use_unformatted_stream=True</code></p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ipos~2"></span>
+              <span class="anchor" id="variable-ipos"></span>
               integer(kind=IK),
             </td>
               <td>private</td>
@@ -2125,7 +2125,7 @@ printed on one line.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-non_normals_to_null~2"></span>
+              <span class="anchor" id="variable-non_normals_to_null"></span>
               logical(kind=LK),
             </td>
               <td>private</td>
@@ -2138,7 +2138,7 @@ printed on one line.</p>
                 <td>.false.</td>
             <td>
 <p>How to serialize NaN, Infinity,
-and -Infinity real values:</p><a href="../type/json_core.html#variable-non_normals_to_null~2" class="pull-right"><emph>Read more&hellip;</emph></a>
+and -Infinity real values:</p><a href="../type/json_core.html#variable-non_normals_to_null" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2235,7 +2235,7 @@ lines in file</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-real_fmt~2"></span>
+              <span class="anchor" id="variable-real_fmt"></span>
               character(kind=CDK, len=:),
             </td>
               <td>private,</td>
@@ -2368,7 +2368,7 @@ then the string is returned unescaped.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-use_quiet_nan~4"></span>
+              <span class="anchor" id="variable-use_quiet_nan~3"></span>
               logical(kind=LK),
             </td>
               <td>private</td>
@@ -5046,7 +5046,7 @@ override this option if necessary].
             <td>
 <p>Note that this option does not affect parsing
 (both escaped and unescaped are still valid in
-all cases).</p><a href="../proc/initialize_json_core.html#variable-escape_solidus~2" class="pull-right"><emph>Read more&hellip;</emph></a>
+all cases).</p><a href="../proc/initialize_json_core.html#variable-escape_solidus" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -5108,7 +5108,7 @@ all cases).</p><a href="../proc/initialize_json_core.html#variable-escape_solidu
             <td>::</td>
             <td><strong>use_quiet_nan</strong></td>
             <td>
-<a href="../proc/initialize_json_core.html#variable-use_quiet_nan~2" class="pull-right"><emph>Read more&hellip;</emph></a>
+<a href="../proc/initialize_json_core.html#variable-use_quiet_nan" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -12471,7 +12471,7 @@ override this option if necessary].
             <td>
 <p>Note that this option does not affect parsing
 (both escaped and unescaped are still valid in
-all cases).</p><a href="../proc/json_initialize.html#variable-escape_solidus~3" class="pull-right"><emph>Read more&hellip;</emph></a>
+all cases).</p><a href="../proc/json_initialize.html#variable-escape_solidus~2" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -12533,7 +12533,7 @@ all cases).</p><a href="../proc/json_initialize.html#variable-escape_solidus~3" 
             <td>::</td>
             <td><strong>use_quiet_nan</strong></td>
             <td>
-<a href="../proc/json_initialize.html#variable-use_quiet_nan~3" class="pull-right"><emph>Read more&hellip;</emph></a>
+<a href="../proc/json_initialize.html#variable-use_quiet_nan~2" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -25892,7 +25892,7 @@ is ignored.</p>
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-06-26 23:30              </p>
+ on 2023-10-01 13:58              </p>
           </div>
         </div>
         <br>
