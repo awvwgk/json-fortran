@@ -125,6 +125,7 @@
 <li><a href="#changes-between-releases">Changes Between Releases</a><ul>
 <li><a href="#change-log">Change Log</a><ul>
 <li><a href="#unreleased">Unreleased</a></li>
+<li><a href="#903-2025-02-22">9.0.3 (2025-02-22)</a></li>
 <li><a href="#902-2024-08-25">9.0.2 (2024-08-25)</a></li>
 <li><a href="#901-2024-06-11">9.0.1 (2024-06-11)</a></li>
 <li><a href="#900-2024-06-11">9.0.0 (2024-06-11)</a></li>
@@ -183,7 +184,7 @@ of the <code>master</code> branch, please head back to the
 <a href="../../index.html">main page</a>.</p>
 <h2 id="latest-stable-release">Latest Stable Release</h2>
 <p><strong>Documentation:</strong>
-<a href="https://jacobwilliams.github.io/json-fortran/prev/9.0.2/index.html">9.0.2</a></p>
+<a href="https://jacobwilliams.github.io/json-fortran/prev/9.0.3/index.html">9.0.3</a></p>
 <p><strong>Download:</strong>
 <a href="https://github.com/jacobwilliams/json-fortran/releases/latest">https://github.com/jacobwilliams/json-fortran/releases/latest</a></p>
 <h2 id="past-releases">Past Releases</h2>
@@ -192,6 +193,11 @@ documentation from the documentation for official releases other than
 using the browser&rsquo;s back button. Feel free to bookmark this page, or
 the <a href="../../index.html">main project page</a> for convenient navigation.</p>
 <ul>
+<li><a href="https://jacobwilliams.github.io/json-fortran/prev/9.0.3/index.html">9.0.3</a>
+   (<a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a> generated documentation)<ul>
+<li><a href="https://github.com/jacobwilliams/json-fortran/releases/tag/9.0.3">Download</a></li>
+</ul>
+</li>
 <li><a href="https://jacobwilliams.github.io/json-fortran/prev/9.0.2/index.html">9.0.2</a>
    (<a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a> generated documentation)<ul>
 <li><a href="https://github.com/jacobwilliams/json-fortran/releases/tag/9.0.2">Download</a></li>
@@ -420,7 +426,7 @@ the <a href="../../index.html">main project page</a> for convenient navigation.<
 </ul>
 <h1 id="development-version">Development Version</h1>
 <p>Documentation for the latest development version may be found at
-<a href="https://jacobwilliams.github.io/json-fortran/prev/9.0.2/index.html">https://jacobwilliams.github.io/json-fortran/prev/9.0.2/index.html</a>
+<a href="https://jacobwilliams.github.io/json-fortran/prev/9.0.3/index.html">https://jacobwilliams.github.io/json-fortran/prev/9.0.3/index.html</a>
 or generated locally using the
 <a href="../development-resources/build.sh.html">build.sh</a> build
 script.</p>
@@ -432,6 +438,7 @@ implemented between each release.</p>
 <ul>
 <li><a href="#change-log">Change Log</a><ul>
 <li><a href="#unreleased">Unreleased</a></li>
+<li><a href="#903-2025-02-22">9.0.3 (2025-02-22)</a></li>
 <li><a href="#902-2024-08-25">9.0.2 (2024-08-25)</a></li>
 <li><a href="#901-2024-06-11">9.0.1 (2024-06-11)</a></li>
 <li><a href="#900-2024-06-11">9.0.0 (2024-06-11)</a></li>
@@ -481,7 +488,15 @@ implemented between each release.</p>
 </li>
 </ul>
 <h3 id="unreleased"><a href="https://github.com/jacobwilliams/json-fortran/tree/HEAD">Unreleased</a></h3>
-<p><a href="https://github.com/jacobwilliams/json-fortran/compare/9.0.2...HEAD">Complete Changeset</a></p>
+<p><a href="https://github.com/jacobwilliams/json-fortran/compare/9.0.3...HEAD">Complete Changeset</a></p>
+<h3 id="903-2025-02-22"><a href="https://github.com/jacobwilliams/json-fortran/tree/9.0.3">9.0.3</a> (2025-02-22)</h3>
+<p><a href="https://github.com/jacobwilliams/json-fortran/compare/9.0.2...9.0.3">Complete Changeset</a>
+or <a href="https://github.com/jacobwilliams/json-fortran/releases/tag/9.0.3">Download v9.0.3</a></p>
+<p><strong>Changes:</strong></p>
+<ul>
+<li>Added some checks to write statements to avoid potential crashes. <a href="https://github.com/jacobwilliams/json-fortran/issues/581">#581</a> <a href="https://github.com/jacobwilliams/json-fortran/pull/582">#582</a> (<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
+<li>Attempting to reduce the size of the repo by pruning the documentation <code>gh-pages</code> history. <a href="https://github.com/jacobwilliams/json-fortran/issues/583">#583</a> <a href="https://github.com/jacobwilliams/json-fortran/pull/584">#584</a> (<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
+</ul>
 <h3 id="902-2024-08-25"><a href="https://github.com/jacobwilliams/json-fortran/tree/9.0.2">9.0.2</a> (2024-08-25)</h3>
 <p><a href="https://github.com/jacobwilliams/json-fortran/compare/9.0.1...9.0.2">Complete Changeset</a>
 or <a href="https://github.com/jacobwilliams/json-fortran/releases/tag/9.0.2">Download v9.0.2</a></p>
@@ -1393,14 +1408,14 @@ or <a href="https://github.com/jacobwilliams/json-fortran/releases/tag/2.0.0">Do
           <div class="col">
             <p>
               JSON-Fortran
- was developed by Jacob Williams<br>              &copy; 2024 
+ was developed by Jacob Williams<br>              &copy; 2025 
 </p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-08-28 14:50              </p>
+ on 2025-02-22 18:18 +0000             </p>
           </div>
         </div>
         <br>

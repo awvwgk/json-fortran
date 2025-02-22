@@ -267,7 +267,7 @@ trigger automatic documentation deployment.</p>
 
 <span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">Deploy</span><span class="w"> </span><span class="n">Documentation</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">master</span>
 <span class="w">      </span><span class="k">if</span><span class="p">:</span><span class="w"> </span><span class="n">matrix</span><span class="o">.</span><span class="n">gcc_v</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">github</span><span class="o">.</span><span class="n">ref</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;refs/heads/master&#39;</span>
-<span class="w">      </span><span class="n">uses</span><span class="p">:</span><span class="w"> </span><span class="n">JamesIves</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">pages</span><span class="o">-</span><span class="n">deploy</span><span class="o">-</span><span class="n">action</span><span class="err">@</span><span class="n">v4</span><span class="o">.</span><span class="mf">6.1</span>
+<span class="w">      </span><span class="n">uses</span><span class="p">:</span><span class="w"> </span><span class="n">JamesIves</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">pages</span><span class="o">-</span><span class="n">deploy</span><span class="o">-</span><span class="n">action</span><span class="err">@</span><span class="n">v4</span><span class="o">.</span><span class="mf">7.3</span>
 <span class="w">      </span><span class="n">with</span><span class="p">:</span>
 <span class="w">        </span><span class="n">branch</span><span class="p">:</span><span class="w"> </span><span class="n">gh</span><span class="o">-</span><span class="n">pages</span><span class="w"> </span><span class="c1"># The branch the action should deploy to.</span>
 <span class="w">        </span><span class="n">folder</span><span class="p">:</span><span class="w"> </span><span class="n">doc</span><span class="w">  </span><span class="c1"># The folder the action should deploy.</span>
@@ -287,11 +287,12 @@ trigger automatic documentation deployment.</p>
 
 <span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">Deploy</span><span class="w"> </span><span class="n">documentation</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">tagged</span><span class="w"> </span><span class="n">release</span>
 <span class="w">      </span><span class="k">if</span><span class="p">:</span><span class="w"> </span><span class="n">matrix</span><span class="o">.</span><span class="n">gcc_v</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">startsWith</span><span class="p">(</span><span class="n">github</span><span class="o">.</span><span class="n">ref</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;refs/tags/&#39;</span><span class="p">)</span>
-<span class="w">      </span><span class="n">uses</span><span class="p">:</span><span class="w"> </span><span class="n">JamesIves</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">pages</span><span class="o">-</span><span class="n">deploy</span><span class="o">-</span><span class="n">action</span><span class="err">@</span><span class="n">v4</span><span class="o">.</span><span class="mf">6.1</span>
+<span class="w">      </span><span class="n">uses</span><span class="p">:</span><span class="w"> </span><span class="n">JamesIves</span><span class="o">/</span><span class="n">github</span><span class="o">-</span><span class="n">pages</span><span class="o">-</span><span class="n">deploy</span><span class="o">-</span><span class="n">action</span><span class="err">@</span><span class="n">v4</span><span class="o">.</span><span class="mf">7.3</span>
 <span class="w">      </span><span class="n">with</span><span class="p">:</span>
 <span class="w">        </span><span class="n">branch</span><span class="p">:</span><span class="w"> </span><span class="n">gh</span><span class="o">-</span><span class="n">pages</span><span class="w"> </span><span class="c1"># The branch the action should deploy to.</span>
 <span class="w">        </span><span class="n">folder</span><span class="p">:</span><span class="w"> </span><span class="n">doc</span><span class="w">  </span><span class="c1"># The folder the action should deploy.</span>
 <span class="w">        </span><span class="n">target</span><span class="o">-</span><span class="n">folder</span><span class="p">:</span><span class="w"> </span><span class="n">prev</span><span class="o">/$</span><span class="p">{{</span><span class="n">github</span><span class="o">.</span><span class="n">ref_name</span><span class="p">}}</span><span class="w"> </span><span class="c1"># deploy to a version-specific folder</span>
+<span class="w">        </span><span class="n">single</span><span class="o">-</span><span class="n">commit</span><span class="p">:</span><span class="w"> </span><span class="bp">true</span>
 
 <span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">Upload</span><span class="w"> </span><span class="n">coverage</span>
 <span class="w">      </span><span class="k">if</span><span class="p">:</span><span class="w"> </span><span class="n">matrix</span><span class="o">.</span><span class="n">gcc_v</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">7</span>
@@ -311,14 +312,14 @@ trigger automatic documentation deployment.</p>
           <div class="col">
             <p>
               JSON-Fortran
- was developed by Jacob Williams<br>              &copy; 2024 
+ was developed by Jacob Williams<br>              &copy; 2025 
 </p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-08-28 14:50              </p>
+ on 2025-02-22 18:18 +0000             </p>
           </div>
         </div>
         <br>
