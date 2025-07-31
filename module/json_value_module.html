@@ -12,14 +12,29 @@
 
     <title>json_value_module &ndash; JSON-Fortran</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="../css/pygments.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
     <link href="../css/local.css" rel="stylesheet">
-      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="../css/pygments.css" rel="stylesheet">
     <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
@@ -99,9 +114,11 @@
     </div>
   </div>
   <script>
-    $(function () {
-    $('[data-bs-toggle="tooltip"]').tooltip()
-    })
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
   </script>
 
   </div>
@@ -433,11 +450,11 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
+                  <li class="list-inline-item"><a href='json_kinds.html'>json_kinds</a></li>
+                  <li class="list-inline-item"><a href='http://fortranwiki.org/fortran/show/iso_fortran_env'>iso_fortran_env</a></li>
+                  <li class="list-inline-item"><a href='json_parameters.html'>json_parameters</a></li>
                   <li class="list-inline-item"><a href='json_string_utilities.html'>json_string_utilities</a></li>
                   <li class="list-inline-item"><a href='http://fortranwiki.org/fortran/show/ieee_arithmetic'>ieee_arithmetic</a></li>
-                  <li class="list-inline-item"><a href='json_kinds.html'>json_kinds</a></li>
-                  <li class="list-inline-item"><a href='json_parameters.html'>json_parameters</a></li>
-                  <li class="list-inline-item"><a href='http://fortranwiki.org/fortran/show/iso_fortran_env'>iso_fortran_env</a></li>
               </ul>
             </li>
             <li class="list-group-item">
@@ -2122,931 +2139,931 @@ and <a href="../proc/string_to_real.html">string_to_real</a> will use
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-add'>add</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_member'>json_value_add_member</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_null'>json_value_add_null</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_add_null'>wrap_json_value_add_null</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_integer'>json_value_add_integer</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_add_integer'>wrap_json_value_add_integer</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_integer_vec'>json_value_add_integer_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_add_integer_vec'>wrap_json_value_add_integer_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_real32'>json_value_add_real32</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_add_real32'>wrap_json_value_add_real32</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_real32_vec'>json_value_add_real32_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_add_real32_vec'>wrap_json_value_add_real32_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_real'>json_value_add_real</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_add_real'>wrap_json_value_add_real</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_real_vec'>json_value_add_real_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_add_real_vec'>wrap_json_value_add_real_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_logical'>json_value_add_logical</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_add_logical'>wrap_json_value_add_logical</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_logical_vec'>json_value_add_logical_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_add_logical_vec'>wrap_json_value_add_logical_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_string'>json_value_add_string</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_add_string'>wrap_json_value_add_string</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_string_vec'>json_value_add_string_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_add_string_vec'>wrap_json_value_add_string_vec</a></td>
-                <td><p>Add objects to a linked list of <a href="../type/json_value.html">json_value</a>s.</p><a href="../type/json_core.html#boundprocedure-add" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+                  <td><p>Add objects to a linked list of <a href="../type/json_value.html">json_value</a>s.</p><a href="../type/json_core.html#boundprocedure-add" class="pull-right"><emph>Read more&hellip;</emph></a></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-add~2'>add</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_string_name_ascii'>json_value_add_string_name_ascii</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_string_val_ascii'>json_value_add_string_val_ascii</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_string_vec_name_ascii'>json_value_add_string_vec_name_ascii</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_string_vec_val_ascii'>json_value_add_string_vec_val_ascii</a></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-add_by_path'>add_by_path</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_add_member_by_path'>json_add_member_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_add_member_by_path'>wrap_json_add_member_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_add_integer_by_path'>json_add_integer_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_add_integer_by_path'>wrap_json_add_integer_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_add_real32_by_path'>json_add_real32_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_add_real32_by_path'>wrap_json_add_real32_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_add_real_by_path'>json_add_real_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_add_real_by_path'>wrap_json_add_real_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_add_logical_by_path'>json_add_logical_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_add_logical_by_path'>wrap_json_add_logical_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_add_string_by_path'>json_add_string_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_add_string_by_path'>wrap_json_add_string_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_add_integer_vec_by_path'>json_add_integer_vec_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_add_integer_vec_by_path'>wrap_json_add_integer_vec_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_add_real32_vec_by_path'>json_add_real32_vec_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_add_real32_vec_by_path'>wrap_json_add_real32_vec_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_add_real_vec_by_path'>json_add_real_vec_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_add_real_vec_by_path'>wrap_json_add_real_vec_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_add_logical_vec_by_path'>json_add_logical_vec_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_add_logical_vec_by_path'>wrap_json_add_logical_vec_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_add_string_vec_by_path'>json_add_string_vec_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_add_string_vec_by_path'>wrap_json_add_string_vec_by_path</a></td>
-                <td><p>Add variables to a <a href="../type/json_value.html">json_value</a> linked list
+                  <td><p>Add variables to a <a href="../type/json_value.html">json_value</a> linked list
   by specifying their paths.</p><a href="../type/json_core.html#boundprocedure-add_by_path" class="pull-right"><emph>Read more&hellip;</emph></a></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-add_by_path~2'>add_by_path</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_add_string_by_path_value_ascii'>json_add_string_by_path_value_ascii</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_add_string_by_path_path_ascii'>json_add_string_by_path_path_ascii</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_add_string_vec_by_path_value_ascii'>json_add_string_vec_by_path_value_ascii</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_add_string_vec_by_path_path_ascii'>json_add_string_vec_by_path_path_ascii</a></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-annotate_invalid_json'>annotate_invalid_json</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/json_core.html#boundprocedure-check_children_for_duplicate_keys'>check_children_for_duplicate_keys</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_check_children_for_duplicate_keys.html'>json_check_children_for_duplicate_keys</a></td>
-                <td>../../<p>Check a <code>json_value</code> object&rsquo;s
+                  <td><p>Check a <code>json_value</code> object&rsquo;s
 children for duplicate keys</p></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/json_core.html#boundprocedure-check_for_duplicate_keys'>check_for_duplicate_keys</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_check_all_for_duplicate_keys.html'>json_check_all_for_duplicate_keys</a></td>
-                <td>../../<p>Check entire <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> structure
+                  <td><p>Check entire <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> structure
 for duplicate keys (recursively)</p></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/json_core.html#boundprocedure-check_for_errors'>check_for_errors</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_check_for_errors.html'>json_check_for_errors</a></td>
-                <td>../../<p>check for error and get error message</p></td>
+                  <td><p>check for error and get error message</p></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/json_core.html#boundprocedure-clear_exceptions'>clear_exceptions</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_clear_exceptions.html'>json_clear_exceptions</a></td>
-                <td>../../<p>clear exceptions</p></td>
+                  <td><p>clear exceptions</p></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/json_core.html#boundprocedure-clone'>clone</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_clone.html'>json_clone</a></td>
-                <td>../../<p>clone a <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> structure (deep copy)</p></td>
+                  <td><p>clone a <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> structure (deep copy)</p></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-convert'>convert</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/json_core.html#boundprocedure-count'>count</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_count.html'>json_count</a></td>
-                <td>../../<p>count the number of children</p></td>
+                  <td><p>count the number of children</p></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-create'>create</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_create_by_path'>json_create_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_create_by_path'>wrap_json_create_by_path</a></td>
-                <td><p>Create a <a href="../type/json_value.html">json_value</a> linked list using the
+                  <td><p>Create a <a href="../type/json_value.html">json_value</a> linked list using the
   path to the variables. Optionally return a
   pointer to the variable.</p><a href="../type/json_core.html#boundprocedure-create" class="pull-right"><emph>Read more&hellip;</emph></a></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-create_array'>create_array</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_create_array'>json_value_create_array</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_create_array'>wrap_json_value_create_array</a></td>
-                <td><p>Allocate a <a href="../type/json_value.html">json_value</a> pointer and make it an array variable.
+                  <td><p>Allocate a <a href="../type/json_value.html">json_value</a> pointer and make it an array variable.
   The pointer should not already be allocated.</p><a href="../type/json_core.html#boundprocedure-create_array" class="pull-right"><emph>Read more&hellip;</emph></a></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-create_double'>create_double</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_create_real'>json_value_create_real</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_create_real'>wrap_json_value_create_real</a></td>
-                <td><p>This is equivalent to <a href="../type/json_core.html#boundprocedure-create_real">create_real</a>,
+                  <td><p>This is equivalent to <a href="../type/json_core.html#boundprocedure-create_real">create_real</a>,
 and is here only for backward compatibility.</p></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-create_double~2'>create_double</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_create_real32'>json_value_create_real32</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_create_real32'>wrap_json_value_create_real32</a></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-create_integer'>create_integer</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_create_integer'>json_value_create_integer</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_create_integer'>wrap_json_value_create_integer</a></td>
-                <td><p>Allocate a json_value pointer and make it an integer variable.
+                  <td><p>Allocate a json_value pointer and make it an integer variable.
   The pointer should not already be allocated.</p><a href="../type/json_core.html#boundprocedure-create_integer" class="pull-right"><emph>Read more&hellip;</emph></a></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-create_logical'>create_logical</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_create_logical'>json_value_create_logical</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_create_logical'>wrap_json_value_create_logical</a></td>
-                <td><p>Allocate a json_value pointer and make it a logical variable.
+                  <td><p>Allocate a json_value pointer and make it a logical variable.
   The pointer should not already be allocated.</p><a href="../type/json_core.html#boundprocedure-create_logical" class="pull-right"><emph>Read more&hellip;</emph></a></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-create_null'>create_null</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_create_null'>json_value_create_null</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_create_null'>wrap_json_value_create_null</a></td>
-                <td><p>Allocate a json_value pointer and make it a null variable.
+                  <td><p>Allocate a json_value pointer and make it a null variable.
   The pointer should not already be allocated.</p><a href="../type/json_core.html#boundprocedure-create_null" class="pull-right"><emph>Read more&hellip;</emph></a></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-create_object'>create_object</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_create_object'>json_value_create_object</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_create_object'>wrap_json_value_create_object</a></td>
-                <td><p>Allocate a <a href="../type/json_value.html">json_value</a> pointer and make it an object variable.
+                  <td><p>Allocate a <a href="../type/json_value.html">json_value</a> pointer and make it an object variable.
   The pointer should not already be allocated.</p><a href="../type/json_core.html#boundprocedure-create_object" class="pull-right"><emph>Read more&hellip;</emph></a></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-create_real'>create_real</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_create_real'>json_value_create_real</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_create_real'>wrap_json_value_create_real</a></td>
-                <td><p>Allocate a <a href="../type/json_value.html">json_value</a> pointer and make it a real variable.
+                  <td><p>Allocate a <a href="../type/json_value.html">json_value</a> pointer and make it a real variable.
   The pointer should not already be allocated.</p><a href="../type/json_core.html#boundprocedure-create_real" class="pull-right"><emph>Read more&hellip;</emph></a></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-create_real~2'>create_real</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_create_real32'>json_value_create_real32</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_create_real32'>wrap_json_value_create_real32</a></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-create_string'>create_string</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_create_string'>json_value_create_string</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_create_string'>wrap_json_value_create_string</a></td>
-                <td><p>Allocate a json_value pointer and make it a string variable.
+                  <td><p>Allocate a json_value pointer and make it a string variable.
   The pointer should not already be allocated.</p><a href="../type/json_core.html#boundprocedure-create_string" class="pull-right"><emph>Read more&hellip;</emph></a></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-deserialize'>deserialize</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_parse_string'>json_parse_string</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_parse_string'>wrap_json_parse_string</a></td>
-                <td><p>Parse the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> string and populate the <a href="../type/json_value.html">json_value</a> tree.</p></td>
+                  <td><p>Parse the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> string and populate the <a href="../type/json_value.html">json_value</a> tree.</p></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-destroy'>destroy</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_destroy'>json_value_destroy</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-destroy_json_core'>destroy_json_core</a></td>
-                <td><p>Destructor routine for a <a href="../type/json_value.html">json_value</a> pointer.
+                  <td><p>Destructor routine for a <a href="../type/json_value.html">json_value</a> pointer.
   This must be called explicitly if it is no longer needed,
   before it goes out of scope.  Otherwise, a memory leak will result.</p><a href="../type/json_core.html#boundprocedure-destroy" class="pull-right"><emph>Read more&hellip;</emph></a></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-destroy_json_core'>destroy_json_core</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/json_core.html#boundprocedure-failed'>failed</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_failed.html'>json_failed</a></td>
-                <td>../../<p>check for error</p></td>
+                  <td><p>check for error</p></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-get'>get</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_by_path'>json_get_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_get_by_path'>wrap_json_get_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_integer'>json_get_integer</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_integer_by_path'>json_get_integer_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_get_integer_by_path'>wrap_json_get_integer_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_integer_vec'>json_get_integer_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_integer_vec_by_path'>json_get_integer_vec_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_get_integer_vec_by_path'>wrap_json_get_integer_vec_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_real32'>json_get_real32</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_real32_by_path'>json_get_real32_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_get_real32_by_path'>wrap_json_get_real32_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_real32_vec'>json_get_real32_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_real32_vec_by_path'>json_get_real32_vec_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_get_real32_vec_by_path'>wrap_json_get_real32_vec_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_real'>json_get_real</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_real_by_path'>json_get_real_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_get_real_by_path'>wrap_json_get_real_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_real_vec'>json_get_real_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_real_vec_by_path'>json_get_real_vec_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_get_real_vec_by_path'>wrap_json_get_real_vec_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_logical'>json_get_logical</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_logical_by_path'>json_get_logical_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_get_logical_by_path'>wrap_json_get_logical_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_logical_vec'>json_get_logical_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_logical_vec_by_path'>json_get_logical_vec_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_get_logical_vec_by_path'>wrap_json_get_logical_vec_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_string'>json_get_string</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_string_by_path'>json_get_string_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_get_string_by_path'>wrap_json_get_string_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_string_vec'>json_get_string_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_string_vec_by_path'>json_get_string_vec_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_get_string_vec_by_path'>wrap_json_get_string_vec_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_alloc_string_vec'>json_get_alloc_string_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_alloc_string_vec_by_path'>json_get_alloc_string_vec_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_get_alloc_string_vec_by_path'>wrap_json_get_alloc_string_vec_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_array'>json_get_array</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_array_by_path'>json_get_array_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_get_array_by_path'>wrap_json_get_array_by_path</a></td>
-                <td><p>Get data from a <a href="../type/json_value.html">json_value</a> linked list.</p><a href="../type/json_core.html#boundprocedure-get" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+                  <td><p>Get data from a <a href="../type/json_value.html">json_value</a> linked list.</p><a href="../type/json_core.html#boundprocedure-get" class="pull-right"><emph>Read more&hellip;</emph></a></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-get_child'>get_child</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_get_child_by_index'>json_value_get_child_by_index</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_get_child'>json_value_get_child</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_get_child_by_name'>json_value_get_child_by_name</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_get_child_by_name'>wrap_json_value_get_child_by_name</a></td>
-                <td><p>Return a child of a <a href="../type/json_value.html">json_value</a> structure.</p></td>
+                  <td><p>Return a child of a <a href="../type/json_value.html">json_value</a> structure.</p></td>
               </tr>
               <tr>
                 <td>  procedure, private, nopass ::
   <strong><a href='../type/json_core.html#boundprocedure-get_current_line_from_file_sequential'>get_current_line_from_file_sequential</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-get_current_line_from_file_stream'>get_current_line_from_file_stream</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/json_core.html#boundprocedure-get_next'>get_next</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_get_next.html'>json_get_next</a></td>
-                <td>../../<p>get pointer to json_value next</p></td>
+                  <td><p>get pointer to json_value next</p></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/json_core.html#boundprocedure-get_parent'>get_parent</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_get_parent.html'>json_get_parent</a></td>
-                <td>../../<p>get pointer to json_value parent</p></td>
+                  <td><p>get pointer to json_value parent</p></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-get_path'>get_path</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_get_path'>json_get_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_get_path'>wrap_json_get_path</a></td>
-                <td>../../<p>get the path to a <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> variable in a structure:</p></td>
+                  <td><p>get the path to a <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> variable in a structure:</p></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/json_core.html#boundprocedure-get_previous'>get_previous</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_get_previous.html'>json_get_previous</a></td>
-                <td>../../<p>get pointer to json_value previous</p></td>
+                  <td><p>get pointer to json_value previous</p></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/json_core.html#boundprocedure-get_tail'>get_tail</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_get_tail.html'>json_get_tail</a></td>
-                <td>../../<p>get pointer to json_value tail</p></td>
+                  <td><p>get pointer to json_value tail</p></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-info'>info</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_info'>json_info</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_info_by_path'>json_info_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_info_by_path'>wrap_json_info_by_path</a></td>
-                <td><p>get info about a <a href="../type/json_value.html">json_value</a></p></td>
+                  <td><p>get info about a <a href="../type/json_value.html">json_value</a></p></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/json_core.html#boundprocedure-initialize'>initialize</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_initialize.html'>json_initialize</a></td>
-                <td>../../<p>to initialize some parsing parameters</p></td>
+                  <td><p>to initialize some parsing parameters</p></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-insert_after'>insert_after</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_insert_after'>json_value_insert_after</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_insert_after_child_by_index'>json_value_insert_after_child_by_index</a></td>
-                <td>../../<p>insert a new element after an existing one,
+                  <td><p>insert a new element after an existing one,
 updating the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> structure accordingly</p></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/json_core.html#boundprocedure-is_child_of'>is_child_of</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_value_is_child_of.html'>json_value_is_child_of</a></td>
-                <td><p>Check if a <a href="../type/json_value.html">json_value</a> is a
+                  <td><p>Check if a <a href="../type/json_value.html">json_value</a> is a
 descendant of another.</p></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-is_vector'>is_vector</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_is_vector.html'>json_is_vector</a></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_add_integer_by_path'>json_add_integer_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_add_integer_vec_by_path'>json_add_integer_vec_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_add_logical_by_path'>json_add_logical_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_add_logical_vec_by_path'>json_add_logical_vec_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_add_member_by_path'>json_add_member_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_add_real32_by_path'>json_add_real32_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_add_real32_vec_by_path'>json_add_real32_vec_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_add_real_by_path'>json_add_real_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_add_real_vec_by_path'>json_add_real_vec_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_add_string_by_path'>json_add_string_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_add_string_by_path_path_ascii'>json_add_string_by_path_path_ascii</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_add_string_by_path_value_ascii'>json_add_string_by_path_value_ascii</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_add_string_vec_by_path'>json_add_string_vec_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_add_string_vec_by_path_path_ascii'>json_add_string_vec_by_path_path_ascii</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_add_string_vec_by_path_value_ascii'>json_add_string_vec_by_path_value_ascii</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_create_by_path'>json_create_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_alloc_string_vec'>json_get_alloc_string_vec</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_alloc_string_vec_by_path'>json_get_alloc_string_vec_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_array'>json_get_array</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_array_by_path'>json_get_array_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_by_path'>json_get_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_by_path_default'>json_get_by_path_default</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_by_path_jsonpath_bracket'>json_get_by_path_jsonpath_bracket</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_by_path_rfc6901'>json_get_by_path_rfc6901</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_integer'>json_get_integer</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_integer_by_path'>json_get_integer_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_integer_vec'>json_get_integer_vec</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_integer_vec_by_path'>json_get_integer_vec_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_logical'>json_get_logical</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_logical_by_path'>json_get_logical_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_logical_vec'>json_get_logical_vec</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_logical_vec_by_path'>json_get_logical_vec_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_path'>json_get_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_real'>json_get_real</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_real32'>json_get_real32</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_real32_by_path'>json_get_real32_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_real32_vec'>json_get_real32_vec</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_real32_vec_by_path'>json_get_real32_vec_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_real_by_path'>json_get_real_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_real_vec'>json_get_real_vec</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_real_vec_by_path'>json_get_real_vec_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_string'>json_get_string</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_string_by_path'>json_get_string_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_string_vec'>json_get_string_vec</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_get_string_vec_by_path'>json_get_string_vec_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_info'>json_info</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_info_by_path'>json_info_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_matrix_info'>json_matrix_info</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_matrix_info_by_path'>json_matrix_info_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_parse_file'>json_parse_file</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_parse_string'>json_parse_string</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_print_to_console'>json_print_to_console</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_print_to_filename'>json_print_to_filename</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_print_to_unit'>json_print_to_unit</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_rename_by_path'>json_rename_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_rename_by_path_name_ascii'>json_rename_by_path_name_ascii</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_rename_by_path_path_ascii'>json_rename_by_path_path_ascii</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_string_info'>json_string_info</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_throw_exception'>json_throw_exception</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_update_integer'>json_update_integer</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_update_logical'>json_update_logical</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_update_real'>json_update_real</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_update_real32'>json_update_real32</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_update_string'>json_update_string</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_update_string_name_ascii'>json_update_string_name_ascii</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_update_string_val_ascii'>json_update_string_val_ascii</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_valid_path'>json_valid_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_add_integer'>json_value_add_integer</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_add_integer_vec'>json_value_add_integer_vec</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_add_logical'>json_value_add_logical</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_add_logical_vec'>json_value_add_logical_vec</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_add_member'>json_value_add_member</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_add_null'>json_value_add_null</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_add_real'>json_value_add_real</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_add_real32'>json_value_add_real32</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_add_real32_vec'>json_value_add_real32_vec</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_add_real_vec'>json_value_add_real_vec</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_add_string'>json_value_add_string</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_add_string_name_ascii'>json_value_add_string_name_ascii</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_add_string_val_ascii'>json_value_add_string_val_ascii</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_add_string_vec'>json_value_add_string_vec</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_add_string_vec_name_ascii'>json_value_add_string_vec_name_ascii</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_add_string_vec_val_ascii'>json_value_add_string_vec_val_ascii</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private, nopass ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_clone_func'>json_value_clone_func</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_create_array'>json_value_create_array</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_create_integer'>json_value_create_integer</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_create_logical'>json_value_create_logical</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_create_null'>json_value_create_null</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_create_object'>json_value_create_object</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_create_real'>json_value_create_real</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_create_real32'>json_value_create_real32</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_create_string'>json_value_create_string</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_destroy'>json_value_destroy</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_get_child'>json_value_get_child</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_get_child_by_index'>json_value_get_child_by_index</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_get_child_by_name'>json_value_get_child_by_name</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_insert_after'>json_value_insert_after</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_insert_after_child_by_index'>json_value_insert_after_child_by_index</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_print'>json_value_print</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_remove_if_present'>json_value_remove_if_present</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-json_value_rename'>json_value_rename</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-load'>load</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_parse_file'>json_parse_file</a></td>
-                <td><p>Parse the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> file and populate the <a href="../type/json_value.html">json_value</a> tree.</p></td>
+                  <td><p>Parse the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> file and populate the <a href="../type/json_value.html">json_value</a> tree.</p></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-matrix_info'>matrix_info</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_matrix_info'>json_matrix_info</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_matrix_info_by_path'>json_matrix_info_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_matrix_info_by_path'>wrap_json_matrix_info_by_path</a></td>
-                <td><p>get matrix info about a <a href="../type/json_value.html">json_value</a></p></td>
+                  <td><p>get matrix info about a <a href="../type/json_value.html">json_value</a></p></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-name_equal'>name_equal</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-name_strings_equal'>name_strings_equal</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-parse'>parse</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_parse_file'>json_parse_file</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_parse_string'>json_parse_string</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_parse_string'>wrap_json_parse_string</a></td>
-                <td>../../<p>Same as <code>load</code> and <code>deserialize</code> but only here for backward compatibility.</p></td>
+                  <td><p>Same as <code>load</code> and <code>deserialize</code> but only here for backward compatibility.</p></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-parse_array'>parse_array</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-parse_end'>parse_end</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_parse_end.html'>json_parse_end</a></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-parse_for_chars'>parse_for_chars</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-parse_number'>parse_number</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-parse_object'>parse_object</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-parse_string'>parse_string</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-parse_value'>parse_value</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-pop_char'>pop_char</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-prepare_parser'>prepare_parser</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_prepare_parser.html'>json_prepare_parser</a></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-print'>print</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_print_to_console'>json_print_to_console</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_print_to_unit'>json_print_to_unit</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_print_to_filename'>json_print_to_filename</a></td>
-                <td><p>Print the <a href="../type/json_value.html">json_value</a> to an output unit or file.</p><a href="../type/json_core.html#boundprocedure-print" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+                  <td><p>Print the <a href="../type/json_value.html">json_value</a> to an output unit or file.</p><a href="../type/json_core.html#boundprocedure-print" class="pull-right"><emph>Read more&hellip;</emph></a></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/json_core.html#boundprocedure-print_error_message'>print_error_message</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_print_error_message.html'>json_print_error_message</a></td>
-                <td>../../<p>simply routine to print error
+                  <td><p>simply routine to print error
 messages</p></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/json_core.html#boundprocedure-print_to_string'>print_to_string</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_value_to_string.html'>json_value_to_string</a></td>
-                <td>../../<p>The same as <code>serialize</code>, but only here for backward compatibility</p></td>
+                  <td><p>The same as <code>serialize</code>, but only here for backward compatibility</p></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-push_char'>push_char</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/json_core.html#boundprocedure-remove'>remove</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_value_remove.html'>json_value_remove</a></td>
-                <td><p>Remove a <a href="../type/json_value.html">json_value</a> from a
+                  <td><p>Remove a <a href="../type/json_value.html">json_value</a> from a
 linked-list structure.</p></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-remove_if_present'>remove_if_present</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_remove_if_present'>json_value_remove_if_present</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_remove_if_present'>wrap_json_value_remove_if_present</a></td>
-                <td>../../<p>If the child variable is present, then remove it.</p></td>
+                  <td><p>If the child variable is present, then remove it.</p></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-rename'>rename</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_rename'>json_value_rename</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_rename'>wrap_json_value_rename</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_rename_by_path'>json_rename_by_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_rename_by_path'>wrap_json_rename_by_path</a></td>
-                <td><p>Rename a <a href="../type/json_value.html">json_value</a> variable.</p></td>
+                  <td><p>Rename a <a href="../type/json_value.html">json_value</a> variable.</p></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-rename~2'>rename</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_rename_by_path_name_ascii'>json_rename_by_path_name_ascii</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_rename_by_path_path_ascii'>json_rename_by_path_path_ascii</a></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/json_core.html#boundprocedure-replace'>replace</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_value_replace.html'>json_value_replace</a></td>
-                <td><p>Replace a <a href="../type/json_value.html">json_value</a> in a
+                  <td><p>Replace a <a href="../type/json_value.html">json_value</a> in a
 linked-list structure.</p></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/json_core.html#boundprocedure-reverse'>reverse</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_value_reverse.html'>json_value_reverse</a></td>
-                <td>../../<p>Reverse the order of the children
+                  <td><p>Reverse the order of the children
 of an array of object.</p></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/json_core.html#boundprocedure-serialize'>serialize</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_value_to_string.html'>json_value_to_string</a></td>
-                <td><p>Print the <a href="../type/json_value.html">json_value</a> structure to an allocatable string</p></td>
+                  <td><p>Print the <a href="../type/json_value.html">json_value</a> structure to an allocatable string</p></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-string_info'>string_info</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_string_info'>json_string_info</a></td>
-                <td><p>get string info about a <a href="../type/json_value.html">json_value</a></p></td>
+                  <td><p>get string info about a <a href="../type/json_value.html">json_value</a></p></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-string_to_dble'>string_to_dble</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-string_to_int'>string_to_int</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/json_core.html#boundprocedure-swap'>swap</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_value_swap.html'>json_value_swap</a></td>
-                <td><p>Swap two <a href="../type/json_value.html">json_value</a> pointers
+                  <td><p>Swap two <a href="../type/json_value.html">json_value</a> pointers
 in a structure (or two different
 structures).</p></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-throw_exception'>throw_exception</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_throw_exception'>json_throw_exception</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_throw_exception'>wrap_json_throw_exception</a></td>
-                <td>../../<p>Throw an exception.</p></td>
+                  <td><p>Throw an exception.</p></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-to_array'>to_array</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-to_integer'>to_integer</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-to_logical'>to_logical</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-to_null'>to_null</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-to_object'>to_object</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-to_real'>to_real</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-to_string'>to_string</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/json_core.html#boundprocedure-traverse'>traverse</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_traverse.html'>json_traverse</a></td>
-                <td>../../<p>to traverse all elements of a <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>
+                  <td><p>to traverse all elements of a <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>
 structure</p></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-update'>update</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_update_logical'>json_update_logical</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_update_logical'>wrap_json_update_logical</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_update_real32'>json_update_real32</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_update_real32'>wrap_json_update_real32</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_update_real'>json_update_real</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_update_real'>wrap_json_update_real</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_update_integer'>json_update_integer</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_update_integer'>wrap_json_update_integer</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_update_string'>json_update_string</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_update_string'>wrap_json_update_string</a></td>
-                <td><p>These are like the <code>add</code> methods, except if a variable with the
+                  <td><p>These are like the <code>add</code> methods, except if a variable with the
   same path is already present, then its value is simply updated.
   Note that currently, these only work for scalar variables.
   These routines can also change the variable&rsquo;s type (but an error will be
@@ -3055,18 +3072,18 @@ structure</p></td>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-update~2'>update</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_update_string_name_ascii'>json_update_string_name_ascii</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_update_string_val_ascii'>json_update_string_val_ascii</a></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-valid_path'>valid_path</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_valid_path'>json_valid_path</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_valid_path'>wrap_json_valid_path</a></td>
-                <td>../../<p>verify if a path is valid
+                  <td><p>verify if a path is valid
 (i.e., a variable with this path exists in the file).</p></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
   <strong><a href='../type/json_core.html#boundprocedure-validate'>validate</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_value_validate.html'>json_value_validate</a></td>
-                <td><p>Check that a <a href="../type/json_value.html">json_value</a> linked
+                  <td><p>Check that a <a href="../type/json_value.html">json_value</a> linked
 list is valid (i.e., is properly
 constructed). This may be useful
 if it has been constructed externally.</p></td>
@@ -3074,297 +3091,297 @@ if it has been constructed externally.</p></td>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_add_integer_by_path'>wrap_json_add_integer_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_add_integer_vec_by_path'>wrap_json_add_integer_vec_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_add_logical_by_path'>wrap_json_add_logical_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_add_logical_vec_by_path'>wrap_json_add_logical_vec_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_add_member_by_path'>wrap_json_add_member_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_add_real32_by_path'>wrap_json_add_real32_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_add_real32_vec_by_path'>wrap_json_add_real32_vec_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_add_real_by_path'>wrap_json_add_real_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_add_real_vec_by_path'>wrap_json_add_real_vec_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_add_string_by_path'>wrap_json_add_string_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_add_string_vec_by_path'>wrap_json_add_string_vec_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_create_by_path'>wrap_json_create_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_get_alloc_string_vec_by_path'>wrap_json_get_alloc_string_vec_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_get_array_by_path'>wrap_json_get_array_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_get_by_path'>wrap_json_get_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_get_integer_by_path'>wrap_json_get_integer_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_get_integer_vec_by_path'>wrap_json_get_integer_vec_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_get_logical_by_path'>wrap_json_get_logical_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_get_logical_vec_by_path'>wrap_json_get_logical_vec_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_get_path'>wrap_json_get_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_get_real32_by_path'>wrap_json_get_real32_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_get_real32_vec_by_path'>wrap_json_get_real32_vec_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_get_real_by_path'>wrap_json_get_real_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_get_real_vec_by_path'>wrap_json_get_real_vec_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_get_string_by_path'>wrap_json_get_string_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_get_string_vec_by_path'>wrap_json_get_string_vec_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_info_by_path'>wrap_json_info_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_matrix_info_by_path'>wrap_json_matrix_info_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_parse_string'>wrap_json_parse_string</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_rename_by_path'>wrap_json_rename_by_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_throw_exception'>wrap_json_throw_exception</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_update_integer'>wrap_json_update_integer</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_update_logical'>wrap_json_update_logical</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_update_real'>wrap_json_update_real</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_update_real32'>wrap_json_update_real32</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_update_string'>wrap_json_update_string</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_valid_path'>wrap_json_valid_path</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_value_add_integer'>wrap_json_value_add_integer</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_value_add_integer_vec'>wrap_json_value_add_integer_vec</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_value_add_logical'>wrap_json_value_add_logical</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_value_add_logical_vec'>wrap_json_value_add_logical_vec</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_value_add_null'>wrap_json_value_add_null</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_value_add_real'>wrap_json_value_add_real</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_value_add_real32'>wrap_json_value_add_real32</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_value_add_real32_vec'>wrap_json_value_add_real32_vec</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_value_add_real_vec'>wrap_json_value_add_real_vec</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_value_add_string'>wrap_json_value_add_string</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_value_add_string_vec'>wrap_json_value_add_string_vec</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_value_create_array'>wrap_json_value_create_array</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_value_create_integer'>wrap_json_value_create_integer</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_value_create_logical'>wrap_json_value_create_logical</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_value_create_null'>wrap_json_value_create_null</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_value_create_object'>wrap_json_value_create_object</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_value_create_real'>wrap_json_value_create_real</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_value_create_real32'>wrap_json_value_create_real32</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_value_create_string'>wrap_json_value_create_string</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_value_get_child_by_name'>wrap_json_value_get_child_by_name</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_value_remove_if_present'>wrap_json_value_remove_if_present</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-wrap_json_value_rename'>wrap_json_value_rename</a></strong></td>
-                <td></td>
+                  <td></td>
               </tr>
           </tbody>
         </table>
@@ -24802,33 +24819,11 @@ with actual character string arguments for <code>name</code> and <code>val</code
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-03-17 18:19 +0000             </p>
+ on 2025-07-31 06:19 +0000             </p>
           </div>
         </div>
         <br>
       </div> <!-- /container -->
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
-
-    <!-- MathJax JavaScript
-             ================================================== -->
-             <!-- Placed at the end of the document so the pages load faster -->
-        <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-          });
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-          <script src="../tipuesearch/tipuesearch_content.js"></script>
-          <script src="../tipuesearch/tipuesearch_set.js"></script>
-          <script src="../tipuesearch/tipuesearch.js"></script>
-
   </body>
 </html>

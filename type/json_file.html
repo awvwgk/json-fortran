@@ -12,14 +12,29 @@
 
     <title>json_file &ndash; JSON-Fortran </title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="../css/pygments.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
     <link href="../css/local.css" rel="stylesheet">
-      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="../css/pygments.css" rel="stylesheet">
     <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
@@ -100,9 +115,11 @@
     </div>
   </div>
   <script>
-    $(function () {
-    $('[data-bs-toggle="tooltip"]').tooltip()
-    })
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
   </script>
 
   </div>
@@ -847,7 +864,7 @@ override this option if necessary].
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-escape_solidus~6"></span>
+              <span class="anchor" id="variable-escape_solidus~5"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -859,7 +876,7 @@ override this option if necessary].
             <td>
 <p>Note that this option does not affect parsing
 (both escaped and unescaped are still valid in
-all cases).</p><a href="../proc/initialize_json_file.html#variable-escape_solidus~6" class="pull-right"><emph>Read more&hellip;</emph></a>
+all cases).</p><a href="../proc/initialize_json_file.html#variable-escape_solidus~5" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -911,7 +928,7 @@ all cases).</p><a href="../proc/initialize_json_file.html#variable-escape_solidu
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-use_quiet_nan~6"></span>
+              <span class="anchor" id="variable-use_quiet_nan~5"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -921,7 +938,7 @@ all cases).</p><a href="../proc/initialize_json_file.html#variable-escape_solidu
             <td>::</td>
             <td><strong>use_quiet_nan</strong></td>
             <td>
-<a href="../proc/initialize_json_file.html#variable-use_quiet_nan~6" class="pull-right"><emph>Read more&hellip;</emph></a>
+<a href="../proc/initialize_json_file.html#variable-use_quiet_nan~5" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -1089,7 +1106,7 @@ as a <a href="../type/json_file.html">json_file</a> object.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~31"></span>
+              <span class="anchor" id="variable-str~18"></span>
               character(kind=CK, len=*),
             </td>
 <td>intent(in)</td>
@@ -1356,7 +1373,7 @@ override this option if necessary].
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-escape_solidus~7"></span>
+              <span class="anchor" id="variable-escape_solidus~6"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -1368,7 +1385,7 @@ override this option if necessary].
             <td>
 <p>Note that this option does not affect parsing
 (both escaped and unescaped are still valid in
-all cases).</p><a href="../proc/initialize_json_file_from_string.html#variable-escape_solidus~7" class="pull-right"><emph>Read more&hellip;</emph></a>
+all cases).</p><a href="../proc/initialize_json_file_from_string.html#variable-escape_solidus~6" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -1420,7 +1437,7 @@ all cases).</p><a href="../proc/initialize_json_file_from_string.html#variable-e
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-use_quiet_nan~7"></span>
+              <span class="anchor" id="variable-use_quiet_nan~6"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -1430,7 +1447,7 @@ all cases).</p><a href="../proc/initialize_json_file_from_string.html#variable-e
             <td>::</td>
             <td><strong>use_quiet_nan</strong></td>
             <td>
-<a href="../proc/initialize_json_file_from_string.html#variable-use_quiet_nan~7" class="pull-right"><emph>Read more&hellip;</emph></a>
+<a href="../proc/initialize_json_file_from_string.html#variable-use_quiet_nan~6" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -1495,7 +1512,7 @@ all cases).</p><a href="../proc/initialize_json_file_from_string.html#variable-e
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~32"></span>
+              <span class="anchor" id="variable-str~19"></span>
               character(kind=CDK, len=*),
             </td>
 <td>intent(in)</td>
@@ -1762,7 +1779,7 @@ override this option if necessary].
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-escape_solidus~8"></span>
+              <span class="anchor" id="variable-escape_solidus~7"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -1774,7 +1791,7 @@ override this option if necessary].
             <td>
 <p>Note that this option does not affect parsing
 (both escaped and unescaped are still valid in
-all cases).</p><a href="../proc/wrap_initialize_json_file_from_string.html#variable-escape_solidus~8" class="pull-right"><emph>Read more&hellip;</emph></a>
+all cases).</p><a href="../proc/wrap_initialize_json_file_from_string.html#variable-escape_solidus~7" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -1826,7 +1843,7 @@ all cases).</p><a href="../proc/wrap_initialize_json_file_from_string.html#varia
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-use_quiet_nan~8"></span>
+              <span class="anchor" id="variable-use_quiet_nan~7"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -1836,7 +1853,7 @@ all cases).</p><a href="../proc/wrap_initialize_json_file_from_string.html#varia
             <td>::</td>
             <td><strong>use_quiet_nan</strong></td>
             <td>
-<a href="../proc/wrap_initialize_json_file_from_string.html#variable-use_quiet_nan~8" class="pull-right"><emph>Read more&hellip;</emph></a>
+<a href="../proc/wrap_initialize_json_file_from_string.html#variable-use_quiet_nan~7" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -1906,7 +1923,7 @@ as a <a href="../type/json_file.html">json_file</a> object.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~33"></span>
+              <span class="anchor" id="variable-str~20"></span>
               character(kind=CK, len=*),
             </td>
 <td>intent(in)</td>
@@ -1965,7 +1982,7 @@ as a <a href="../type/json_file.html">json_file</a> object.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~34"></span>
+              <span class="anchor" id="variable-str~21"></span>
               character(kind=CDK, len=*),
             </td>
 <td>intent(in)</td>
@@ -2078,9 +2095,9 @@ as a <a href="../type/json_file.html">json_file</a> object.</p>
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <p>Add a variable to a <a href="../type/json_file.html">json_file</a>, by specifying the path.</p>
+        <div class="card-body">
+          
+          <p>Add a variable to a <a href="../type/json_file.html">json_file</a>, by specifying the path.</p>
 <h3 id="example">Example</h3>
 <div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="k">program </span><span class="n">test</span>
 <span class="w">  </span><span class="k">use </span><span class="n">json_module</span><span class="p">,</span><span class="w"> </span><span class="n">rk</span><span class="o">=&gt;</span><span class="n">json_rk</span><span class="p">,</span><span class="w"> </span><span class="n">ik</span><span class="o">=&gt;</span><span class="n">json_ik</span>
@@ -2093,10 +2110,10 @@ as a <a href="../type/json_file.html">json_file</a> object.</p>
 <span class="w">  </span><span class="k">call </span><span class="n">f</span><span class="p">%</span><span class="k">print</span><span class="p">()</span><span class="w">  </span><span class="c">! print to the console</span>
 <span class="w">  </span><span class="k">end program </span><span class="n">test</span>
 </code></pre></div>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add.html'>json_file_add</a>(me, p, destroy_original)  
 </h3>
         <dl class="dl-horizontal">
@@ -2168,9 +2185,9 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_object.html'>json_file_add_object</a>(me, path, p, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -2270,9 +2287,9 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_add_object.html'>wrap_json_file_add_object</a>(me, path, p, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -2372,9 +2389,9 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_integer.html'>json_file_add_integer</a>(me, path, val, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -2474,9 +2491,9 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_add_integer.html'>wrap_json_file_add_integer</a>(me, path, val, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -2576,9 +2593,9 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_real32.html'>json_file_add_real32</a>(me, path, val, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -2678,9 +2695,9 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_add_real32.html'>wrap_json_file_add_real32</a>(me, path, val, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -2780,9 +2797,9 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_real.html'>json_file_add_real</a>(me, path, val, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -2882,9 +2899,9 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_add_real.html'>wrap_json_file_add_real</a>(me, path, val, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -2984,9 +3001,9 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_logical.html'>json_file_add_logical</a>(me, path, val, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -3086,9 +3103,9 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_add_logical.html'>wrap_json_file_add_logical</a>(me, path, val, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -3188,9 +3205,9 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_string.html'>json_file_add_string</a>(me, path, val, found, was_created, trim_str, adjustl_str)  
 </h3>
         <dl class="dl-horizontal">
@@ -3321,9 +3338,9 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_add_string.html'>wrap_json_file_add_string</a>(me, path, val, found, was_created, trim_str, adjustl_str)  
 </h3>
         <dl class="dl-horizontal">
@@ -3454,9 +3471,9 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_integer_vec.html'>json_file_add_integer_vec</a>(me, path, vec, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -3556,9 +3573,9 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_add_integer_vec.html'>wrap_json_file_add_integer_vec</a>(me, path, vec, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -3658,9 +3675,9 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_real32_vec.html'>json_file_add_real32_vec</a>(me, path, vec, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -3760,9 +3777,9 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_add_real32_vec.html'>wrap_json_file_add_real32_vec</a>(me, path, vec, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -3862,9 +3879,9 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_real_vec.html'>json_file_add_real_vec</a>(me, path, vec, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -3964,9 +3981,9 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_add_real_vec.html'>wrap_json_file_add_real_vec</a>(me, path, vec, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -4066,9 +4083,9 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_logical_vec.html'>json_file_add_logical_vec</a>(me, path, vec, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -4168,9 +4185,9 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_add_logical_vec.html'>wrap_json_file_add_logical_vec</a>(me, path, vec, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -4270,9 +4287,9 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_string_vec.html'>json_file_add_string_vec</a>(me, path, vec, found, was_created, ilen, trim_str, adjustl_str)  
 </h3>
         <dl class="dl-horizontal">
@@ -4421,9 +4438,9 @@ for each element.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_add_string_vec.html'>wrap_json_file_add_string_vec</a>(me, path, vec, found, was_created, ilen, trim_str, adjustl_str)  
 </h3>
         <dl class="dl-horizontal">
@@ -4572,8 +4589,8 @@ for each element.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -4587,9 +4604,9 @@ for each element.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_string_path_ascii.html'>json_file_add_string_path_ascii</a>(me, path, val, found, was_created, trim_str, adjustl_str)  
 </h3>
         <dl class="dl-horizontal">
@@ -4720,9 +4737,9 @@ for each element.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_string_value_ascii.html'>json_file_add_string_value_ascii</a>(me, path, val, found, was_created, trim_str, adjustl_str)  
 </h3>
         <dl class="dl-horizontal">
@@ -4853,9 +4870,9 @@ for each element.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_string_vec_path_ascii.html'>json_file_add_string_vec_path_ascii</a>(me, path, vec, found, was_created, ilen, trim_str, adjustl_str)  
 </h3>
         <dl class="dl-horizontal">
@@ -5004,9 +5021,9 @@ for each element.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_string_vec_vec_ascii.html'>json_file_add_string_vec_vec_ascii</a>(me, path, vec, found, was_created, ilen, trim_str, adjustl_str)  
 </h3>
         <dl class="dl-horizontal">
@@ -5155,8 +5172,8 @@ for each element.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -5170,9 +5187,9 @@ for each element.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/assign_json_file.html'>assign_json_file</a>(me, f)  
 </h3>
         <dl class="dl-horizontal">
@@ -5229,8 +5246,8 @@ perform a deep copy of the <a href="../type/json_value.html">json_value</a> data
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -5244,9 +5261,9 @@ perform a deep copy of the <a href="../type/json_value.html">json_value</a> data
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/assign_json_file_to_string.html'>assign_json_file_to_string</a>(str, me)  
 </h3>
         <dl class="dl-horizontal">
@@ -5302,8 +5319,8 @@ perform a deep copy of the <a href="../type/json_value.html">json_value</a> data
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -5317,9 +5334,9 @@ perform a deep copy of the <a href="../type/json_value.html">json_value</a> data
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/assign_string_to_json_file.html'>assign_string_to_json_file</a>(me, str)  
 </h3>
         <dl class="dl-horizontal">
@@ -5375,8 +5392,8 @@ This is just a wrapper for the <a href="../proc/json_file_load_from_string.html"
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -5390,9 +5407,9 @@ This is just a wrapper for the <a href="../proc/json_file_load_from_string.html"
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/assign_json_file.html'>assign_json_file</a>(me, f)  
 </h3>
         <dl class="dl-horizontal">
@@ -5449,9 +5466,9 @@ perform a deep copy of the <a href="../type/json_value.html">json_value</a> data
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/assign_json_file_to_string.html'>assign_json_file_to_string</a>(str, me)  
 </h3>
         <dl class="dl-horizontal">
@@ -5507,9 +5524,9 @@ perform a deep copy of the <a href="../type/json_value.html">json_value</a> data
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/assign_string_to_json_file.html'>assign_string_to_json_file</a>(me, str)  
 </h3>
         <dl class="dl-horizontal">
@@ -5565,9 +5582,9 @@ This is just a wrapper for the <a href="../proc/json_file_load_from_string.html"
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_assign_string_to_json_file.html'>wrap_assign_string_to_json_file</a>(me, str)  
 </h3>
         <dl class="dl-horizontal">
@@ -5622,8 +5639,8 @@ This is just a wrapper for the <a href="../proc/json_file_load_from_string.html"
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -5637,9 +5654,9 @@ This is just a wrapper for the <a href="../proc/json_file_load_from_string.html"
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_check_for_errors.html'>json_file_check_for_errors</a>(me, status_ok, error_msg)  
 </h3>
     
@@ -5707,8 +5724,8 @@ This is just a wrapper for the <a href="../proc/json_file_load_from_string.html"
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -5722,9 +5739,9 @@ This is just a wrapper for the <a href="../proc/json_file_load_from_string.html"
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure subroutine <a href='../proc/json_file_clear_exceptions.html'>json_file_clear_exceptions</a>(me)  
 </h3>
     
@@ -5761,8 +5778,8 @@ This is just a wrapper for the <a href="../proc/json_file_load_from_string.html"
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -5776,13 +5793,13 @@ This is just a wrapper for the <a href="../proc/json_file_load_from_string.html"
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <p>Load <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> from a string.</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        <div class="card-body">
+          
+          <p>Load <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> from a string.</p>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_load_from_string.html'>json_file_load_from_string</a>(me, str, destroy_pointer)  
 </h3>
         <dl class="dl-horizontal">
@@ -5854,9 +5871,9 @@ loading (default is True)</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_load_from_string.html'>wrap_json_file_load_from_string</a>(me, str)  
 </h3>
     
@@ -5908,8 +5925,8 @@ loading (default is True)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -5923,9 +5940,9 @@ loading (default is True)</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_destroy.html'>json_file_destroy</a>(me, destroy_core)  
 </h3>
         <dl class="dl-horizontal">
@@ -5984,8 +6001,8 @@ default is to leave it as is.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -5999,9 +6016,9 @@ default is to leave it as is.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure function <a href='../proc/json_file_failed.html'>json_file_failed</a>(me) result(failed)  
 </h3>
     
@@ -6043,8 +6060,8 @@ default is to leave it as is.</p>
     </h4>
     <p>will be true if there has been an error.</p>
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -6058,13 +6075,13 @@ default is to leave it as is.</p>
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <p>Get a variable from a <a href="../type/json_file.html">json_file</a>, by specifying the path.</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        <div class="card-body">
+          
+          <p>Get a variable from a <a href="../type/json_file.html">json_file</a>, by specifying the path.</p>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_object.html'>json_file_get_object</a>(me, path, p, found)  
 </h3>
         <dl class="dl-horizontal">
@@ -6150,9 +6167,9 @@ default is to leave it as is.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_object.html'>wrap_json_file_get_object</a>(me, path, p, found)  
 </h3>
     
@@ -6234,9 +6251,9 @@ default is to leave it as is.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_integer.html'>json_file_get_integer</a>(me, path, val, found, default)  
 </h3>
         <dl class="dl-horizontal">
@@ -6337,9 +6354,9 @@ default is to leave it as is.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_integer.html'>wrap_json_file_get_integer</a>(me, path, val, found, default)  
 </h3>
     
@@ -6436,9 +6453,9 @@ default is to leave it as is.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_real32.html'>json_file_get_real32</a>(me, path, val, found, default)  
 </h3>
         <dl class="dl-horizontal">
@@ -6539,9 +6556,9 @@ default is to leave it as is.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_real32.html'>wrap_json_file_get_real32</a>(me, path, val, found, default)  
 </h3>
     
@@ -6638,9 +6655,9 @@ default is to leave it as is.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_real.html'>json_file_get_real</a>(me, path, val, found, default)  
 </h3>
         <dl class="dl-horizontal">
@@ -6741,9 +6758,9 @@ default is to leave it as is.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_real.html'>wrap_json_file_get_real</a>(me, path, val, found, default)  
 </h3>
     
@@ -6840,9 +6857,9 @@ default is to leave it as is.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_logical.html'>json_file_get_logical</a>(me, path, val, found, default)  
 </h3>
         <dl class="dl-horizontal">
@@ -6943,9 +6960,9 @@ default is to leave it as is.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_logical.html'>wrap_json_file_get_logical</a>(me, path, val, found, default)  
 </h3>
     
@@ -7042,9 +7059,9 @@ default is to leave it as is.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_string.html'>json_file_get_string</a>(me, path, val, found, default)  
 </h3>
         <dl class="dl-horizontal">
@@ -7146,9 +7163,9 @@ The output val is an allocatable character string.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_string.html'>wrap_json_file_get_string</a>(me, path, val, found, default)  
 </h3>
     
@@ -7245,9 +7262,9 @@ The output val is an allocatable character string.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_integer_vec.html'>json_file_get_integer_vec</a>(me, path, vec, found, default)  
 </h3>
         <dl class="dl-horizontal">
@@ -7348,9 +7365,9 @@ The output val is an allocatable character string.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_integer_vec.html'>wrap_json_file_get_integer_vec</a>(me, path, vec, found, default)  
 </h3>
     
@@ -7447,9 +7464,9 @@ The output val is an allocatable character string.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_real32_vec.html'>json_file_get_real32_vec</a>(me, path, vec, found, default)  
 </h3>
         <dl class="dl-horizontal">
@@ -7550,9 +7567,9 @@ The output val is an allocatable character string.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_real32_vec.html'>wrap_json_file_get_real32_vec</a>(me, path, vec, found, default)  
 </h3>
     
@@ -7649,9 +7666,9 @@ The output val is an allocatable character string.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_real_vec.html'>json_file_get_real_vec</a>(me, path, vec, found, default)  
 </h3>
         <dl class="dl-horizontal">
@@ -7752,9 +7769,9 @@ The output val is an allocatable character string.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_real_vec.html'>wrap_json_file_get_real_vec</a>(me, path, vec, found, default)  
 </h3>
     
@@ -7851,9 +7868,9 @@ The output val is an allocatable character string.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_logical_vec.html'>json_file_get_logical_vec</a>(me, path, vec, found, default)  
 </h3>
         <dl class="dl-horizontal">
@@ -7954,9 +7971,9 @@ The output val is an allocatable character string.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_logical_vec.html'>wrap_json_file_get_logical_vec</a>(me, path, vec, found, default)  
 </h3>
     
@@ -8053,9 +8070,9 @@ The output val is an allocatable character string.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_string_vec.html'>json_file_get_string_vec</a>(me, path, vec, found, default)  
 </h3>
         <dl class="dl-horizontal">
@@ -8156,9 +8173,9 @@ The output val is an allocatable character string.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_string_vec.html'>wrap_json_file_get_string_vec</a>(me, path, vec, found, default)  
 </h3>
     
@@ -8255,9 +8272,9 @@ The output val is an allocatable character string.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_alloc_string_vec.html'>json_file_get_alloc_string_vec</a>(me, path, vec, ilen, found, default, default_ilen)  
 </h3>
         <dl class="dl-horizontal">
@@ -8392,9 +8409,9 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_alloc_string_vec.html'>wrap_json_file_get_alloc_string_vec</a>(me, path, vec, ilen, found, default, default_ilen)  
 </h3>
     
@@ -8525,9 +8542,9 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_root.html'>json_file_get_root</a>(me, p)  
 </h3>
         <dl class="dl-horizontal">
@@ -8583,8 +8600,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -8598,9 +8615,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/get_json_core_in_file.html'>get_json_core_in_file</a>(me, core)  
 </h3>
     
@@ -8652,8 +8669,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -8667,9 +8684,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_variable_info.html'>json_file_variable_info</a>(me, path, found, var_type, n_children, name)  
 </h3>
         <dl class="dl-horizontal">
@@ -8785,9 +8802,9 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_variable_info.html'>wrap_json_file_variable_info</a>(me, path, found, var_type, n_children, name)  
 </h3>
     
@@ -8899,8 +8916,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -8914,9 +8931,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/initialize_json_core_in_file.html'>initialize_json_core_in_file</a>(me, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma)  
 </h3>
     
@@ -9216,7 +9233,7 @@ override this option if necessary].
             <td>
 <p>Note that this option does not affect parsing
 (both escaped and unescaped are still valid in
-all cases).</p><a href="../proc/initialize_json_core_in_file.html#variable-escape_solidus~5" class="pull-right"><emph>Read more&hellip;</emph></a>
+all cases).</p><a href="../proc/initialize_json_core_in_file.html#variable-escape_solidus~4" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -9278,7 +9295,7 @@ all cases).</p><a href="../proc/initialize_json_core_in_file.html#variable-escap
             <td>::</td>
             <td><strong>use_quiet_nan</strong></td>
             <td>
-<a href="../proc/initialize_json_core_in_file.html#variable-use_quiet_nan~5" class="pull-right"><emph>Read more&hellip;</emph></a>
+<a href="../proc/initialize_json_core_in_file.html#variable-use_quiet_nan~4" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -9316,9 +9333,9 @@ all cases).</p><a href="../proc/initialize_json_core_in_file.html#variable-escap
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/set_json_core_in_file.html'>set_json_core_in_file</a>(me, core)  
 </h3>
     
@@ -9370,8 +9387,8 @@ all cases).</p><a href="../proc/initialize_json_core_in_file.html#variable-escap
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -9385,9 +9402,9 @@ all cases).</p><a href="../proc/initialize_json_core_in_file.html#variable-escap
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/initialize_json_core_in_file.html'>initialize_json_core_in_file</a>(me, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma)  
 </h3>
     
@@ -9687,7 +9704,7 @@ override this option if necessary].
             <td>
 <p>Note that this option does not affect parsing
 (both escaped and unescaped are still valid in
-all cases).</p><a href="../proc/initialize_json_core_in_file.html#variable-escape_solidus~5" class="pull-right"><emph>Read more&hellip;</emph></a>
+all cases).</p><a href="../proc/initialize_json_core_in_file.html#variable-escape_solidus~4" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -9749,7 +9766,7 @@ all cases).</p><a href="../proc/initialize_json_core_in_file.html#variable-escap
             <td>::</td>
             <td><strong>use_quiet_nan</strong></td>
             <td>
-<a href="../proc/initialize_json_core_in_file.html#variable-use_quiet_nan~5" class="pull-right"><emph>Read more&hellip;</emph></a>
+<a href="../proc/initialize_json_core_in_file.html#variable-use_quiet_nan~4" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -9787,8 +9804,8 @@ all cases).</p><a href="../proc/initialize_json_core_in_file.html#variable-escap
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -9802,9 +9819,9 @@ all cases).</p><a href="../proc/initialize_json_core_in_file.html#variable-escap
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add.html'>json_file_add</a>(me, p, destroy_original)  
 </h3>
         <dl class="dl-horizontal">
@@ -9876,8 +9893,8 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -9891,9 +9908,9 @@ destroyed. [Default is True]</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_integer.html'>json_file_add_integer</a>(me, path, val, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -9993,8 +10010,8 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -10008,9 +10025,9 @@ destroyed. [Default is True]</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_integer_vec.html'>json_file_add_integer_vec</a>(me, path, vec, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -10110,8 +10127,8 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -10125,9 +10142,9 @@ destroyed. [Default is True]</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_logical.html'>json_file_add_logical</a>(me, path, val, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -10227,8 +10244,8 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -10242,9 +10259,9 @@ destroyed. [Default is True]</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_logical_vec.html'>json_file_add_logical_vec</a>(me, path, vec, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -10344,8 +10361,8 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -10359,9 +10376,9 @@ destroyed. [Default is True]</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_object.html'>json_file_add_object</a>(me, path, p, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -10461,8 +10478,8 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -10476,9 +10493,9 @@ destroyed. [Default is True]</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_real.html'>json_file_add_real</a>(me, path, val, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -10578,8 +10595,8 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -10593,9 +10610,9 @@ destroyed. [Default is True]</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_real32.html'>json_file_add_real32</a>(me, path, val, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -10695,8 +10712,8 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -10710,9 +10727,9 @@ destroyed. [Default is True]</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_real32_vec.html'>json_file_add_real32_vec</a>(me, path, vec, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -10812,8 +10829,8 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -10827,9 +10844,9 @@ destroyed. [Default is True]</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_real_vec.html'>json_file_add_real_vec</a>(me, path, vec, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -10929,8 +10946,8 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -10944,9 +10961,9 @@ destroyed. [Default is True]</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_string.html'>json_file_add_string</a>(me, path, val, found, was_created, trim_str, adjustl_str)  
 </h3>
         <dl class="dl-horizontal">
@@ -11077,8 +11094,8 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -11092,9 +11109,9 @@ destroyed. [Default is True]</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_string_path_ascii.html'>json_file_add_string_path_ascii</a>(me, path, val, found, was_created, trim_str, adjustl_str)  
 </h3>
         <dl class="dl-horizontal">
@@ -11225,8 +11242,8 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -11240,9 +11257,9 @@ destroyed. [Default is True]</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_string_value_ascii.html'>json_file_add_string_value_ascii</a>(me, path, val, found, was_created, trim_str, adjustl_str)  
 </h3>
         <dl class="dl-horizontal">
@@ -11373,8 +11390,8 @@ destroyed. [Default is True]</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -11388,9 +11405,9 @@ destroyed. [Default is True]</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_string_vec.html'>json_file_add_string_vec</a>(me, path, vec, found, was_created, ilen, trim_str, adjustl_str)  
 </h3>
         <dl class="dl-horizontal">
@@ -11539,8 +11556,8 @@ for each element.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -11554,9 +11571,9 @@ for each element.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_string_vec_path_ascii.html'>json_file_add_string_vec_path_ascii</a>(me, path, vec, found, was_created, ilen, trim_str, adjustl_str)  
 </h3>
         <dl class="dl-horizontal">
@@ -11705,8 +11722,8 @@ for each element.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -11720,9 +11737,9 @@ for each element.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_add_string_vec_vec_ascii.html'>json_file_add_string_vec_vec_ascii</a>(me, path, vec, found, was_created, ilen, trim_str, adjustl_str)  
 </h3>
         <dl class="dl-horizontal">
@@ -11871,8 +11888,8 @@ for each element.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -11886,9 +11903,9 @@ for each element.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_alloc_string_vec.html'>json_file_get_alloc_string_vec</a>(me, path, vec, ilen, found, default, default_ilen)  
 </h3>
         <dl class="dl-horizontal">
@@ -12023,8 +12040,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -12038,9 +12055,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_integer.html'>json_file_get_integer</a>(me, path, val, found, default)  
 </h3>
         <dl class="dl-horizontal">
@@ -12141,8 +12158,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -12156,9 +12173,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_integer_vec.html'>json_file_get_integer_vec</a>(me, path, vec, found, default)  
 </h3>
         <dl class="dl-horizontal">
@@ -12259,8 +12276,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -12274,9 +12291,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_logical.html'>json_file_get_logical</a>(me, path, val, found, default)  
 </h3>
         <dl class="dl-horizontal">
@@ -12377,8 +12394,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -12392,9 +12409,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_logical_vec.html'>json_file_get_logical_vec</a>(me, path, vec, found, default)  
 </h3>
         <dl class="dl-horizontal">
@@ -12495,8 +12512,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -12510,9 +12527,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_object.html'>json_file_get_object</a>(me, path, p, found)  
 </h3>
         <dl class="dl-horizontal">
@@ -12598,8 +12615,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -12613,9 +12630,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_real.html'>json_file_get_real</a>(me, path, val, found, default)  
 </h3>
         <dl class="dl-horizontal">
@@ -12716,8 +12733,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -12731,9 +12748,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_real32.html'>json_file_get_real32</a>(me, path, val, found, default)  
 </h3>
         <dl class="dl-horizontal">
@@ -12834,8 +12851,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -12849,9 +12866,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_real32_vec.html'>json_file_get_real32_vec</a>(me, path, vec, found, default)  
 </h3>
         <dl class="dl-horizontal">
@@ -12952,8 +12969,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -12967,9 +12984,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_real_vec.html'>json_file_get_real_vec</a>(me, path, vec, found, default)  
 </h3>
         <dl class="dl-horizontal">
@@ -13070,8 +13087,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -13085,9 +13102,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_root.html'>json_file_get_root</a>(me, p)  
 </h3>
         <dl class="dl-horizontal">
@@ -13143,8 +13160,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -13158,9 +13175,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_string.html'>json_file_get_string</a>(me, path, val, found, default)  
 </h3>
         <dl class="dl-horizontal">
@@ -13262,8 +13279,8 @@ The output val is an allocatable character string.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -13277,9 +13294,9 @@ The output val is an allocatable character string.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_get_string_vec.html'>json_file_get_string_vec</a>(me, path, vec, found, default)  
 </h3>
         <dl class="dl-horizontal">
@@ -13380,8 +13397,8 @@ The output val is an allocatable character string.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -13395,9 +13412,9 @@ The output val is an allocatable character string.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_load_from_string.html'>json_file_load_from_string</a>(me, str, destroy_pointer)  
 </h3>
         <dl class="dl-horizontal">
@@ -13469,8 +13486,8 @@ loading (default is True)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -13484,9 +13501,9 @@ loading (default is True)</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_print_to_console.html'>json_file_print_to_console</a>(me)  
 </h3>
         <dl class="dl-horizontal">
@@ -13527,8 +13544,8 @@ loading (default is True)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -13542,9 +13559,9 @@ loading (default is True)</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_print_to_filename.html'>json_file_print_to_filename</a>(me, filename)  
 </h3>
         <dl class="dl-horizontal">
@@ -13601,8 +13618,8 @@ loading (default is True)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -13616,9 +13633,9 @@ loading (default is True)</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_print_to_unit.html'>json_file_print_to_unit</a>(me, iunit)  
 </h3>
         <dl class="dl-horizontal">
@@ -13674,8 +13691,8 @@ loading (default is True)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -13689,9 +13706,9 @@ loading (default is True)</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_remove.html'>json_file_remove</a>(me, path)  
 </h3>
         <dl class="dl-horizontal">
@@ -13747,8 +13764,8 @@ loading (default is True)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -13762,9 +13779,9 @@ loading (default is True)</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_rename.html'>json_file_rename</a>(me, path, name, found)  
 </h3>
         <dl class="dl-horizontal">
@@ -13849,8 +13866,8 @@ loading (default is True)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -13864,9 +13881,9 @@ loading (default is True)</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_rename_name_ascii.html'>json_file_rename_name_ascii</a>(me, path, name, found)  
 </h3>
         <dl class="dl-horizontal">
@@ -13951,8 +13968,8 @@ loading (default is True)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -13966,9 +13983,9 @@ loading (default is True)</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_rename_path_ascii.html'>json_file_rename_path_ascii</a>(me, path, name, found)  
 </h3>
         <dl class="dl-horizontal">
@@ -14053,8 +14070,8 @@ loading (default is True)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -14068,9 +14085,9 @@ loading (default is True)</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_update_integer.html'>json_file_update_integer</a>(me, path, val, found)  
 </h3>
         <dl class="dl-horizontal">
@@ -14158,8 +14175,8 @@ loading (default is True)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -14173,9 +14190,9 @@ loading (default is True)</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_update_logical.html'>json_file_update_logical</a>(me, path, val, found)  
 </h3>
         <dl class="dl-horizontal">
@@ -14263,8 +14280,8 @@ loading (default is True)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -14278,9 +14295,9 @@ loading (default is True)</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_update_real.html'>json_file_update_real</a>(me, path, val, found)  
 </h3>
         <dl class="dl-horizontal">
@@ -14368,8 +14385,8 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -14383,9 +14400,9 @@ If it is not present, then create it and set its value.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_update_real32.html'>json_file_update_real32</a>(me, path, val, found)  
 </h3>
         <dl class="dl-horizontal">
@@ -14471,8 +14488,8 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -14486,9 +14503,9 @@ If it is not present, then create it and set its value.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_update_string.html'>json_file_update_string</a>(me, path, val, found, trim_str, adjustl_str)  
 </h3>
         <dl class="dl-horizontal">
@@ -14607,8 +14624,8 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -14622,9 +14639,9 @@ If it is not present, then create it and set its value.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_update_string_name_ascii.html'>json_file_update_string_name_ascii</a>(me, path, val, found, trim_str, adjustl_str)  
 </h3>
     
@@ -14737,8 +14754,8 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -14752,9 +14769,9 @@ If it is not present, then create it and set its value.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_update_string_val_ascii.html'>json_file_update_string_val_ascii</a>(me, path, val, found, trim_str, adjustl_str)  
 </h3>
     
@@ -14867,8 +14884,8 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -14882,9 +14899,9 @@ If it is not present, then create it and set its value.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  function <a href='../proc/json_file_valid_path.html'>json_file_valid_path</a>(me, path) result(found)  
 </h3>
         <dl class="dl-horizontal">
@@ -14944,8 +14961,8 @@ If it is not present, then create it and set its value.</p>
     </h4>
     <p>if the variable was found</p>
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -14959,9 +14976,9 @@ If it is not present, then create it and set its value.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  function <a href='../proc/json_file_valid_path_op.html'>json_file_valid_path_op</a>(path, me) result(found)  
 </h3>
         <dl class="dl-horizontal">
@@ -15021,8 +15038,8 @@ If it is not present, then create it and set its value.</p>
     </h4>
     <p>if the variable was found</p>
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -15036,9 +15053,9 @@ If it is not present, then create it and set its value.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_variable_info.html'>json_file_variable_info</a>(me, path, found, var_type, n_children, name)  
 </h3>
         <dl class="dl-horizontal">
@@ -15154,8 +15171,8 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -15169,9 +15186,9 @@ If it is not present, then create it and set its value.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_variable_matrix_info.html'>json_file_variable_matrix_info</a>(me, path, is_matrix, found, var_type, n_sets, set_size, name)  
 </h3>
         <dl class="dl-horizontal">
@@ -15321,8 +15338,8 @@ cols if using row-major order)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -15336,13 +15353,13 @@ cols if using row-major order)</p>
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <p>Load <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> from a file.</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        <div class="card-body">
+          
+          <p>Load <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> from a file.</p>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_load.html'>json_file_load</a>(me, filename, unit, destroy_pointer)  
 </h3>
         <dl class="dl-horizontal">
@@ -15431,8 +15448,8 @@ loading (default is True)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -15446,13 +15463,13 @@ loading (default is True)</p>
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <p>The same as <code>load</code>, but only here for backward compatibility</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        <div class="card-body">
+          
+          <p>The same as <code>load</code>, but only here for backward compatibility</p>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_load.html'>json_file_load</a>(me, filename, unit, destroy_pointer)  
 </h3>
         <dl class="dl-horizontal">
@@ -15541,8 +15558,8 @@ loading (default is True)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -15556,13 +15573,13 @@ loading (default is True)</p>
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <p>The same as <code>deserialize</code>, but only here for backward compatibility</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        <div class="card-body">
+          
+          <p>The same as <code>deserialize</code>, but only here for backward compatibility</p>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_load_from_string.html'>json_file_load_from_string</a>(me, str, destroy_pointer)  
 </h3>
         <dl class="dl-horizontal">
@@ -15634,9 +15651,9 @@ loading (default is True)</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_load_from_string.html'>wrap_json_file_load_from_string</a>(me, str)  
 </h3>
     
@@ -15688,8 +15705,8 @@ loading (default is True)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -15703,9 +15720,9 @@ loading (default is True)</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_variable_matrix_info.html'>json_file_variable_matrix_info</a>(me, path, is_matrix, found, var_type, n_sets, set_size, name)  
 </h3>
         <dl class="dl-horizontal">
@@ -15855,9 +15872,9 @@ cols if using row-major order)</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_variable_matrix_info.html'>wrap_json_file_variable_matrix_info</a>(me, path, is_matrix, found, var_type, n_sets, set_size, name)  
 </h3>
     
@@ -16003,8 +16020,8 @@ cols if using row-major order)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -16018,9 +16035,9 @@ cols if using row-major order)</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_move_pointer.html'>json_file_move_pointer</a>(to, from)  
 </h3>
         <dl class="dl-horizontal">
@@ -16077,8 +16094,8 @@ cols if using row-major order)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -16092,9 +16109,9 @@ cols if using row-major order)</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_nullify.html'>json_file_nullify</a>(me)  
 </h3>
         <dl class="dl-horizontal">
@@ -16135,8 +16152,8 @@ cols if using row-major order)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -16150,9 +16167,9 @@ cols if using row-major order)</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  function <a href='../proc/json_file_valid_path_op.html'>json_file_valid_path_op</a>(path, me) result(found)  
 </h3>
         <dl class="dl-horizontal">
@@ -16212,9 +16229,9 @@ cols if using row-major order)</p>
     </h4>
     <p>if the variable was found</p>
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  function <a href='../proc/wrap_json_file_valid_path_op.html'>wrap_json_file_valid_path_op</a>(path, me) result(found)  
 </h3>
         <dl class="dl-horizontal">
@@ -16274,8 +16291,8 @@ cols if using row-major order)</p>
     </h4>
     <p>if the variable was found</p>
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -16289,9 +16306,9 @@ cols if using row-major order)</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_print_to_console.html'>json_file_print_to_console</a>(me)  
 </h3>
         <dl class="dl-horizontal">
@@ -16332,9 +16349,9 @@ cols if using row-major order)</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_print_to_unit.html'>json_file_print_to_unit</a>(me, iunit)  
 </h3>
         <dl class="dl-horizontal">
@@ -16390,9 +16407,9 @@ cols if using row-major order)</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_print_to_filename.html'>json_file_print_to_filename</a>(me, filename)  
 </h3>
         <dl class="dl-horizontal">
@@ -16449,8 +16466,8 @@ cols if using row-major order)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -16464,9 +16481,9 @@ cols if using row-major order)</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_print_error_message.html'>json_file_print_error_message</a>(me, io_unit)  
 </h3>
     
@@ -16518,8 +16535,8 @@ cols if using row-major order)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -16533,13 +16550,13 @@ cols if using row-major order)</p>
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <p>The same as <code>print</code>, but only here for backward compatibility</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        <div class="card-body">
+          
+          <p>The same as <code>print</code>, but only here for backward compatibility</p>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_print_to_console.html'>json_file_print_to_console</a>(me)  
 </h3>
         <dl class="dl-horizontal">
@@ -16580,9 +16597,9 @@ cols if using row-major order)</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_print_to_unit.html'>json_file_print_to_unit</a>(me, iunit)  
 </h3>
         <dl class="dl-horizontal">
@@ -16638,9 +16655,9 @@ cols if using row-major order)</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_print_to_filename.html'>json_file_print_to_filename</a>(me, filename)  
 </h3>
         <dl class="dl-horizontal">
@@ -16697,8 +16714,8 @@ cols if using row-major order)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -16712,13 +16729,13 @@ cols if using row-major order)</p>
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <p>The same as <code>serialize</code>, but only here for backward compatibility</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        <div class="card-body">
+          
+          <p>The same as <code>serialize</code>, but only here for backward compatibility</p>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_print_to_string.html'>json_file_print_to_string</a>(me, str)  
 </h3>
         <dl class="dl-horizontal">
@@ -16774,8 +16791,8 @@ cols if using row-major order)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -16789,14 +16806,14 @@ cols if using row-major order)</p>
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <p>Remove a variable from a <a href="../type/json_file.html">json_file</a>
+        <div class="card-body">
+          
+          <p>Remove a variable from a <a href="../type/json_file.html">json_file</a>
 by specifying the path.</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_remove.html'>json_file_remove</a>(me, path)  
 </h3>
         <dl class="dl-horizontal">
@@ -16852,9 +16869,9 @@ by specifying the path.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_remove.html'>wrap_json_file_remove</a>(me, path)  
 </h3>
     
@@ -16906,8 +16923,8 @@ by specifying the path.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -16921,13 +16938,13 @@ by specifying the path.</p>
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <p>Rename a variable, specifying it by path</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        <div class="card-body">
+          
+          <p>Rename a variable, specifying it by path</p>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_rename.html'>json_file_rename</a>(me, path, name, found)  
 </h3>
         <dl class="dl-horizontal">
@@ -17012,9 +17029,9 @@ by specifying the path.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_rename.html'>wrap_json_file_rename</a>(me, path, name, found)  
 </h3>
         <dl class="dl-horizontal">
@@ -17099,8 +17116,8 @@ by specifying the path.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -17114,9 +17131,9 @@ by specifying the path.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_rename_path_ascii.html'>json_file_rename_path_ascii</a>(me, path, name, found)  
 </h3>
         <dl class="dl-horizontal">
@@ -17201,9 +17218,9 @@ by specifying the path.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_rename_name_ascii.html'>json_file_rename_name_ascii</a>(me, path, name, found)  
 </h3>
         <dl class="dl-horizontal">
@@ -17288,8 +17305,8 @@ by specifying the path.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -17303,13 +17320,13 @@ by specifying the path.</p>
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <p>Print the <a href="../type/json_value.html">json_value</a> structure to an allocatable string</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        <div class="card-body">
+          
+          <p>Print the <a href="../type/json_value.html">json_value</a> structure to an allocatable string</p>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_print_to_string.html'>json_file_print_to_string</a>(me, str)  
 </h3>
         <dl class="dl-horizontal">
@@ -17365,8 +17382,8 @@ by specifying the path.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -17380,9 +17397,9 @@ by specifying the path.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/set_json_core_in_file.html'>set_json_core_in_file</a>(me, core)  
 </h3>
     
@@ -17434,8 +17451,8 @@ by specifying the path.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -17449,9 +17466,9 @@ by specifying the path.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_traverse.html'>json_file_traverse</a>(me, traverse_callback)  
 </h3>
         <dl class="dl-horizontal">
@@ -17509,8 +17526,8 @@ for each element of the structure.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -17524,9 +17541,9 @@ for each element of the structure.</p>
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <p>Update a scalar variable in a <a href="../type/json_file.html">json_file</a>,
+        <div class="card-body">
+          
+          <p>Update a scalar variable in a <a href="../type/json_file.html">json_file</a>,
   by specifying the path.</p>
 <div class="alert alert-info">
 <p class="alert-title h4">Note</p>
@@ -17534,10 +17551,10 @@ for each element of the structure.</p>
       methods, which do a similar thing (and can be used for
       scalars and vectors, etc.)</p>
 </div>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_update_integer.html'>json_file_update_integer</a>(me, path, val, found)  
 </h3>
         <dl class="dl-horizontal">
@@ -17625,9 +17642,9 @@ for each element of the structure.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_update_integer.html'>wrap_json_file_update_integer</a>(me, path, val, found)  
 </h3>
     
@@ -17709,9 +17726,9 @@ for each element of the structure.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_update_logical.html'>json_file_update_logical</a>(me, path, val, found)  
 </h3>
         <dl class="dl-horizontal">
@@ -17799,9 +17816,9 @@ for each element of the structure.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_update_logical.html'>wrap_json_file_update_logical</a>(me, path, val, found)  
 </h3>
     
@@ -17883,9 +17900,9 @@ for each element of the structure.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_update_real32.html'>json_file_update_real32</a>(me, path, val, found)  
 </h3>
         <dl class="dl-horizontal">
@@ -17971,9 +17988,9 @@ for each element of the structure.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_update_real32.html'>wrap_json_file_update_real32</a>(me, path, val, found)  
 </h3>
     
@@ -18055,9 +18072,9 @@ for each element of the structure.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_update_real.html'>json_file_update_real</a>(me, path, val, found)  
 </h3>
         <dl class="dl-horizontal">
@@ -18145,9 +18162,9 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_update_real.html'>wrap_json_file_update_real</a>(me, path, val, found)  
 </h3>
     
@@ -18229,9 +18246,9 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_update_string.html'>json_file_update_string</a>(me, path, val, found, trim_str, adjustl_str)  
 </h3>
         <dl class="dl-horizontal">
@@ -18350,9 +18367,9 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_update_string.html'>wrap_json_file_update_string</a>(me, path, val, found, trim_str, adjustl_str)  
 </h3>
     
@@ -18465,8 +18482,8 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -18480,9 +18497,9 @@ If it is not present, then create it and set its value.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_update_string_name_ascii.html'>json_file_update_string_name_ascii</a>(me, path, val, found, trim_str, adjustl_str)  
 </h3>
     
@@ -18595,9 +18612,9 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/json_file_update_string_val_ascii.html'>json_file_update_string_val_ascii</a>(me, path, val, found, trim_str, adjustl_str)  
 </h3>
     
@@ -18710,8 +18727,8 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -18725,14 +18742,14 @@ If it is not present, then create it and set its value.</p>
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <p>Verify that a path is valid
+        <div class="card-body">
+          
+          <p>Verify that a path is valid
 (i.e., a variable with this path exists in the file).</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  function <a href='../proc/json_file_valid_path.html'>json_file_valid_path</a>(me, path) result(found)  
 </h3>
         <dl class="dl-horizontal">
@@ -18792,9 +18809,9 @@ If it is not present, then create it and set its value.</p>
     </h4>
     <p>if the variable was found</p>
 
-        </li>
-        <li class="list-group-item">
-                  <h3>
+          </li>
+          <li class="list-group-item">
+                    <h3>
     private  function <a href='../proc/wrap_json_file_valid_path.html'>wrap_json_file_valid_path</a>(me, path) result(found)  
 </h3>
         <dl class="dl-horizontal">
@@ -18854,8 +18871,8 @@ If it is not present, then create it and set its value.</p>
     </h4>
     <p>if the variable was found</p>
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -18869,9 +18886,9 @@ If it is not present, then create it and set its value.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_assign_string_to_json_file.html'>wrap_assign_string_to_json_file</a>(me, str)  
 </h3>
         <dl class="dl-horizontal">
@@ -18926,8 +18943,8 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -18941,9 +18958,9 @@ If it is not present, then create it and set its value.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_add_integer.html'>wrap_json_file_add_integer</a>(me, path, val, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -19043,8 +19060,8 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -19058,9 +19075,9 @@ If it is not present, then create it and set its value.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_add_integer_vec.html'>wrap_json_file_add_integer_vec</a>(me, path, vec, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -19160,8 +19177,8 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -19175,9 +19192,9 @@ If it is not present, then create it and set its value.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_add_logical.html'>wrap_json_file_add_logical</a>(me, path, val, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -19277,8 +19294,8 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -19292,9 +19309,9 @@ If it is not present, then create it and set its value.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_add_logical_vec.html'>wrap_json_file_add_logical_vec</a>(me, path, vec, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -19394,8 +19411,8 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -19409,9 +19426,9 @@ If it is not present, then create it and set its value.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_add_object.html'>wrap_json_file_add_object</a>(me, path, p, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -19511,8 +19528,8 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -19526,9 +19543,9 @@ If it is not present, then create it and set its value.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_add_real.html'>wrap_json_file_add_real</a>(me, path, val, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -19628,8 +19645,8 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -19643,9 +19660,9 @@ If it is not present, then create it and set its value.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_add_real32.html'>wrap_json_file_add_real32</a>(me, path, val, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -19745,8 +19762,8 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -19760,9 +19777,9 @@ If it is not present, then create it and set its value.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_add_real32_vec.html'>wrap_json_file_add_real32_vec</a>(me, path, vec, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -19862,8 +19879,8 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -19877,9 +19894,9 @@ If it is not present, then create it and set its value.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_add_real_vec.html'>wrap_json_file_add_real_vec</a>(me, path, vec, found, was_created)  
 </h3>
         <dl class="dl-horizontal">
@@ -19979,8 +19996,8 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -19994,9 +20011,9 @@ If it is not present, then create it and set its value.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_add_string.html'>wrap_json_file_add_string</a>(me, path, val, found, was_created, trim_str, adjustl_str)  
 </h3>
         <dl class="dl-horizontal">
@@ -20127,8 +20144,8 @@ If it is not present, then create it and set its value.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -20142,9 +20159,9 @@ If it is not present, then create it and set its value.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_add_string_vec.html'>wrap_json_file_add_string_vec</a>(me, path, vec, found, was_created, ilen, trim_str, adjustl_str)  
 </h3>
         <dl class="dl-horizontal">
@@ -20293,8 +20310,8 @@ for each element.</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -20308,9 +20325,9 @@ for each element.</p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_alloc_string_vec.html'>wrap_json_file_get_alloc_string_vec</a>(me, path, vec, ilen, found, default, default_ilen)  
 </h3>
     
@@ -20441,8 +20458,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -20456,9 +20473,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_integer.html'>wrap_json_file_get_integer</a>(me, path, val, found, default)  
 </h3>
     
@@ -20555,8 +20572,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -20570,9 +20587,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_integer_vec.html'>wrap_json_file_get_integer_vec</a>(me, path, vec, found, default)  
 </h3>
     
@@ -20669,8 +20686,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -20684,9 +20701,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_logical.html'>wrap_json_file_get_logical</a>(me, path, val, found, default)  
 </h3>
     
@@ -20783,8 +20800,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -20798,9 +20815,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_logical_vec.html'>wrap_json_file_get_logical_vec</a>(me, path, vec, found, default)  
 </h3>
     
@@ -20897,8 +20914,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -20912,9 +20929,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_object.html'>wrap_json_file_get_object</a>(me, path, p, found)  
 </h3>
     
@@ -20996,8 +21013,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -21011,9 +21028,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_real.html'>wrap_json_file_get_real</a>(me, path, val, found, default)  
 </h3>
     
@@ -21110,8 +21127,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -21125,9 +21142,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_real32.html'>wrap_json_file_get_real32</a>(me, path, val, found, default)  
 </h3>
     
@@ -21224,8 +21241,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -21239,9 +21256,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_real32_vec.html'>wrap_json_file_get_real32_vec</a>(me, path, vec, found, default)  
 </h3>
     
@@ -21338,8 +21355,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -21353,9 +21370,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_real_vec.html'>wrap_json_file_get_real_vec</a>(me, path, vec, found, default)  
 </h3>
     
@@ -21452,8 +21469,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -21467,9 +21484,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_string.html'>wrap_json_file_get_string</a>(me, path, val, found, default)  
 </h3>
     
@@ -21566,8 +21583,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -21581,9 +21598,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_get_string_vec.html'>wrap_json_file_get_string_vec</a>(me, path, vec, found, default)  
 </h3>
     
@@ -21680,8 +21697,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -21695,9 +21712,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_load_from_string.html'>wrap_json_file_load_from_string</a>(me, str)  
 </h3>
     
@@ -21749,8 +21766,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -21764,9 +21781,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_remove.html'>wrap_json_file_remove</a>(me, path)  
 </h3>
     
@@ -21818,8 +21835,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -21833,9 +21850,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_rename.html'>wrap_json_file_rename</a>(me, path, name, found)  
 </h3>
         <dl class="dl-horizontal">
@@ -21920,8 +21937,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -21935,9 +21952,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_update_integer.html'>wrap_json_file_update_integer</a>(me, path, val, found)  
 </h3>
     
@@ -22019,8 +22036,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -22034,9 +22051,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_update_logical.html'>wrap_json_file_update_logical</a>(me, path, val, found)  
 </h3>
     
@@ -22118,8 +22135,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -22133,9 +22150,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_update_real.html'>wrap_json_file_update_real</a>(me, path, val, found)  
 </h3>
     
@@ -22217,8 +22234,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -22232,9 +22249,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_update_real32.html'>wrap_json_file_update_real32</a>(me, path, val, found)  
 </h3>
     
@@ -22316,8 +22333,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -22331,9 +22348,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_update_string.html'>wrap_json_file_update_string</a>(me, path, val, found, trim_str, adjustl_str)  
 </h3>
     
@@ -22446,8 +22463,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -22461,9 +22478,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  function <a href='../proc/wrap_json_file_valid_path.html'>wrap_json_file_valid_path</a>(me, path) result(found)  
 </h3>
         <dl class="dl-horizontal">
@@ -22523,8 +22540,8 @@ length of <code>default</code></p>
     </h4>
     <p>if the variable was found</p>
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -22538,9 +22555,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  function <a href='../proc/wrap_json_file_valid_path_op.html'>wrap_json_file_valid_path_op</a>(path, me) result(found)  
 </h3>
         <dl class="dl-horizontal">
@@ -22600,8 +22617,8 @@ length of <code>default</code></p>
     </h4>
     <p>if the variable was found</p>
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -22615,9 +22632,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_variable_info.html'>wrap_json_file_variable_info</a>(me, path, found, var_type, n_children, name)  
 </h3>
     
@@ -22729,8 +22746,8 @@ length of <code>default</code></p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -22744,9 +22761,9 @@ length of <code>default</code></p>
         
       </h3>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private  subroutine <a href='../proc/wrap_json_file_variable_matrix_info.html'>wrap_json_file_variable_matrix_info</a>(me, path, is_matrix, found, var_type, n_sets, set_size, name)  
 </h3>
     
@@ -22892,8 +22909,8 @@ cols if using row-major order)</p>
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -23220,33 +23237,11 @@ cols if using row-major order)</p>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-03-17 18:19 +0000             </p>
+ on 2025-07-31 06:19 +0000             </p>
           </div>
         </div>
         <br>
       </div> <!-- /container -->
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
-
-    <!-- MathJax JavaScript
-             ================================================== -->
-             <!-- Placed at the end of the document so the pages load faster -->
-        <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-          });
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-          <script src="../tipuesearch/tipuesearch_content.js"></script>
-          <script src="../tipuesearch/tipuesearch_set.js"></script>
-          <script src="../tipuesearch/tipuesearch.js"></script>
-
   </body>
 </html>

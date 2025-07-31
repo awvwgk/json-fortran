@@ -12,14 +12,29 @@
 
     <title>json_file &ndash; JSON-Fortran</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="../css/pygments.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
     <link href="../css/local.css" rel="stylesheet">
-      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="../css/pygments.css" rel="stylesheet">
     <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
@@ -100,9 +115,11 @@
     </div>
   </div>
   <script>
-    $(function () {
-    $('[data-bs-toggle="tooltip"]').tooltip()
-    })
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
   </script>
 
   </div>
@@ -190,7 +207,7 @@
 <!-- Title: interface~~json_file~~CallsGraph Pages: 1 -->
 <svg id="interfacejson_fileCallsGraph" width="641pt" height="301pt"
  viewBox="0.00 0.00 641.00 301.40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="interface~~json_file~~CallsGraph" class="graph" transform="scale(4.68 4.68) rotate(0) translate(4 1408)">
+<g id="interface~~json_file~~CallsGraph" class="graph" transform="scale(0.21 0.21) rotate(0) translate(4 1408)">
 <title>interface~~json_file~~CallsGraph</title>
 <polygon fill="white" stroke="transparent" points="-4,4 -4,-1408 2999,-1408 2999,4 -4,4"/>
 <!-- interface~json_file -->
@@ -1518,7 +1535,7 @@
 <!-- Title: Graph Key Pages: 1 -->
 <svg width="641pt" height="28pt"
  viewBox="0.00 0.00 641.00 27.51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1.16 1.16) rotate(0) translate(4 28)">
+<g id="graph0" class="graph" transform="scale(0.86 0.86) rotate(0) translate(4 28)">
 <title>Graph Key</title>
 <polygon fill="white" stroke="transparent" points="-4,4 -4,-28 741.5,-28 741.5,4 -4,4"/>
 <!-- Subroutine -->
@@ -1877,7 +1894,7 @@ override this option if necessary].
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-escape_solidus~6"></span>
+              <span class="anchor" id="variable-escape_solidus~5"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -1889,7 +1906,7 @@ override this option if necessary].
             <td>
 <p>Note that this option does not affect parsing
 (both escaped and unescaped are still valid in
-all cases).</p><a href="../proc/initialize_json_file.html#variable-escape_solidus~6" class="pull-right"><emph>Read more&hellip;</emph></a>
+all cases).</p><a href="../proc/initialize_json_file.html#variable-escape_solidus~5" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -1941,7 +1958,7 @@ all cases).</p><a href="../proc/initialize_json_file.html#variable-escape_solidu
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-use_quiet_nan~6"></span>
+              <span class="anchor" id="variable-use_quiet_nan~5"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -1951,7 +1968,7 @@ all cases).</p><a href="../proc/initialize_json_file.html#variable-escape_solidu
             <td>::</td>
             <td><strong>use_quiet_nan</strong></td>
             <td>
-<a href="../proc/initialize_json_file.html#variable-use_quiet_nan~6" class="pull-right"><emph>Read more&hellip;</emph></a>
+<a href="../proc/initialize_json_file.html#variable-use_quiet_nan~5" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2108,7 +2125,7 @@ as a <a href="../type/json_file.html">json_file</a> object.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~31"></span>
+              <span class="anchor" id="variable-str~18"></span>
               character(kind=CK, len=*),
             </td>
 <td>intent(in)</td>
@@ -2375,7 +2392,7 @@ override this option if necessary].
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-escape_solidus~7"></span>
+              <span class="anchor" id="variable-escape_solidus~6"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -2387,7 +2404,7 @@ override this option if necessary].
             <td>
 <p>Note that this option does not affect parsing
 (both escaped and unescaped are still valid in
-all cases).</p><a href="../proc/initialize_json_file_from_string.html#variable-escape_solidus~7" class="pull-right"><emph>Read more&hellip;</emph></a>
+all cases).</p><a href="../proc/initialize_json_file_from_string.html#variable-escape_solidus~6" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2439,7 +2456,7 @@ all cases).</p><a href="../proc/initialize_json_file_from_string.html#variable-e
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-use_quiet_nan~7"></span>
+              <span class="anchor" id="variable-use_quiet_nan~6"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -2449,7 +2466,7 @@ all cases).</p><a href="../proc/initialize_json_file_from_string.html#variable-e
             <td>::</td>
             <td><strong>use_quiet_nan</strong></td>
             <td>
-<a href="../proc/initialize_json_file_from_string.html#variable-use_quiet_nan~7" class="pull-right"><emph>Read more&hellip;</emph></a>
+<a href="../proc/initialize_json_file_from_string.html#variable-use_quiet_nan~6" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2515,7 +2532,7 @@ all cases).</p><a href="../proc/initialize_json_file_from_string.html#variable-e
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~32"></span>
+              <span class="anchor" id="variable-str~19"></span>
               character(kind=CDK, len=*),
             </td>
 <td>intent(in)</td>
@@ -2782,7 +2799,7 @@ override this option if necessary].
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-escape_solidus~8"></span>
+              <span class="anchor" id="variable-escape_solidus~7"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -2794,7 +2811,7 @@ override this option if necessary].
             <td>
 <p>Note that this option does not affect parsing
 (both escaped and unescaped are still valid in
-all cases).</p><a href="../proc/wrap_initialize_json_file_from_string.html#variable-escape_solidus~8" class="pull-right"><emph>Read more&hellip;</emph></a>
+all cases).</p><a href="../proc/wrap_initialize_json_file_from_string.html#variable-escape_solidus~7" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2846,7 +2863,7 @@ all cases).</p><a href="../proc/wrap_initialize_json_file_from_string.html#varia
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-use_quiet_nan~8"></span>
+              <span class="anchor" id="variable-use_quiet_nan~7"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -2856,7 +2873,7 @@ all cases).</p><a href="../proc/wrap_initialize_json_file_from_string.html#varia
             <td>::</td>
             <td><strong>use_quiet_nan</strong></td>
             <td>
-<a href="../proc/wrap_initialize_json_file_from_string.html#variable-use_quiet_nan~8" class="pull-right"><emph>Read more&hellip;</emph></a>
+<a href="../proc/wrap_initialize_json_file_from_string.html#variable-use_quiet_nan~7" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2927,7 +2944,7 @@ as a <a href="../type/json_file.html">json_file</a> object.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~33"></span>
+              <span class="anchor" id="variable-str~20"></span>
               character(kind=CK, len=*),
             </td>
 <td>intent(in)</td>
@@ -2987,7 +3004,7 @@ as a <a href="../type/json_file.html">json_file</a> object.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~34"></span>
+              <span class="anchor" id="variable-str~21"></span>
               character(kind=CDK, len=*),
             </td>
 <td>intent(in)</td>
@@ -3044,33 +3061,11 @@ as a <a href="../type/json_file.html">json_file</a> object.</p>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-03-17 18:19 +0000             </p>
+ on 2025-07-31 06:19 +0000             </p>
           </div>
         </div>
         <br>
       </div> <!-- /container -->
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
-
-    <!-- MathJax JavaScript
-             ================================================== -->
-             <!-- Placed at the end of the document so the pages load faster -->
-        <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-          });
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-          <script src="../tipuesearch/tipuesearch_content.js"></script>
-          <script src="../tipuesearch/tipuesearch_set.js"></script>
-          <script src="../tipuesearch/tipuesearch.js"></script>
-
   </body>
 </html>
