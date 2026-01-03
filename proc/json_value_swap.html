@@ -94,7 +94,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 1.2% of total for procedures.">85 statements</a>
+                 title=" 1.1% of total for procedures.">85 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -166,33 +166,16 @@
     
 
     <p>Swap two elements in a <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> structure.
-  All of the children are carried along as well.</p>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>If both are not associated, then an error is thrown.</p>
-</div>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>The assumption here is that both variables are part of a valid
-      <a href="../type/json_value.html">json_value</a> linked list (so the normal <code>parent</code>, <code>previous</code>,
-      <code>next</code>, etc. pointers are properly associated if necessary).</p>
-</div>
-<div class="alert alert-warning">
-<p class="alert-title h4">Warning</p>
-<p>This cannot be used to swap a parent/child pair, since that
-         could lead to a circular linkage. An exception is thrown if
-         this is tried.</p>
-</div>
-<div class="alert alert-warning">
-<p class="alert-title h4">Warning</p>
-<p>There are also other situations where using this routine may
-         produce a malformed <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> structure, such as moving an array
-         element outside of an array. This is not checked for.</p>
-</div>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>If <code>p1</code> and <code>p2</code> have a common parent, it is always safe to swap them.</p>
-</div>
+All of the children are carried along as well.</p>
+<div class="codehilite"><pre><span></span><code><span class="err">[[</span><span class="k">json_value</span><span class="err">]]</span><span class="w"> </span><span class="n">linked</span><span class="w"> </span><span class="k">list</span><span class="w"> </span><span class="p">(</span><span class="n">so</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">normal</span><span class="w"> </span><span class="n n-Quoted">`parent`</span><span class="p">,</span><span class="w"> </span><span class="n n-Quoted">`previous`</span><span class="p">,</span>
+<span class="n n-Quoted">`next`</span><span class="p">,</span><span class="w"> </span><span class="n">etc</span><span class="p">.</span><span class="w"> </span><span class="n">pointers</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">properly</span><span class="w"> </span><span class="n">associated</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">necessary</span><span class="p">).</span>
+
+<span class="w">   </span><span class="n">could</span><span class="w"> </span><span class="k">lead</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">circular</span><span class="w"> </span><span class="n">linkage</span><span class="p">.</span><span class="w"> </span><span class="n">An</span><span class="w"> </span><span class="n">exception</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">thrown</span><span class="w"> </span><span class="k">if</span>
+<span class="w">   </span><span class="n">this</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">tried</span><span class="p">.</span>
+
+<span class="w">   </span><span class="n">produce</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">malformed</span><span class="w"> </span><span class="kt">JSON</span><span class="w"> </span><span class="n">structure</span><span class="p">,</span><span class="w"> </span><span class="n">such</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">moving</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="k">array</span>
+<span class="w">   </span><span class="n">element</span><span class="w"> </span><span class="n">outside</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="k">array</span><span class="p">.</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">checked</span><span class="w"> </span><span class="k">for</span><span class="p">.</span>
+</code></pre></div>
 
     <h3>Type Bound</h3>
     <p><a href='../type/json_core.html'>json_core</a></p>
@@ -210,7 +193,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~25"></span>
+              <span class="anchor" id="variable-json~26"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -662,14 +645,14 @@ large graphs.</div>
           <div class="col">
             <p>
               JSON-Fortran
- was developed by Jacob Williams<br>              &copy; 2025 
+ was developed by Jacob Williams<br>              &copy; 2026 
 </p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-09-18 06:20 +0000             </p>
+ on 2026-01-03 06:18 +0000             </p>
           </div>
         </div>
         <br>

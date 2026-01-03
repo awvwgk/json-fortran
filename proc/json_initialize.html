@@ -94,7 +94,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 2.1% of total for procedures.">147 statements</a>
+                 title=" 2.5% of total for procedures.">184 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -161,7 +161,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private  subroutine json_initialize(me, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma)  
+    <h2>private  subroutine json_initialize(me, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode)  
 </h2>
     
 
@@ -173,14 +173,12 @@
   of the variables (note that only the arguments present are changed).</p>
 <h3 id="modified">Modified</h3>
 <ul>
-<li>Izaak Beekman : 02/24/2015</li>
+<li>
+<p>Izaak Beekman : 02/24/2015</p>
+<p><a href="../proc/initialize_json_core_in_file.html">initialize_json_core_in_file</a>, and <a href="../proc/initialize_json_file.html">initialize_json_file</a>
+  all have a similar interface.</p>
+</li>
 </ul>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p><a href="../proc/initialize_json_core.html">initialize_json_core</a>, <a href="../proc/json_initialize.html">json_initialize</a>,
-      <a href="../proc/initialize_json_core_in_file.html">initialize_json_core_in_file</a>, and <a href="../proc/initialize_json_file.html">initialize_json_file</a>
-      all have a similar interface.</p>
-</div>
 
     <h3>Type Bound</h3>
     <p><a href='../type/json_core.html'>json_core</a></p>
@@ -479,7 +477,7 @@ override this option if necessary].
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-escape_solidus~8"></span>
+              <span class="anchor" id="variable-escape_solidus~7"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -617,6 +615,84 @@ all cases).</p>
             <td>
                 <p>Allow a single trailing comma in arrays and objects.
 (default is true)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_mode~6"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_mode</strong></td>
+            <td>
+                <p>Which version of the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> parser to use:</p>
+<ul>
+<li>1 : the original recursive version [default]</li>
+<li>2 : a non-recursive version that uses an
+  explicit stack to avoid deep recursion issues.</li>
+</ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_initial_stack_size~7"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_initial_stack_size</strong></td>
+            <td>
+                <p>The initial stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).
+(default is 32)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_max_stack_size~7"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_max_stack_size</strong></td>
+            <td>
+                <p>The maximum stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).
+(default is 10000)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-string_to_real_mode~6"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>string_to_real_mode</strong></td>
+            <td>
+                <p>Which implementation to use for converting
+strings to real values:</p>
+<ul>
+<li>1 : use the Fortran implementation [default]</li>
+<li>2 : use C library routines to convert
+  strings to real values. This may be faster
+  than the Fortran implementation. If the
+  conversion fails, it will fall back to
+  the Fortran version.</li>
+</ul>
             </td>
         </tr>
     </tbody>
@@ -1385,7 +1461,9 @@ large graphs.</div>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">use_unformatted_stream</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
 <span class="k">        </span><span class="n">me</span><span class="p">%</span><span class="n">filesize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
 <span class="w">        </span><span class="n">me</span><span class="p">%</span><span class="n">ichunk</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
-<span class="w">        </span><span class="n">me</span><span class="p">%</span><span class="n">chunk</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nb">repeat</span><span class="p">(</span><span class="n">space</span><span class="p">,</span><span class="w"> </span><span class="n">stream_chunk_size</span><span class="p">)</span><span class="w"> </span><span class="c">! default chunk size</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">chunk</span><span class="p">))</span><span class="w"> </span><span class="k">deallocate</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">chunk</span><span class="p">)</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">chunk</span><span class="p">(</span><span class="n">stream_chunk_size</span><span class="p">))</span><span class="w"> </span><span class="c">! default chunk size</span>
+<span class="w">        </span><span class="n">me</span><span class="p">%</span><span class="n">chunk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">space</span>
 <span class="w">    </span><span class="k">end if</span>
 
 <span class="cp">#ifdef USE_UCS4</span>
@@ -1484,6 +1562,35 @@ large graphs.</div>
 <span class="k">        </span><span class="n">me</span><span class="p">%</span><span class="n">allow_trailing_comma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">allow_trailing_comma</span>
 <span class="w">    </span><span class="k">end if</span>
 
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">parser_mode</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        select case</span><span class="p">(</span><span class="n">parser_mode</span><span class="p">)</span>
+<span class="w">        </span><span class="k">case</span><span class="p">(</span><span class="mi">1_IK</span><span class="p">);</span><span class="w"> </span><span class="n">me</span><span class="p">%</span><span class="n">parse_value</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">parse_value_recursive</span><span class="w">  </span><span class="c">! recursive parser</span>
+<span class="w">        </span><span class="k">case</span><span class="p">(</span><span class="mi">2_IK</span><span class="p">);</span><span class="w"> </span><span class="n">me</span><span class="p">%</span><span class="n">parse_value</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">parse_value_nonrecursive</span><span class="w">  </span><span class="c">! non-recursive parser</span>
+<span class="w">        </span><span class="k">case </span><span class="n">default</span>
+<span class="w">            </span><span class="k">call </span><span class="n">integer_to_string</span><span class="p">(</span><span class="n">parser_mode</span><span class="p">,</span><span class="n">int_fmt</span><span class="p">,</span><span class="n">istr</span><span class="p">)</span>
+<span class="w">            </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Invalid parser_mode: &#39;</span><span class="o">//</span><span class="n">istr</span><span class="p">)</span>
+<span class="w">        </span><span class="k">end select</span>
+<span class="k">    end if</span>
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">parser_initial_stack_size</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">me</span><span class="p">%</span><span class="n">parser_initial_stack_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="mi">1_IK</span><span class="p">,</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">parser_initial_stack_size</span><span class="p">))</span>
+<span class="w">    </span><span class="k">end if</span>
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">parser_max_stack_size</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">me</span><span class="p">%</span><span class="n">parser_max_stack_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="mi">1_IK</span><span class="p">,</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">parser_max_stack_size</span><span class="p">))</span>
+<span class="w">    </span><span class="k">end if</span>
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">parser_max_stack_size</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">me</span><span class="p">%</span><span class="n">parser_initial_stack_size</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        call </span><span class="n">me</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Error: parser_max_stack_size must be &gt;= parser_initial_stack_size.&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">end if</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">string_to_real_mode</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        select case</span><span class="w"> </span><span class="p">(</span><span class="n">string_to_real_mode</span><span class="p">)</span>
+<span class="w">        </span><span class="k">case</span><span class="p">(</span><span class="mi">1_IK</span><span class="p">);</span><span class="w"> </span><span class="n">me</span><span class="p">%</span><span class="n">string_to_real</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">string_to_real</span><span class="w">    </span><span class="c">! original Fortran version</span>
+<span class="w">        </span><span class="k">case</span><span class="p">(</span><span class="mi">2_IK</span><span class="p">);</span><span class="w"> </span><span class="n">me</span><span class="p">%</span><span class="n">string_to_real</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">string_to_real_c</span><span class="w">  </span><span class="c">! using C library routines</span>
+<span class="w">        </span><span class="k">case </span><span class="n">default</span>
+<span class="w">            </span><span class="k">call </span><span class="n">integer_to_string</span><span class="p">(</span><span class="n">string_to_real_mode</span><span class="p">,</span><span class="n">int_fmt</span><span class="p">,</span><span class="n">istr</span><span class="p">)</span>
+<span class="w">            </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Invalid string_to_real_mode: &#39;</span><span class="o">//</span><span class="n">istr</span><span class="p">)</span>
+<span class="w">        </span><span class="k">end select</span>
+<span class="k">    end if</span>
+
 <span class="w">    </span><span class="c">!Set the format for real numbers:</span>
 <span class="w">    </span><span class="c">! [if not changing it, then it remains the same]</span>
 
@@ -1562,14 +1669,14 @@ large graphs.</div>
           <div class="col">
             <p>
               JSON-Fortran
- was developed by Jacob Williams<br>              &copy; 2025 
+ was developed by Jacob Williams<br>              &copy; 2026 
 </p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-09-18 06:20 +0000             </p>
+ on 2026-01-03 06:18 +0000             </p>
           </div>
         </div>
         <br>

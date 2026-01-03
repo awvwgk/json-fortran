@@ -94,7 +94,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title="15.4% of total for modules and submodules.">1145 statements</a>
+                 title="14.6% of total for modules and submodules.">1161 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -316,11 +316,11 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
-                  <li class="list-inline-item"><a href='json_parameters.html'>json_parameters</a></li>
                   <li class="list-inline-item"><a href='json_string_utilities.html'>json_string_utilities</a></li>
-                  <li class="list-inline-item"><a href='http://fortranwiki.org/fortran/show/iso_fortran_env'>iso_fortran_env</a></li>
                   <li class="list-inline-item"><a href='json_value_module.html'>json_value_module</a></li>
+                  <li class="list-inline-item"><a href='json_parameters.html'>json_parameters</a></li>
                   <li class="list-inline-item"><a href='json_kinds.html'>json_kinds</a></li>
+                  <li class="list-inline-item"><a href='http://fortranwiki.org/fortran/show/iso_fortran_env'>iso_fortran_env</a></li>
               </ul>
             </li>
             <li class="list-group-item">
@@ -728,7 +728,7 @@ large graphs.</div>
     <ul class="list-group">
           <li class="list-group-item">
                 <h3>
-    private  function <a href='../proc/initialize_json_file.html'>initialize_json_file</a>(p, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, nullify_pointer) result(file_object)  
+    private  function <a href='../proc/initialize_json_file.html'>initialize_json_file</a>(p, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode, nullify_pointer) result(file_object)  
 
     </h3>
         <dl class="dl-horizontal">
@@ -737,15 +737,12 @@ large graphs.</div>
     </dl>
 
   <p>Cast a <a href="../type/json_value.html">json_value</a> object as a <a href="../type/json_file.html">json_file</a> object.
-  It also calls the <code>initialize()</code> method.</p>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p><a href="../proc/initialize_json_core.html">initialize_json_core</a>, <a href="../proc/json_initialize.html">json_initialize</a>,
-      <a href="../proc/initialize_json_core_in_file.html">initialize_json_core_in_file</a>, <a href="../proc/initialize_json_file.html">initialize_json_file</a>,
-      <a href="../proc/initialize_json_file_v2.html">initialize_json_file_v2</a>, <a href="../proc/initialize_json_file_from_string.html">initialize_json_file_from_string</a>,
-      and <a href="../proc/initialize_json_file_from_string_v2.html">initialize_json_file_from_string_v2</a>
-      all have a similar interface.</p>
-</div>
+It also calls the <code>initialize()</code> method.</p>
+<div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">[initialize_json_core_in_file</span><span class="o">]</span><span class="err">]</span><span class="p">,</span><span class="w"> </span><span class="o">[</span><span class="n">[initialize_json_file</span><span class="o">]</span><span class="err">]</span><span class="p">,</span>
+<span class="o">[</span><span class="n">[initialize_json_file_v2</span><span class="o">]</span><span class="err">]</span><span class="p">,</span><span class="w"> </span><span class="o">[</span><span class="n">[initialize_json_file_from_string</span><span class="o">]</span><span class="err">]</span><span class="p">,</span>
+<span class="ow">and</span><span class="w"> </span><span class="o">[</span><span class="n">[initialize_json_file_from_string_v2</span><span class="o">]</span><span class="err">]</span>
+<span class="ow">all</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">similar</span><span class="w"> </span><span class="n">interface</span><span class="p">.</span>
+</code></pre></div>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1139,6 +1136,71 @@ all cases).</p><a href="../proc/initialize_json_file.html#variable-escape_solidu
         </tr>
         <tr>
             <td>
+              <span class="anchor" id="variable-parser_mode~2"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_mode</strong></td>
+            <td>
+<p>Which version of the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> parser to use:</p><a href="../proc/initialize_json_file.html#variable-parser_mode~2" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_initial_stack_size~2"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_initial_stack_size</strong></td>
+            <td>
+<p>The initial stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).
+(default is 32)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_max_stack_size~2"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_max_stack_size</strong></td>
+            <td>
+<p>The maximum stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).
+(default is 10000)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-string_to_real_mode~2"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>string_to_real_mode</strong></td>
+            <td>
+<p>Which implementation to use for converting
+strings to real values:</p><a href="../proc/initialize_json_file.html#variable-string_to_real_mode~2" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
               <span class="anchor" id="variable-nullify_pointer"></span>
               logical(kind=LK),
             </td>
@@ -1234,7 +1296,7 @@ as a <a href="../type/json_file.html">json_file</a> object.</p>
           </li>
           <li class="list-group-item">
                 <h3>
-    private  function <a href='../proc/initialize_json_file_from_string.html'>initialize_json_file_from_string</a>(str, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma) result(file_object)  
+    private  function <a href='../proc/initialize_json_file_from_string.html'>initialize_json_file_from_string</a>(str, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode) result(file_object)  
 
     </h3>
         <dl class="dl-horizontal">
@@ -1249,14 +1311,11 @@ as a <a href="../type/json_file.html">json_file</a> object.</p>
 <span class="w">  </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json_file</span><span class="p">(</span><span class="s1">&#39;{&quot;key &quot;: 1}&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">trailing_spaces_significant</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.)</span>
 </code></pre></div>
 
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p><a href="../proc/initialize_json_core.html">initialize_json_core</a>, <a href="../proc/json_initialize.html">json_initialize</a>,
-      <a href="../proc/initialize_json_core_in_file.html">initialize_json_core_in_file</a>, <a href="../proc/initialize_json_file.html">initialize_json_file</a>,
-      <a href="../proc/initialize_json_file_v2.html">initialize_json_file_v2</a>, <a href="../proc/initialize_json_file_from_string.html">initialize_json_file_from_string</a>,
-      and <a href="../proc/initialize_json_file_from_string_v2.html">initialize_json_file_from_string_v2</a>
-      all have a similar interface.</p>
-</div>
+<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="o">[</span><span class="n">[initialize_json_core_in_file</span><span class="o">]</span><span class="err">]</span><span class="p">,</span><span class="w"> </span><span class="o">[</span><span class="n">[initialize_json_file</span><span class="o">]</span><span class="err">]</span><span class="p">,</span>
+<span class="w">  </span><span class="o">[</span><span class="n">[initialize_json_file_v2</span><span class="o">]</span><span class="err">]</span><span class="p">,</span><span class="w"> </span><span class="o">[</span><span class="n">[initialize_json_file_from_string</span><span class="o">]</span><span class="err">]</span><span class="p">,</span>
+<span class="w">  </span><span class="ow">and</span><span class="w"> </span><span class="o">[</span><span class="n">[initialize_json_file_from_string_v2</span><span class="o">]</span><span class="err">]</span>
+<span class="w">  </span><span class="ow">all</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">similar</span><span class="w"> </span><span class="n">interface</span><span class="p">.</span>
+</code></pre></div>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1646,6 +1705,71 @@ all cases).</p><a href="../proc/initialize_json_file_from_string.html#variable-e
 (default is true)</p>
             </td>
         </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_mode~3"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_mode</strong></td>
+            <td>
+<p>Which version of the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> parser to use:</p><a href="../proc/initialize_json_file_from_string.html#variable-parser_mode~3" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_initial_stack_size~3"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_initial_stack_size</strong></td>
+            <td>
+<p>The initial stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).
+(default is 32)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_max_stack_size~3"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_max_stack_size</strong></td>
+            <td>
+<p>The maximum stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).
+(default is 10000)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-string_to_real_mode~3"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>string_to_real_mode</strong></td>
+            <td>
+<p>Which implementation to use for converting
+strings to real values:</p><a href="../proc/initialize_json_file_from_string.html#variable-string_to_real_mode~3" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
     </tbody>
   </table>
 
@@ -1658,7 +1782,7 @@ all cases).</p><a href="../proc/initialize_json_file_from_string.html#variable-e
           </li>
           <li class="list-group-item">
                 <h3>
-    private  function <a href='../proc/wrap_initialize_json_file_from_string.html'>wrap_initialize_json_file_from_string</a>(str, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma) result(file_object)  
+    private  function <a href='../proc/wrap_initialize_json_file_from_string.html'>wrap_initialize_json_file_from_string</a>(str, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode) result(file_object)  
 
     </h3>
     
@@ -2052,6 +2176,71 @@ all cases).</p><a href="../proc/wrap_initialize_json_file_from_string.html#varia
 (default is true)</p>
             </td>
         </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_mode~4"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_mode</strong></td>
+            <td>
+<p>Which version of the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> parser to use:</p><a href="../proc/wrap_initialize_json_file_from_string.html#variable-parser_mode~4" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_initial_stack_size~4"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_initial_stack_size</strong></td>
+            <td>
+<p>The initial stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).
+(default is 32)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_max_stack_size~4"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_max_stack_size</strong></td>
+            <td>
+<p>The maximum stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).
+(default is 10000)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-string_to_real_mode~4"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>string_to_real_mode</strong></td>
+            <td>
+<p>Which implementation to use for converting
+strings to real values:</p><a href="../proc/wrap_initialize_json_file_from_string.html#variable-string_to_real_mode~4" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
     </tbody>
   </table>
 
@@ -2271,10 +2460,10 @@ factory used for this file.</p>
                     
                     function
                     <strong><a href='/home/runner/work/json-fortran/json-fortran/doc/proc/initialize_json_file.html'>initialize_json_file</a></strong>
-                    (p, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, nullify_pointer)
+                    (p, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode, nullify_pointer)
                   </td>
                   <td><p>Cast a <a href="../type/json_value.html">json_value</a> object as a <a href="../type/json_file.html">json_file</a> object.
-  It also calls the <code>initialize()</code> method.</p><a href="../proc/initialize_json_file.html" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+It also calls the <code>initialize()</code> method.</p><a href="../proc/initialize_json_file.html" class="pull-right"><emph>Read more&hellip;</emph></a></td>
                 </tr>
                 <tr>
                   <td>
@@ -2295,7 +2484,7 @@ as a <a href="../type/json_file.html">json_file</a> object.</p></td>
                     
                     function
                     <strong><a href='/home/runner/work/json-fortran/json-fortran/doc/proc/initialize_json_file_from_string.html'>initialize_json_file_from_string</a></strong>
-                    (str, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma)
+                    (str, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode)
                   </td>
                   <td><p>Cast a <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> string as a <a href="../type/json_file.html">json_file</a> object.
   It also calls the <code>initialize()</code> method.</p><a href="../proc/initialize_json_file_from_string.html" class="pull-right"><emph>Read more&hellip;</emph></a></td>
@@ -2307,7 +2496,7 @@ as a <a href="../type/json_file.html">json_file</a> object.</p></td>
                     
                     function
                     <strong><a href='/home/runner/work/json-fortran/json-fortran/doc/proc/wrap_initialize_json_file_from_string.html'>wrap_initialize_json_file_from_string</a></strong>
-                    (str, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma)
+                    (str, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode)
                   </td>
                   <td><p>Alternate version of <a href="../proc/initialize_json_file_from_string.html">initialize_json_file_from_string</a>, where &ldquo;str&rdquo; is kind=CDK.</p></td>
                 </tr>
@@ -2760,7 +2949,7 @@ by specifying the path.</p></td>
                 <td>  generic, public ::
   <strong><a href='../type/json_file.html#boundprocedure-update'>update</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_file.html#boundprocedure-json_file_update_integer'>json_file_update_integer</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_file.html#boundprocedure-wrap_json_file_update_integer'>wrap_json_file_update_integer</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_file.html#boundprocedure-json_file_update_logical'>json_file_update_logical</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_file.html#boundprocedure-wrap_json_file_update_logical'>wrap_json_file_update_logical</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_file.html#boundprocedure-json_file_update_real32'>json_file_update_real32</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_file.html#boundprocedure-wrap_json_file_update_real32'>wrap_json_file_update_real32</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_file.html#boundprocedure-json_file_update_real'>json_file_update_real</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_file.html#boundprocedure-wrap_json_file_update_real'>wrap_json_file_update_real</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_file.html#boundprocedure-json_file_update_string'>json_file_update_string</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_file.html#boundprocedure-wrap_json_file_update_string'>wrap_json_file_update_string</a></td>
                   <td><p>Update a scalar variable in a <a href="../type/json_file.html">json_file</a>,
-  by specifying the path.</p><a href="../type/json_file.html#boundprocedure-update" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+by specifying the path.</p><a href="../type/json_file.html#boundprocedure-update" class="pull-right"><emph>Read more&hellip;</emph></a></td>
               </tr>
               <tr>
                 <td>  generic, public ::
@@ -2964,7 +3153,7 @@ by specifying the path.</p></td>
         <section>
           <h2>Functions</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-initialize_json_file"></span> <h3>private  function <a href='../proc/initialize_json_file.html'>initialize_json_file</a>(p, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, nullify_pointer) result(file_object)  
+    <div class="card-header codesum"><span class="anchor" id="proc-initialize_json_file"></span> <h3>private  function <a href='../proc/initialize_json_file.html'>initialize_json_file</a>(p, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode, nullify_pointer) result(file_object)  
 </h3></div>
     <div class="card-body">
               <dl class="dl-horizontal">
@@ -2973,7 +3162,7 @@ by specifying the path.</p></td>
     </dl>
 
   <p>Cast a <a href="../type/json_value.html">json_value</a> object as a <a href="../type/json_file.html">json_file</a> object.
-  It also calls the <code>initialize()</code> method.</p><a href="../proc/initialize_json_file.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+It also calls the <code>initialize()</code> method.</p><a href="../proc/initialize_json_file.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -3367,6 +3556,71 @@ all cases).</p><a href="../proc/initialize_json_file.html#variable-escape_solidu
         </tr>
         <tr>
             <td>
+              <span class="anchor" id="variable-parser_mode~2"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_mode</strong></td>
+            <td>
+<p>Which version of the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> parser to use:</p><a href="../proc/initialize_json_file.html#variable-parser_mode~2" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_initial_stack_size~2"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_initial_stack_size</strong></td>
+            <td>
+<p>The initial stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).
+(default is 32)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_max_stack_size~2"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_max_stack_size</strong></td>
+            <td>
+<p>The maximum stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).
+(default is 10000)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-string_to_real_mode~2"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>string_to_real_mode</strong></td>
+            <td>
+<p>Which implementation to use for converting
+strings to real values:</p><a href="../proc/initialize_json_file.html#variable-string_to_real_mode~2" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
               <span class="anchor" id="variable-nullify_pointer"></span>
               logical(kind=LK),
             </td>
@@ -3399,7 +3653,7 @@ to use <code>p</code>, then this should be set to False.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-initialize_json_file_from_string"></span> <h3>private  function <a href='../proc/initialize_json_file_from_string.html'>initialize_json_file_from_string</a>(str, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma) result(file_object)  
+    <div class="card-header codesum"><span class="anchor" id="proc-initialize_json_file_from_string"></span> <h3>private  function <a href='../proc/initialize_json_file_from_string.html'>initialize_json_file_from_string</a>(str, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode) result(file_object)  
 </h3></div>
     <div class="card-body">
               <dl class="dl-horizontal">
@@ -3798,6 +4052,71 @@ all cases).</p><a href="../proc/initialize_json_file_from_string.html#variable-e
 (default is true)</p>
             </td>
         </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_mode~3"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_mode</strong></td>
+            <td>
+<p>Which version of the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> parser to use:</p><a href="../proc/initialize_json_file_from_string.html#variable-parser_mode~3" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_initial_stack_size~3"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_initial_stack_size</strong></td>
+            <td>
+<p>The initial stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).
+(default is 32)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_max_stack_size~3"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_max_stack_size</strong></td>
+            <td>
+<p>The maximum stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).
+(default is 10000)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-string_to_real_mode~3"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>string_to_real_mode</strong></td>
+            <td>
+<p>Which implementation to use for converting
+strings to real values:</p><a href="../proc/initialize_json_file_from_string.html#variable-string_to_real_mode~3" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
     </tbody>
   </table>
 
@@ -4112,7 +4431,7 @@ as a <a href="../type/json_file.html">json_file</a> object.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-wrap_initialize_json_file_from_string"></span> <h3>private  function <a href='../proc/wrap_initialize_json_file_from_string.html'>wrap_initialize_json_file_from_string</a>(str, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma) result(file_object)  
+    <div class="card-header codesum"><span class="anchor" id="proc-wrap_initialize_json_file_from_string"></span> <h3>private  function <a href='../proc/wrap_initialize_json_file_from_string.html'>wrap_initialize_json_file_from_string</a>(str, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode) result(file_object)  
 </h3></div>
     <div class="card-body">
           
@@ -4504,6 +4823,71 @@ all cases).</p><a href="../proc/wrap_initialize_json_file_from_string.html#varia
             <td>
 <p>Allow a single trailing comma in arrays and objects.
 (default is true)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_mode~4"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_mode</strong></td>
+            <td>
+<p>Which version of the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> parser to use:</p><a href="../proc/wrap_initialize_json_file_from_string.html#variable-parser_mode~4" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_initial_stack_size~4"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_initial_stack_size</strong></td>
+            <td>
+<p>The initial stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).
+(default is 32)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_max_stack_size~4"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_max_stack_size</strong></td>
+            <td>
+<p>The maximum stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).
+(default is 10000)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-string_to_real_mode~4"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>string_to_real_mode</strong></td>
+            <td>
+<p>Which implementation to use for converting
+strings to real values:</p><a href="../proc/wrap_initialize_json_file_from_string.html#variable-string_to_real_mode~4" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
     </tbody>
@@ -4983,12 +5367,12 @@ This is just a wrapper for the <a href="../proc/json_file_load_from_string.html"
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-initialize_json_core_in_file"></span> <h3>private  subroutine <a href='../proc/initialize_json_core_in_file.html'>initialize_json_core_in_file</a>(me, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma)  
+    <div class="card-header codesum"><span class="anchor" id="proc-initialize_json_core_in_file"></span> <h3>private  subroutine <a href='../proc/initialize_json_core_in_file.html'>initialize_json_core_in_file</a>(me, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode)  
 </h3></div>
     <div class="card-body">
           
   <p>Initialize the <a href="../type/json_core.html">json_core</a> for this <a href="../type/json_file.html">json_file</a>.
-  This is just a wrapper for <a href="../proc/json_initialize.html">json_initialize</a>.</p><a href="../proc/initialize_json_core_in_file.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+This is just a wrapper for <a href="../proc/json_initialize.html">json_initialize</a>.</p><a href="../proc/initialize_json_core_in_file.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -5376,6 +5760,71 @@ all cases).</p><a href="../proc/initialize_json_core_in_file.html#variable-escap
             <td>
 <p>Allow a single trailing comma in arrays and objects.
 (default is true)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_mode"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_mode</strong></td>
+            <td>
+<p>Which version of the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> parser to use:</p><a href="../proc/initialize_json_core_in_file.html#variable-parser_mode" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_initial_stack_size"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_initial_stack_size</strong></td>
+            <td>
+<p>The initial stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).
+(default is 32)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_max_stack_size"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_max_stack_size</strong></td>
+            <td>
+<p>The maximum stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).
+(default is 10000)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-string_to_real_mode"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>string_to_real_mode</strong></td>
+            <td>
+<p>Which implementation to use for converting
+strings to real values:</p><a href="../proc/initialize_json_core_in_file.html#variable-string_to_real_mode" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
     </tbody>
@@ -8486,7 +8935,7 @@ length of <code>default</code></p>
         <dt>Date</dt><dd>7/23/2015</dd>
     </dl>
 
-  <p>Get a <a href="../type/json_value.html">json_value</a> pointer to the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> file root.</p><a href="../proc/json_file_get_root.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Get a <a href="../type/json_value.html">json_value</a> pointer to the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> file root.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -8922,7 +9371,7 @@ loading (default is True)</p>
     </dl>
 
   <p>Move the <a href="../type/json_value.html">json_value</a> pointer from one <a href="../type/json_file.html">json_file</a> to another.
-  The &ldquo;from&rdquo; pointer is then nullified, but not destroyed.</p><a href="../proc/json_file_move_pointer.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+The &ldquo;from&rdquo; pointer is then nullified, but not destroyed.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -9302,7 +9751,7 @@ loading (default is True)</p>
         <dt>Date</dt><dd>7/7/2018</dd>
     </dl>
 
-  <p>Remove a variable from a <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> file.</p><a href="../proc/json_file_remove.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Remove a variable from a <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> file.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -14144,14 +14593,14 @@ cols if using row-major order)</p>
           <div class="col">
             <p>
               JSON-Fortran
- was developed by Jacob Williams<br>              &copy; 2025 
+ was developed by Jacob Williams<br>              &copy; 2026 
 </p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-09-18 06:20 +0000             </p>
+ on 2026-01-03 06:18 +0000             </p>
           </div>
         </div>
         <br>

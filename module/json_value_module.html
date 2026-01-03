@@ -94,7 +94,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title="77.2% of total for modules and submodules.">5747 statements</a>
+                 title="77.6% of total for modules and submodules.">6171 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -169,6 +169,8 @@
         <div class="list-group list-group-flush">
             <a class="list-group-item" href="../module/json_value_module.html#interface-json_array_callback_func">json_array_callback_func</a>
             <a class="list-group-item" href="../module/json_value_module.html#interface-json_traverse_callback_func">json_traverse_callback_func</a>
+            <a class="list-group-item" href="../module/json_value_module.html#interface-parser_func">parser_func</a>
+            <a class="list-group-item" href="../module/json_value_module.html#interface-string_to_real_func">string_to_real_func</a>
         </div>
       </div>
     </div>
@@ -198,6 +200,7 @@
             <a class="list-group-item" href="../module/json_value_module.html#proc-json_failed">json_failed</a>
             <a class="list-group-item" href="../module/json_value_module.html#proc-json_is_vector">json_is_vector</a>
             <a class="list-group-item" href="../module/json_value_module.html#proc-json_valid_path">json_valid_path</a>
+            <a class="list-group-item" href="../module/json_value_module.html#proc-json_value_equals">json_value_equals</a>
             <a class="list-group-item" href="../module/json_value_module.html#proc-json_value_is_child_of">json_value_is_child_of</a>
             <a class="list-group-item" href="../module/json_value_module.html#proc-name_equal">name_equal</a>
             <a class="list-group-item" href="../module/json_value_module.html#proc-name_strings_equal">name_strings_equal</a>
@@ -348,7 +351,8 @@
             <a class="list-group-item" href="../module/json_value_module.html#proc-parse_number">parse_number</a>
             <a class="list-group-item" href="../module/json_value_module.html#proc-parse_object">parse_object</a>
             <a class="list-group-item" href="../module/json_value_module.html#proc-parse_string">parse_string</a>
-            <a class="list-group-item" href="../module/json_value_module.html#proc-parse_value">parse_value</a>
+            <a class="list-group-item" href="../module/json_value_module.html#proc-parse_value_nonrecursive">parse_value_nonrecursive</a>
+            <a class="list-group-item" href="../module/json_value_module.html#proc-parse_value_recursive">parse_value_recursive</a>
             <a class="list-group-item" href="../module/json_value_module.html#proc-pop_char">pop_char</a>
             <a class="list-group-item" href="../module/json_value_module.html#proc-push_char">push_char</a>
             <a class="list-group-item" href="../module/json_value_module.html#proc-to_array">to_array</a>
@@ -450,11 +454,11 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
-                  <li class="list-inline-item"><a href='json_parameters.html'>json_parameters</a></li>
                   <li class="list-inline-item"><a href='json_string_utilities.html'>json_string_utilities</a></li>
-                  <li class="list-inline-item"><a href='http://fortranwiki.org/fortran/show/iso_fortran_env'>iso_fortran_env</a></li>
                   <li class="list-inline-item"><a href='http://fortranwiki.org/fortran/show/ieee_arithmetic'>ieee_arithmetic</a></li>
+                  <li class="list-inline-item"><a href='json_parameters.html'>json_parameters</a></li>
                   <li class="list-inline-item"><a href='json_kinds.html'>json_kinds</a></li>
+                  <li class="list-inline-item"><a href='http://fortranwiki.org/fortran/show/iso_fortran_env'>iso_fortran_env</a></li>
               </ul>
             </li>
             <li class="list-group-item">
@@ -903,7 +907,7 @@ be read faster.</p>
     <ul class="list-group">
           <li class="list-group-item">
                 <h3>
-    private  function <a href='../proc/initialize_json_core.html'>initialize_json_core</a>(verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma) result(json_core_object)  
+    private  function <a href='../proc/initialize_json_core.html'>initialize_json_core</a>(verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode) result(json_core_object)  
 
     </h3>
         <dl class="dl-horizontal">
@@ -912,13 +916,10 @@ be read faster.</p>
     </dl>
 
   <p>Function constructor for a <a href="../type/json_core.html">json_core</a>.
-  This is just a wrapper for <a href="../proc/json_initialize.html">json_initialize</a>.</p>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p><a href="../proc/initialize_json_core.html">initialize_json_core</a>, <a href="../proc/json_initialize.html">json_initialize</a>,
-      <a href="../proc/initialize_json_core_in_file.html">initialize_json_core_in_file</a>, and <a href="../proc/initialize_json_file.html">initialize_json_file</a>
-      all have a similar interface.</p>
-</div>
+This is just a wrapper for <a href="../proc/json_initialize.html">json_initialize</a>.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[[initialize_json_core_in_file]], and [[initialize_json_file]]</span>
+<span class="na">all have a similar interface.</span>
+</code></pre></div>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1185,7 +1186,7 @@ override this option if necessary].
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-escape_solidus~7"></span>
+              <span class="anchor" id="variable-escape_solidus~6"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -1197,7 +1198,7 @@ override this option if necessary].
             <td>
 <p>Note that this option does not affect parsing
 (both escaped and unescaped are still valid in
-all cases).</p><a href="../proc/initialize_json_core.html#variable-escape_solidus~7" class="pull-right"><emph>Read more&hellip;</emph></a>
+all cases).</p><a href="../proc/initialize_json_core.html#variable-escape_solidus~6" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -1293,6 +1294,71 @@ all cases).</p><a href="../proc/initialize_json_core.html#variable-escape_solidu
 (default is true)</p>
             </td>
         </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_mode~5"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_mode</strong></td>
+            <td>
+<p>Which version of the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> parser to use:</p><a href="../proc/initialize_json_core.html#variable-parser_mode~5" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_initial_stack_size~6"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_initial_stack_size</strong></td>
+            <td>
+<p>The initial stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).
+(default is 32)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_max_stack_size~6"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_max_stack_size</strong></td>
+            <td>
+<p>The maximum stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).
+(default is 10000)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-string_to_real_mode~5"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>string_to_real_mode</strong></td>
+            <td>
+<p>Which implementation to use for converting
+strings to real values:</p><a href="../proc/initialize_json_core.html#variable-string_to_real_mode~5" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
     </tbody>
   </table>
 
@@ -1366,7 +1432,7 @@ all cases).</p><a href="../proc/initialize_json_core.html#variable-escape_solidu
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-i~7"></span>
+              <span class="anchor" id="variable-i"></span>
               integer(kind=IK),
             </td>
 <td>intent(in)</td>
@@ -1468,6 +1534,189 @@ all cases).</p><a href="../proc/initialize_json_core.html#variable-escape_solidu
             <td><strong>finished</strong></td>
             <td>
                 <p>set true to stop traversing</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+      </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="interface-parser_func"></span><h3>abstract interface
+        
+    </h3></div>
+    <ul class="list-group">
+      <li class="list-group-item">
+            <h3>
+    private  subroutine parser_func(json, unit, str, value)  
+
+    </h3>
+  <p><abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> parser function interface</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-json~3"></span>
+              class(<a href='../type/json_core.html'>json_core</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>json</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-unit~2"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>unit</strong></td>
+            <td>
+                <p>file unit number</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-str~11"></span>
+              character(kind=CK, len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>str</strong></td>
+            <td>
+                <p>string containing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> data</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-value"></span>
+              type(<a href='../type/json_value.html'>json_value</a>),
+            </td>
+<td></td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+                <p><abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> data that is extracted</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+      </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="interface-string_to_real_func"></span><h3>abstract interface
+        
+    </h3></div>
+    <ul class="list-group">
+      <li class="list-group-item">
+            <h3>
+    private  subroutine string_to_real_func(str, use_quiet_nan, rval, status_ok)  
+
+    </h3>
+  <p>Function to convert a string to a real value</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-str~12"></span>
+              character(kind=CK, len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>str</strong></td>
+            <td>
+                <p>the string to convert to a real</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-use_quiet_nan~6"></span>
+              logical(kind=LK),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>use_quiet_nan</strong></td>
+            <td>
+                <p>if true, return NaN&rsquo;s as <code>ieee_quiet_nan</code>.
+otherwise, use <code>ieee_signaling_nan</code>.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rval"></span>
+              real(kind=RK),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rval</strong></td>
+            <td>
+                <p><code>str</code> converted to a real value</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-status_ok~2"></span>
+              logical(kind=LK),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>status_ok</strong></td>
+            <td>
+                <p>true if there were no errors</p>
             </td>
         </tr>
     </tbody>
@@ -1603,11 +1852,11 @@ are case sensitive.</p>
         <tr>
             <td>
               <span class="anchor" id="variable-chunk"></span>
-              character(kind=CK, len=:),
+              character(kind=CK, len=1),
             </td>
               <td>private,</td>
             <td>
-              allocatable
+              dimension(:), allocatable
             </td>
             <td>::</td>
             <td><strong>chunk</strong></td>
@@ -1640,7 +1889,7 @@ Default is <code>CK_'/!#'</code>.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-compact_real~2"></span>
+              <span class="anchor" id="variable-compact_real"></span>
               logical(kind=LK),
             </td>
               <td>private</td>
@@ -1698,7 +1947,7 @@ this variable is not allocated.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-escape_solidus~6"></span>
+              <span class="anchor" id="variable-escape_solidus~5"></span>
               logical(kind=LK),
             </td>
               <td>private</td>
@@ -1775,7 +2024,7 @@ when <code>use_unformatted_stream=True</code></p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ipos~2"></span>
+              <span class="anchor" id="variable-ipos"></span>
               integer(kind=IK),
             </td>
               <td>private</td>
@@ -1847,7 +2096,7 @@ printed on one line.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-non_normals_to_null~2"></span>
+              <span class="anchor" id="variable-non_normals_to_null"></span>
               logical(kind=LK),
             </td>
               <td>private</td>
@@ -1860,7 +2109,7 @@ printed on one line.</p>
                 <td>.false.</td>
             <td>
 <p>How to serialize NaN, Infinity,
-and -Infinity real values:</p><a href="../type/json_core.html#variable-non_normals_to_null~2" class="pull-right"><emph>Read more&hellip;</emph></a>
+and -Infinity real values:</p><a href="../type/json_core.html#variable-non_normals_to_null" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -1878,6 +2127,62 @@ and -Infinity real values:</p><a href="../type/json_core.html#variable-non_norma
                 <td>2_IK</td>
             <td>
 <p>if <code>strict_type_checking=false</code>:</p><a href="../type/json_core.html#variable-null_to_real_mode~5" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parse_value"></span>
+              procedure(<a href='../interface/parser_func.html'>parser_func</a>),
+            </td>
+              <td>private,</td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>parse_value</strong></td>
+<td>=&gt; </td>
+                <td>parse_value_recursive</td>
+            <td>
+<p>The <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> parser function to use.
+Can be either <code>parse_value</code> (the recursive parser)
+or <code>parse_value_non_recursive</code> (the non-recursive parser).
+[defined by <code>parser_mode</code> input]</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_initial_stack_size~5"></span>
+              integer(kind=IK),
+            </td>
+              <td>private</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_initial_stack_size</strong></td>
+<td> =</td>
+                <td>32_IK</td>
+            <td>
+<p>The initial stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_max_stack_size~5"></span>
+              integer(kind=IK),
+            </td>
+              <td>private</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_max_stack_size</strong></td>
+<td> =</td>
+                <td>10000_IK</td>
+            <td>
+<p>The maximum stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).</p>
             </td>
         </tr>
         <tr>
@@ -1957,7 +2262,7 @@ lines in file</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-real_fmt~2"></span>
+              <span class="anchor" id="variable-real_fmt"></span>
               character(kind=CDK, len=:),
             </td>
               <td>private,</td>
@@ -2052,6 +2357,24 @@ example, integer to real).</p>
         </tr>
         <tr>
             <td>
+              <span class="anchor" id="variable-string_to_real"></span>
+              procedure(<a href='../interface/string_to_real_func.html'>string_to_real_func</a>),
+            </td>
+              <td>private,</td>
+            <td>
+              nopass, pointer
+            </td>
+            <td>::</td>
+            <td><strong>string_to_real</strong></td>
+<td>=&gt; </td>
+                <td>string_to_real</td>
+            <td>
+<p>Function to convert a string to a real value.
+This is set in <a href="../proc/json_initialize.html">json_initialize</a>.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
               <span class="anchor" id="variable-trailing_spaces_significant~5"></span>
               logical(kind=LK),
             </td>
@@ -2090,7 +2413,7 @@ then the string is returned unescaped.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-use_quiet_nan~6"></span>
+              <span class="anchor" id="variable-use_quiet_nan~5"></span>
               logical(kind=LK),
             </td>
               <td>private</td>
@@ -2103,7 +2426,7 @@ then the string is returned unescaped.</p>
                 <td>.true.</td>
             <td>
 <p>if true [default], <code>null_to_real_mode=2</code>
-and <a href="../proc/string_to_real.html">string_to_real</a> will use
+and <a href="../type/json_core.html#variable-string_to_real">string_to_real</a> will use
 <code>ieee_quiet_nan</code> for NaN values. If false,
 <code>ieee_signaling_nan</code> will be used.</p>
             </td>
@@ -2124,10 +2447,10 @@ and <a href="../proc/string_to_real.html">string_to_real</a> will use
                     
                     function
                     <strong><a href='/home/runner/work/json-fortran/json-fortran/doc/proc/initialize_json_core.html'>initialize_json_core</a></strong>
-                    (verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma)
+                    (verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode)
                   </td>
                   <td><p>Function constructor for a <a href="../type/json_core.html">json_core</a>.
-  This is just a wrapper for <a href="../proc/json_initialize.html">json_initialize</a>.</p><a href="../proc/initialize_json_core.html" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+This is just a wrapper for <a href="../proc/json_initialize.html">json_initialize</a>.</p><a href="../proc/initialize_json_core.html" class="pull-right"><emph>Read more&hellip;</emph></a></td>
                 </tr>
           </tbody>
         </table>
@@ -2139,7 +2462,7 @@ and <a href="../proc/string_to_real.html">string_to_real</a> will use
               <tr>
                 <td>  generic, public ::
   <strong><a href='../type/json_core.html#boundprocedure-add~3'>add</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_member'>json_value_add_member</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_null'>json_value_add_null</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_add_null'>wrap_json_value_add_null</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_integer'>json_value_add_integer</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_add_integer'>wrap_json_value_add_integer</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_integer_vec'>json_value_add_integer_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_add_integer_vec'>wrap_json_value_add_integer_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_real32'>json_value_add_real32</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_add_real32'>wrap_json_value_add_real32</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_real32_vec'>json_value_add_real32_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_add_real32_vec'>wrap_json_value_add_real32_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_real'>json_value_add_real</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_add_real'>wrap_json_value_add_real</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_real_vec'>json_value_add_real_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_add_real_vec'>wrap_json_value_add_real_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_logical'>json_value_add_logical</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_add_logical'>wrap_json_value_add_logical</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_logical_vec'>json_value_add_logical_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_add_logical_vec'>wrap_json_value_add_logical_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_string'>json_value_add_string</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_add_string'>wrap_json_value_add_string</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-json_value_add_string_vec'>json_value_add_string_vec</a>, <a href='/home/runner/work/json-fortran/json-fortran/doc/type/json_core.html#boundprocedure-wrap_json_value_add_string_vec'>wrap_json_value_add_string_vec</a></td>
-                  <td><p>Add objects to a linked list of <a href="../type/json_value.html">json_value</a>s.</p><a href="../type/json_core.html#boundprocedure-add~3" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+                  <td><p>Add objects to a linked list of <a href="../type/json_value.html">json_value</a>s.</p></td>
               </tr>
               <tr>
                 <td>  generic, public ::
@@ -2280,6 +2603,12 @@ and is here only for backward compatibility.</p></td>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-destroy_json_core'>destroy_json_core</a></strong></td>
                   <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/json_core.html#boundprocedure-equals'>equals</a></strong> => <a href='/home/runner/work/json-fortran/json-fortran/doc/proc/json_value_equals.html'>json_value_equals</a></td>
+                  <td><p>Check if two json_value structures
+are equal</p></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
@@ -2916,11 +3245,6 @@ descendant of another.</p></td>
               <tr>
                 <td>  procedure, private ::
   <strong><a href='../type/json_core.html#boundprocedure-parse_string'>parse_string</a></strong></td>
-                  <td></td>
-              </tr>
-              <tr>
-                <td>  procedure, private ::
-  <strong><a href='../type/json_core.html#boundprocedure-parse_value'>parse_value</a></strong></td>
                   <td></td>
               </tr>
               <tr>
@@ -3633,7 +3957,7 @@ if it has been constructed externally.</p></td>
         <section>
           <h2>Functions</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-initialize_json_core"></span> <h3>private  function <a href='../proc/initialize_json_core.html'>initialize_json_core</a>(verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma) result(json_core_object)  
+    <div class="card-header codesum"><span class="anchor" id="proc-initialize_json_core"></span> <h3>private  function <a href='../proc/initialize_json_core.html'>initialize_json_core</a>(verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode) result(json_core_object)  
 </h3></div>
     <div class="card-body">
               <dl class="dl-horizontal">
@@ -3642,7 +3966,7 @@ if it has been constructed externally.</p></td>
     </dl>
 
   <p>Function constructor for a <a href="../type/json_core.html">json_core</a>.
-  This is just a wrapper for <a href="../proc/json_initialize.html">json_initialize</a>.</p><a href="../proc/initialize_json_core.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+This is just a wrapper for <a href="../proc/json_initialize.html">json_initialize</a>.</p><a href="../proc/initialize_json_core.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -3909,7 +4233,7 @@ override this option if necessary].
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-escape_solidus~7"></span>
+              <span class="anchor" id="variable-escape_solidus~6"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -3921,7 +4245,7 @@ override this option if necessary].
             <td>
 <p>Note that this option does not affect parsing
 (both escaped and unescaped are still valid in
-all cases).</p><a href="../proc/initialize_json_core.html#variable-escape_solidus~7" class="pull-right"><emph>Read more&hellip;</emph></a>
+all cases).</p><a href="../proc/initialize_json_core.html#variable-escape_solidus~6" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -4017,6 +4341,71 @@ all cases).</p><a href="../proc/initialize_json_core.html#variable-escape_solidu
 (default is true)</p>
             </td>
         </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_mode~5"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_mode</strong></td>
+            <td>
+<p>Which version of the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> parser to use:</p><a href="../proc/initialize_json_core.html#variable-parser_mode~5" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_initial_stack_size~6"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_initial_stack_size</strong></td>
+            <td>
+<p>The initial stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).
+(default is 32)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_max_stack_size~6"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_max_stack_size</strong></td>
+            <td>
+<p>The maximum stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).
+(default is 10000)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-string_to_real_mode~5"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>string_to_real_mode</strong></td>
+            <td>
+<p>Which implementation to use for converting
+strings to real values:</p><a href="../proc/initialize_json_core.html#variable-string_to_real_mode~5" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
     </tbody>
   </table>
 
@@ -4049,7 +4438,7 @@ all cases).</p><a href="../proc/initialize_json_core.html#variable-escape_solidu
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~98"></span>
+              <span class="anchor" id="variable-json~99"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -4115,7 +4504,7 @@ or a <code>json_array</code>. For any other
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~20"></span>
+              <span class="anchor" id="variable-json~21"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(in)</td>
@@ -4163,7 +4552,7 @@ This routine is used for the <code>compress_vectors</code> option.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~115"></span>
+              <span class="anchor" id="variable-json~116"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -4224,7 +4613,7 @@ are scalars of the same type</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~116"></span>
+              <span class="anchor" id="variable-json~117"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -4280,6 +4669,81 @@ are scalars of the same type</p>
   </div>
 
               <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-json_value_equals"></span> <h3>private recursive function <a href='../proc/json_value_equals.html'>json_value_equals</a>(json, p1, p2) result(equals)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Compare two <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> structures for equality.</p><a href="../proc/json_value_equals.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-json~217"></span>
+              class(<a href='../type/json_core.html'>json_core</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>json</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-p1~4"></span>
+              type(<a href='../type/json_value.html'>json_value</a>),
+            </td>
+<td></td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>p1</strong></td>
+            <td>
+<p>first <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> structure</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-p2~4"></span>
+              type(<a href='../type/json_value.html'>json_value</a>),
+            </td>
+<td></td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>p2</strong></td>
+            <td>
+<p>second <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> structure</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical(kind=LK)</small>
+    </h4>
+    <p>true if the structures are equal</p>
+
+    </div>
+  </div>
+
+              <div class="card">
     <div class="card-header codesum"><span class="anchor" id="proc-json_value_is_child_of"></span> <h3>private  function <a href='../proc/json_value_is_child_of.html'>json_value_is_child_of</a>(json, p1, p2) result(is_child_of)  
 </h3></div>
     <div class="card-body">
@@ -4304,7 +4768,7 @@ are scalars of the same type</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~26"></span>
+              <span class="anchor" id="variable-json~27"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -4383,7 +4847,7 @@ are scalars of the same type</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~3"></span>
+              <span class="anchor" id="variable-json~4"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -4464,7 +4928,7 @@ the specified settings for case sensitivity and trailing whitespace.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~4"></span>
+              <span class="anchor" id="variable-json~5"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -4540,7 +5004,7 @@ lexically equal</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~133"></span>
+              <span class="anchor" id="variable-json~134"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -4555,7 +5019,7 @@ lexically equal</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~28"></span>
+              <span class="anchor" id="variable-str~17"></span>
               character(kind=CK, len=*),
             </td>
 <td>intent(in)</td>
@@ -4585,7 +5049,7 @@ lexically equal</p>
 </h3></div>
     <div class="card-body">
           
-  <p>Convert a string into an integer.</p><a href="../proc/string_to_int.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Convert a string into an integer.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -4600,7 +5064,7 @@ lexically equal</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~132"></span>
+              <span class="anchor" id="variable-json~133"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -4615,7 +5079,7 @@ lexically equal</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~27"></span>
+              <span class="anchor" id="variable-str~16"></span>
               character(kind=CK, len=*),
             </td>
 <td>intent(in)</td>
@@ -4660,7 +5124,7 @@ lexically equal</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~117"></span>
+              <span class="anchor" id="variable-json~118"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -4741,7 +5205,7 @@ file or string.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~181"></span>
+              <span class="anchor" id="variable-json~182"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -4771,7 +5235,7 @@ file or string.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~32"></span>
+              <span class="anchor" id="variable-str~21"></span>
               character(kind=CK, len=*),
             </td>
 <td>intent(in)</td>
@@ -4797,9 +5261,9 @@ file or string.</p>
     <div class="card-body">
           
   <p>Convert an existing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> variable <code>p</code> to a different <abbr title="json_unknown, json_null, json_object, json_array, json_logical, json_integer, json_double, json_string">variable type</abbr>.
-  The existing variable (and its children) is destroyed. It is replaced
-  in the structure by a new variable of type <code>var_type</code>
-  (which can be a <code>json_null</code>, <code>json_object</code> or <code>json_array</code>).</p><a href="../proc/convert.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+The existing variable (and its children) is destroyed. It is replaced
+in the structure by a new variable of type <code>var_type</code>
+(which can be a <code>json_null</code>, <code>json_object</code> or <code>json_array</code>).</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -4814,7 +5278,7 @@ file or string.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~128"></span>
+              <span class="anchor" id="variable-json~129"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -5076,7 +5540,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~182"></span>
+              <span class="anchor" id="variable-json~183"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -5146,7 +5610,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~48"></span>
+              <span class="anchor" id="variable-json~49"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -5191,7 +5655,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value"></span>
+              <span class="anchor" id="variable-value~2"></span>
               integer(kind=IK),
             </td>
 <td>intent(in)</td>
@@ -5261,7 +5725,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~60"></span>
+              <span class="anchor" id="variable-json~61"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -5306,7 +5770,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~13"></span>
+              <span class="anchor" id="variable-value~14"></span>
               integer(kind=IK),
             </td>
 <td>intent(in),</td>
@@ -5376,7 +5840,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~54"></span>
+              <span class="anchor" id="variable-json~55"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -5421,7 +5885,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~7"></span>
+              <span class="anchor" id="variable-value~8"></span>
               logical(kind=LK),
             </td>
 <td>intent(in)</td>
@@ -5491,7 +5955,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~62"></span>
+              <span class="anchor" id="variable-json~63"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -5536,7 +6000,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~15"></span>
+              <span class="anchor" id="variable-value~16"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -5606,7 +6070,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~46"></span>
+              <span class="anchor" id="variable-json~47"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -5721,7 +6185,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~52"></span>
+              <span class="anchor" id="variable-json~53"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -5766,7 +6230,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~5"></span>
+              <span class="anchor" id="variable-value~6"></span>
               real(kind=real32),
             </td>
 <td>intent(in)</td>
@@ -5836,7 +6300,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~66"></span>
+              <span class="anchor" id="variable-json~67"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -5881,7 +6345,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~19"></span>
+              <span class="anchor" id="variable-value~20"></span>
               real(kind=real32),
             </td>
 <td>intent(in),</td>
@@ -5951,7 +6415,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~50"></span>
+              <span class="anchor" id="variable-json~51"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -5996,7 +6460,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~3"></span>
+              <span class="anchor" id="variable-value~4"></span>
               real(kind=RK),
             </td>
 <td>intent(in)</td>
@@ -6066,7 +6530,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~64"></span>
+              <span class="anchor" id="variable-json~65"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -6111,7 +6575,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~17"></span>
+              <span class="anchor" id="variable-value~18"></span>
               real(kind=RK),
             </td>
 <td>intent(in),</td>
@@ -6181,7 +6645,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~56"></span>
+              <span class="anchor" id="variable-json~57"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -6226,7 +6690,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~9"></span>
+              <span class="anchor" id="variable-value~10"></span>
               character(kind=CK, len=*),
             </td>
 <td>intent(in)</td>
@@ -6326,7 +6790,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~58"></span>
+              <span class="anchor" id="variable-json~59"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -6371,7 +6835,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~11"></span>
+              <span class="anchor" id="variable-value~12"></span>
               character(kind=CK, len=*),
             </td>
 <td>intent(in)</td>
@@ -6471,7 +6935,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~59"></span>
+              <span class="anchor" id="variable-json~60"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -6516,7 +6980,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~12"></span>
+              <span class="anchor" id="variable-value~13"></span>
               character(kind=CDK, len=*),
             </td>
 <td>intent(in)</td>
@@ -6616,7 +7080,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~68"></span>
+              <span class="anchor" id="variable-json~69"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -6661,7 +7125,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~21"></span>
+              <span class="anchor" id="variable-value~22"></span>
               character(kind=CK, len=*),
             </td>
 <td>intent(in),</td>
@@ -6706,7 +7170,7 @@ This is the STREAM version (see also <a href="../proc/get_current_line_from_file
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ilen~9"></span>
+              <span class="anchor" id="variable-ilen~8"></span>
               integer(kind=IK),
             </td>
 <td>intent(in),</td>
@@ -6779,7 +7243,7 @@ for each element.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~71"></span>
+              <span class="anchor" id="variable-json~72"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -6824,7 +7288,7 @@ for each element.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~24"></span>
+              <span class="anchor" id="variable-value~25"></span>
               character(kind=CK, len=*),
             </td>
 <td>intent(in),</td>
@@ -6869,7 +7333,7 @@ for each element.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ilen~12"></span>
+              <span class="anchor" id="variable-ilen~11"></span>
               integer(kind=IK),
             </td>
 <td>intent(in),</td>
@@ -6942,7 +7406,7 @@ for each element.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~70"></span>
+              <span class="anchor" id="variable-json~71"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -6987,7 +7451,7 @@ for each element.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~23"></span>
+              <span class="anchor" id="variable-value~24"></span>
               character(kind=CDK, len=*),
             </td>
 <td>intent(in),</td>
@@ -7032,7 +7496,7 @@ for each element.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ilen~11"></span>
+              <span class="anchor" id="variable-ilen~10"></span>
               integer(kind=IK),
             </td>
 <td>intent(in),</td>
@@ -7095,9 +7559,9 @@ for each element.</p>
     </dl>
 
   <p>Checks a <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> structure for duplicate child names.
-  This one recursively traverses the entire structure
-  (calling <a href="../proc/json_check_children_for_duplicate_keys.html">json_check_children_for_duplicate_keys</a>
-  recursively for each element).</p><a href="../proc/json_check_all_for_duplicate_keys.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+This one recursively traverses the entire structure
+(calling <a href="../proc/json_check_children_for_duplicate_keys.html">json_check_children_for_duplicate_keys</a>
+recursively for each element).</p><a href="../proc/json_check_all_for_duplicate_keys.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -7112,7 +7576,7 @@ for each element.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~107"></span>
+              <span class="anchor" id="variable-json~108"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -7225,7 +7689,7 @@ duplicate was found)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~106"></span>
+              <span class="anchor" id="variable-json~107"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -7341,7 +7805,7 @@ duplicate was found)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~19"></span>
+              <span class="anchor" id="variable-json~20"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(in)</td>
@@ -7356,7 +7820,7 @@ duplicate was found)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-status_ok~4"></span>
+              <span class="anchor" id="variable-status_ok~3"></span>
               logical(kind=LK),
             </td>
 <td>intent(out),</td>
@@ -7417,7 +7881,7 @@ there were no errors)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~16"></span>
+              <span class="anchor" id="variable-json~17"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -7461,7 +7925,7 @@ there were no errors)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~5"></span>
+              <span class="anchor" id="variable-json~6"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -7533,7 +7997,7 @@ there were no errors)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~119"></span>
+              <span class="anchor" id="variable-json~120"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -7641,10 +8105,10 @@ specify by <code>path</code></p>
     </dl>
 
   <p>Get a string vector from a <a href="../type/json_value.html">json_value</a>. This is an alternate
-  version of <a href="../proc/json_get_string_vec.html">json_get_string_vec</a>. This one returns an allocatable
-  length character (where the string length is the maximum length of
-  any element in the array). It also returns an integer array of the
-  actual sizes of the strings in the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> structure.</p><a href="../proc/json_get_alloc_string_vec.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+version of <a href="../proc/json_get_string_vec.html">json_get_string_vec</a>. This one returns an allocatable
+length character (where the string length is the maximum length of
+any element in the array). It also returns an integer array of the
+actual sizes of the strings in the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> structure.</p><a href="../proc/json_get_alloc_string_vec.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -7659,7 +8123,7 @@ specify by <code>path</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~168"></span>
+              <span class="anchor" id="variable-json~169"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -7704,7 +8168,7 @@ specify by <code>path</code></p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ilen~15"></span>
+              <span class="anchor" id="variable-ilen~14"></span>
               integer(kind=IK),
             </td>
 <td>intent(out),</td>
@@ -7746,7 +8210,7 @@ string in the array</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~170"></span>
+              <span class="anchor" id="variable-json~171"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -7806,7 +8270,7 @@ string in the array</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ilen~16"></span>
+              <span class="anchor" id="variable-ilen~15"></span>
               integer(kind=IK),
             </td>
 <td>intent(out),</td>
@@ -7880,7 +8344,7 @@ length of <code>default</code></p>
     <div class="card-body">
           
   <p>This routine calls the user-supplied <a href="../interface/json_array_callback_func.html">json_array_callback_func</a>
-  subroutine for each element in the array.</p><a href="../proc/json_get_array.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+subroutine for each element in the array.</p><a href="../proc/json_get_array.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -7895,7 +8359,7 @@ length of <code>default</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~172"></span>
+              <span class="anchor" id="variable-json~173"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -7966,7 +8430,7 @@ for each element in the array (specified by the path).</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~174"></span>
+              <span class="anchor" id="variable-json~175"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -8066,7 +8530,7 @@ for each element in the array (specified by the path).</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~118"></span>
+              <span class="anchor" id="variable-json~119"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -8167,7 +8631,7 @@ specified by <code>path</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~125"></span>
+              <span class="anchor" id="variable-json~126"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -8311,7 +8775,7 @@ it will be false.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~127"></span>
+              <span class="anchor" id="variable-json~128"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -8456,7 +8920,7 @@ it will be false.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~126"></span>
+              <span class="anchor" id="variable-json~127"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -8558,7 +9022,7 @@ specify by <code>path</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~134"></span>
+              <span class="anchor" id="variable-json~135"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -8588,7 +9052,7 @@ specify by <code>path</code></p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~25"></span>
+              <span class="anchor" id="variable-value~26"></span>
               integer(kind=IK),
             </td>
 <td>intent(out)</td>
@@ -8628,7 +9092,7 @@ specify by <code>path</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~135"></span>
+              <span class="anchor" id="variable-json~136"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -8673,7 +9137,7 @@ specify by <code>path</code></p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~26"></span>
+              <span class="anchor" id="variable-value~27"></span>
               integer(kind=IK),
             </td>
 <td>intent(out)</td>
@@ -8747,7 +9211,7 @@ specify by <code>path</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~137"></span>
+              <span class="anchor" id="variable-json~138"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -8817,7 +9281,7 @@ specify by <code>path</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~139"></span>
+              <span class="anchor" id="variable-json~140"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -8932,7 +9396,7 @@ specify by <code>path</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~154"></span>
+              <span class="anchor" id="variable-json~155"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -8962,7 +9426,7 @@ specify by <code>path</code></p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~34"></span>
+              <span class="anchor" id="variable-value~35"></span>
               logical(kind=LK),
             </td>
 <td>intent(out)</td>
@@ -9002,7 +9466,7 @@ specify by <code>path</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~155"></span>
+              <span class="anchor" id="variable-json~156"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -9047,7 +9511,7 @@ specify by <code>path</code></p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~35"></span>
+              <span class="anchor" id="variable-value~36"></span>
               logical(kind=LK),
             </td>
 <td>intent(out)</td>
@@ -9121,7 +9585,7 @@ specify by <code>path</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~157"></span>
+              <span class="anchor" id="variable-json~158"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -9191,7 +9655,7 @@ specify by <code>path</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~159"></span>
+              <span class="anchor" id="variable-json~160"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -9311,7 +9775,7 @@ If there is no next, then a <code>null()</code> pointer is returned.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~100"></span>
+              <span class="anchor" id="variable-json~101"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -9386,7 +9850,7 @@ If there is no parent, then a <code>null()</code> pointer is returned.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~99"></span>
+              <span class="anchor" id="variable-json~100"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -9442,7 +9906,7 @@ If there is no parent, then a <code>null()</code> pointer is returned.</p>
     <div class="card-body">
           
   <p>Returns the path to a <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> object that is part
-  of a linked list structure.</p><a href="../proc/json_get_path.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+of a linked list structure.</p><a href="../proc/json_get_path.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -9457,7 +9921,7 @@ If there is no parent, then a <code>null()</code> pointer is returned.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~130"></span>
+              <span class="anchor" id="variable-json~131"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -9581,7 +10045,7 @@ If there is no previous, then a <code>null()</code> pointer is returned.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~101"></span>
+              <span class="anchor" id="variable-json~102"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -9651,7 +10115,7 @@ If there is no previous, then a <code>null()</code> pointer is returned.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~141"></span>
+              <span class="anchor" id="variable-json~142"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -9681,7 +10145,7 @@ If there is no previous, then a <code>null()</code> pointer is returned.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~28"></span>
+              <span class="anchor" id="variable-value~29"></span>
               real(kind=RK),
             </td>
 <td>intent(out)</td>
@@ -9721,7 +10185,7 @@ If there is no previous, then a <code>null()</code> pointer is returned.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~148"></span>
+              <span class="anchor" id="variable-json~149"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -9751,7 +10215,7 @@ If there is no previous, then a <code>null()</code> pointer is returned.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~31"></span>
+              <span class="anchor" id="variable-value~32"></span>
               real(kind=real32),
             </td>
 <td>intent(out)</td>
@@ -9791,7 +10255,7 @@ If there is no previous, then a <code>null()</code> pointer is returned.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~149"></span>
+              <span class="anchor" id="variable-json~150"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -9836,7 +10300,7 @@ If there is no previous, then a <code>null()</code> pointer is returned.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~32"></span>
+              <span class="anchor" id="variable-value~33"></span>
               real(kind=real32),
             </td>
 <td>intent(out)</td>
@@ -9906,7 +10370,7 @@ If there is no previous, then a <code>null()</code> pointer is returned.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~151"></span>
+              <span class="anchor" id="variable-json~152"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -9976,7 +10440,7 @@ If there is no previous, then a <code>null()</code> pointer is returned.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~152"></span>
+              <span class="anchor" id="variable-json~153"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -10091,7 +10555,7 @@ If there is no previous, then a <code>null()</code> pointer is returned.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~142"></span>
+              <span class="anchor" id="variable-json~143"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -10136,7 +10600,7 @@ If there is no previous, then a <code>null()</code> pointer is returned.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~29"></span>
+              <span class="anchor" id="variable-value~30"></span>
               real(kind=RK),
             </td>
 <td>intent(out)</td>
@@ -10210,7 +10674,7 @@ If there is no previous, then a <code>null()</code> pointer is returned.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~144"></span>
+              <span class="anchor" id="variable-json~145"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -10280,7 +10744,7 @@ If there is no previous, then a <code>null()</code> pointer is returned.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~146"></span>
+              <span class="anchor" id="variable-json~147"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -10395,7 +10859,7 @@ If there is no previous, then a <code>null()</code> pointer is returned.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~161"></span>
+              <span class="anchor" id="variable-json~162"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -10425,7 +10889,7 @@ If there is no previous, then a <code>null()</code> pointer is returned.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~37"></span>
+              <span class="anchor" id="variable-value~38"></span>
               character(kind=CK, len=:),
             </td>
 <td>intent(out),</td>
@@ -10465,7 +10929,7 @@ If there is no previous, then a <code>null()</code> pointer is returned.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~162"></span>
+              <span class="anchor" id="variable-json~163"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -10510,7 +10974,7 @@ If there is no previous, then a <code>null()</code> pointer is returned.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~38"></span>
+              <span class="anchor" id="variable-value~39"></span>
               character(kind=CK, len=:),
             </td>
 <td>intent(out),</td>
@@ -10584,7 +11048,7 @@ If there is no previous, then a <code>null()</code> pointer is returned.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~164"></span>
+              <span class="anchor" id="variable-json~165"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -10654,7 +11118,7 @@ If there is no previous, then a <code>null()</code> pointer is returned.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~166"></span>
+              <span class="anchor" id="variable-json~167"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -10775,7 +11239,7 @@ If there is no tail, then a <code>null()</code> pointer is returned.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~102"></span>
+              <span class="anchor" id="variable-json~103"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -10849,7 +11313,7 @@ If there is no tail, then a <code>null()</code> pointer is returned.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~6"></span>
+              <span class="anchor" id="variable-json~7"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -10949,7 +11413,7 @@ If there is no tail, then a <code>null()</code> pointer is returned.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~9"></span>
+              <span class="anchor" id="variable-json~10"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -11060,7 +11524,7 @@ If there is no tail, then a <code>null()</code> pointer is returned.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-json_initialize"></span> <h3>private  subroutine <a href='../proc/json_initialize.html'>json_initialize</a>(me, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma)  
+    <div class="card-header codesum"><span class="anchor" id="proc-json_initialize"></span> <h3>private  subroutine <a href='../proc/json_initialize.html'>json_initialize</a>(me, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode)  
 </h3></div>
     <div class="card-body">
               <dl class="dl-horizontal">
@@ -11350,7 +11814,7 @@ override this option if necessary].
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-escape_solidus~8"></span>
+              <span class="anchor" id="variable-escape_solidus~7"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -11362,7 +11826,7 @@ override this option if necessary].
             <td>
 <p>Note that this option does not affect parsing
 (both escaped and unescaped are still valid in
-all cases).</p><a href="../proc/json_initialize.html#variable-escape_solidus~8" class="pull-right"><emph>Read more&hellip;</emph></a>
+all cases).</p><a href="../proc/json_initialize.html#variable-escape_solidus~7" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -11458,6 +11922,71 @@ all cases).</p><a href="../proc/json_initialize.html#variable-escape_solidus~8" 
 (default is true)</p>
             </td>
         </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_mode~6"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_mode</strong></td>
+            <td>
+<p>Which version of the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> parser to use:</p><a href="../proc/json_initialize.html#variable-parser_mode~6" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_initial_stack_size~7"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_initial_stack_size</strong></td>
+            <td>
+<p>The initial stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).
+(default is 32)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-parser_max_stack_size~7"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>parser_max_stack_size</strong></td>
+            <td>
+<p>The maximum stack size (in number of elements)
+to use when <code>parser_mode=2</code> (non-recursive parser).
+(default is 10000)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-string_to_real_mode~6"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>string_to_real_mode</strong></td>
+            <td>
+<p>Which implementation to use for converting
+strings to real values:</p><a href="../proc/json_initialize.html#variable-string_to_real_mode~6" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
     </tbody>
   </table>
 
@@ -11490,7 +12019,7 @@ all cases).</p><a href="../proc/json_initialize.html#variable-escape_solidus~8" 
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~11"></span>
+              <span class="anchor" id="variable-json~12"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -11623,7 +12152,7 @@ cols if using row-major order)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~12"></span>
+              <span class="anchor" id="variable-json~13"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -11789,7 +12318,7 @@ in the file.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~179"></span>
+              <span class="anchor" id="variable-json~180"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -11804,7 +12333,7 @@ in the file.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-unit~3"></span>
+              <span class="anchor" id="variable-unit~4"></span>
               integer(kind=IK),
             </td>
 <td>intent(in)</td>
@@ -11819,7 +12348,7 @@ in the file.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~30"></span>
+              <span class="anchor" id="variable-str~19"></span>
               character(kind=CK, len=*),
             </td>
 <td>intent(in)</td>
@@ -11841,7 +12370,7 @@ data (only used if <code>unit=0</code>)</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-json_parse_file"></span> <h3>private  subroutine <a href='../proc/json_parse_file.html'>json_parse_file</a>(json, file, p, unit)  
+    <div class="card-header codesum"><span class="anchor" id="proc-json_parse_file"></span> <h3>private  subroutine <a href='../proc/json_parse_file.html'>json_parse_file</a>(json, file, p, unit, close_unit_if_open)  
 </h3></div>
     <div class="card-body">
           
@@ -11860,7 +12389,7 @@ data (only used if <code>unit=0</code>)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~177"></span>
+              <span class="anchor" id="variable-json~178"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -11905,7 +12434,7 @@ data (only used if <code>unit=0</code>)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-unit~2"></span>
+              <span class="anchor" id="variable-unit~3"></span>
               integer(kind=IK),
             </td>
 <td>intent(in),</td>
@@ -11916,6 +12445,21 @@ data (only used if <code>unit=0</code>)</p>
             <td><strong>unit</strong></td>
             <td>
 <p>file unit number (/= 0)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-close_unit_if_open"></span>
+              logical(kind=LK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>close_unit_if_open</strong></td>
+            <td>
+<p>if true, close unit if it was already open [defaults to true]</p>
             </td>
         </tr>
     </tbody>
@@ -11945,7 +12489,7 @@ data (only used if <code>unit=0</code>)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~178"></span>
+              <span class="anchor" id="variable-json~179"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -11975,7 +12519,7 @@ data (only used if <code>unit=0</code>)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~29"></span>
+              <span class="anchor" id="variable-str~18"></span>
               character(kind=CK, len=*),
             </td>
 <td>intent(in)</td>
@@ -12016,7 +12560,7 @@ Currently, all this does it allocate the <code>comment_char</code> if none was s
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~176"></span>
+              <span class="anchor" id="variable-json~177"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -12059,7 +12603,7 @@ Currently, all this does it allocate the <code>comment_char</code> if none was s
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~214"></span>
+              <span class="anchor" id="variable-json~216"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -12115,7 +12659,7 @@ printing error message</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~111"></span>
+              <span class="anchor" id="variable-json~112"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -12174,7 +12718,7 @@ printing error message</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~113"></span>
+              <span class="anchor" id="variable-json~114"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -12249,7 +12793,7 @@ printing error message</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~112"></span>
+              <span class="anchor" id="variable-json~113"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -12305,7 +12849,7 @@ already have been opened, can&rsquo;t be -1).</p>
 </h3></div>
     <div class="card-body">
           
-  <p>Rename a <a href="../type/json_value.html">json_value</a>, given the path.</p><a href="../proc/json_rename_by_path.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Rename a <a href="../type/json_value.html">json_value</a>, given the path.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -12320,7 +12864,7 @@ already have been opened, can&rsquo;t be -1).</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~121"></span>
+              <span class="anchor" id="variable-json~122"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -12420,7 +12964,7 @@ already have been opened, can&rsquo;t be -1).</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~123"></span>
+              <span class="anchor" id="variable-json~124"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -12520,7 +13064,7 @@ already have been opened, can&rsquo;t be -1).</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~124"></span>
+              <span class="anchor" id="variable-json~125"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -12624,7 +13168,7 @@ already have been opened, can&rsquo;t be -1).</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~7"></span>
+              <span class="anchor" id="variable-json~8"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -12654,7 +13198,7 @@ already have been opened, can&rsquo;t be -1).</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ilen~8"></span>
+              <span class="anchor" id="variable-ilen~7"></span>
               integer(kind=IK),
             </td>
 <td>intent(out),</td>
@@ -12726,8 +13270,8 @@ throw an exception</p>
     </dl>
 
   <p>Throw an exception in the <a href="../type/json_core.html">json_core</a>.
-  This routine sets the error flag, and prevents any subsequent routine
-  from doing anything, until <a href="../proc/json_clear_exceptions.html">json_clear_exceptions</a> is called.</p><a href="../proc/json_throw_exception.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+This routine sets the error flag, and prevents any subsequent routine
+from doing anything, until <a href="../proc/json_clear_exceptions.html">json_clear_exceptions</a> is called.</p><a href="../proc/json_throw_exception.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -12742,7 +13286,7 @@ throw an exception</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~17"></span>
+              <span class="anchor" id="variable-json~18"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -12821,7 +13365,7 @@ for each element of the structure.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~173"></span>
+              <span class="anchor" id="variable-json~174"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -12881,8 +13425,8 @@ for each element of the structure.</p>
     </dl>
 
   <p>Given the path string, if the variable is present,
-  and is a scalar, then update its value.
-  If it is not present, then create it and set its value.</p><a href="../proc/json_update_integer.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+and is a scalar, then update its value.
+If it is not present, then create it and set its value.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -12897,7 +13441,7 @@ for each element of the structure.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~37"></span>
+              <span class="anchor" id="variable-json~38"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -12987,8 +13531,8 @@ for each element of the structure.</p>
     </dl>
 
   <p>Given the path string, if the variable is present,
-  and is a scalar, then update its value.
-  If it is not present, then create it and set its value.</p><a href="../proc/json_update_logical.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+and is a scalar, then update its value.
+If it is not present, then create it and set its value.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -13003,7 +13547,7 @@ for each element of the structure.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~31"></span>
+              <span class="anchor" id="variable-json~32"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -13093,8 +13637,8 @@ for each element of the structure.</p>
     </dl>
 
   <p>Given the path string, if the variable is present,
-  and is a scalar, then update its value.
-  If it is not present, then create it and set its value.</p><a href="../proc/json_update_real.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+and is a scalar, then update its value.
+If it is not present, then create it and set its value.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -13109,7 +13653,7 @@ for each element of the structure.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~33"></span>
+              <span class="anchor" id="variable-json~34"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -13209,7 +13753,7 @@ for each element of the structure.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~35"></span>
+              <span class="anchor" id="variable-json~36"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -13299,8 +13843,8 @@ for each element of the structure.</p>
     </dl>
 
   <p>Given the path string, if the variable is present,
-  and is a scalar, then update its value.
-  If it is not present, then create it and set its value.</p><a href="../proc/json_update_string.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+and is a scalar, then update its value.
+If it is not present, then create it and set its value.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -13315,7 +13859,7 @@ for each element of the structure.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~39"></span>
+              <span class="anchor" id="variable-json~40"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -13448,7 +13992,7 @@ for each element of the structure.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~41"></span>
+              <span class="anchor" id="variable-json~42"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -13581,7 +14125,7 @@ for each element of the structure.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~42"></span>
+              <span class="anchor" id="variable-json~43"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -13718,7 +14262,7 @@ for each element of the structure.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~82"></span>
+              <span class="anchor" id="variable-json~83"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -13807,7 +14351,7 @@ for each element of the structure.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~84"></span>
+              <span class="anchor" id="variable-json~85"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -13896,7 +14440,7 @@ for each element of the structure.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~86"></span>
+              <span class="anchor" id="variable-json~87"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -13985,7 +14529,7 @@ for each element of the structure.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~88"></span>
+              <span class="anchor" id="variable-json~89"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -14070,7 +14614,7 @@ for each element of the structure.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~43"></span>
+              <span class="anchor" id="variable-json~44"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -14142,7 +14686,7 @@ to add to <code>p</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~80"></span>
+              <span class="anchor" id="variable-json~81"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -14216,7 +14760,7 @@ to add to <code>p</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~72"></span>
+              <span class="anchor" id="variable-json~73"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -14301,7 +14845,7 @@ to add to <code>p</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~76"></span>
+              <span class="anchor" id="variable-json~77"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -14386,7 +14930,7 @@ to add to <code>p</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~78"></span>
+              <span class="anchor" id="variable-json~79"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -14475,7 +15019,7 @@ to add to <code>p</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~74"></span>
+              <span class="anchor" id="variable-json~75"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -14564,7 +15108,7 @@ to add to <code>p</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~90"></span>
+              <span class="anchor" id="variable-json~91"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -14679,7 +15223,7 @@ to add to <code>p</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~92"></span>
+              <span class="anchor" id="variable-json~93"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -14794,7 +15338,7 @@ to add to <code>p</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~93"></span>
+              <span class="anchor" id="variable-json~94"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -14913,7 +15457,7 @@ to add to <code>p</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~94"></span>
+              <span class="anchor" id="variable-json~95"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -15028,7 +15572,7 @@ to add to <code>p</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~96"></span>
+              <span class="anchor" id="variable-json~97"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -15143,7 +15687,7 @@ to add to <code>p</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~97"></span>
+              <span class="anchor" id="variable-json~98"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -15409,7 +15953,7 @@ its parent&rsquo;s children</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~198"></span>
+              <span class="anchor" id="variable-json~199"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -15483,7 +16027,7 @@ its parent&rsquo;s children</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~186"></span>
+              <span class="anchor" id="variable-json~187"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -15572,7 +16116,7 @@ its parent&rsquo;s children</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~184"></span>
+              <span class="anchor" id="variable-json~185"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -15661,7 +16205,7 @@ its parent&rsquo;s children</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~194"></span>
+              <span class="anchor" id="variable-json~195"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -15735,7 +16279,7 @@ its parent&rsquo;s children</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~196"></span>
+              <span class="anchor" id="variable-json~197"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -15809,7 +16353,7 @@ its parent&rsquo;s children</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~188"></span>
+              <span class="anchor" id="variable-json~189"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -15879,7 +16423,7 @@ its parent&rsquo;s children</p>
 </h3></div>
     <div class="card-body">
           
-  <p>Alternate version of <a href="../proc/json_value_create_real.html">json_value_create_real</a> where val=real32.</p><a href="../proc/json_value_create_real32.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Alternate version of <a href="../proc/json_value_create_real.html">json_value_create_real</a> where val=real32.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -15894,7 +16438,7 @@ its parent&rsquo;s children</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~190"></span>
+              <span class="anchor" id="variable-json~191"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -15983,7 +16527,7 @@ its parent&rsquo;s children</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~192"></span>
+              <span class="anchor" id="variable-json~193"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -16102,7 +16646,7 @@ its parent&rsquo;s children</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~21"></span>
+              <span class="anchor" id="variable-json~22"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -16174,7 +16718,7 @@ is also destroyed (default is true)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~104"></span>
+              <span class="anchor" id="variable-json~105"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -16244,7 +16788,7 @@ is also destroyed (default is true)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~103"></span>
+              <span class="anchor" id="variable-json~104"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -16351,7 +16895,7 @@ thrown).</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~105"></span>
+              <span class="anchor" id="variable-json~106"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -16456,7 +17000,7 @@ thrown).</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~44"></span>
+              <span class="anchor" id="variable-json~45"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -16530,7 +17074,7 @@ a wrapper for <a href="../proc/json_value_insert_after.html">json_value_insert_a
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~45"></span>
+              <span class="anchor" id="variable-json~46"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -16618,7 +17162,7 @@ style array index)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~114"></span>
+              <span class="anchor" id="variable-json~115"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -16664,7 +17208,7 @@ file is assumed to be open)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~25"></span>
+              <span class="anchor" id="variable-str~14"></span>
               character(kind=CK, len=:),
             </td>
 <td>intent(inout),</td>
@@ -16805,7 +17349,7 @@ on one line [default is False]</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~22"></span>
+              <span class="anchor" id="variable-json~23"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -16880,7 +17424,7 @@ from <a href="../type/json_value.html">json_value</a>, if it exists.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~29"></span>
+              <span class="anchor" id="variable-json~30"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -16954,7 +17498,7 @@ from <a href="../type/json_value.html">json_value</a>, if it exists.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~14"></span>
+              <span class="anchor" id="variable-json~15"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -17024,7 +17568,7 @@ from <a href="../type/json_value.html">json_value</a>, if it exists.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~23"></span>
+              <span class="anchor" id="variable-json~24"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -17116,7 +17660,7 @@ a memory leak.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~24"></span>
+              <span class="anchor" id="variable-json~25"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -17161,7 +17705,7 @@ a memory leak.</p>
     </dl>
 
   <p>Swap two elements in a <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> structure.
-  All of the children are carried along as well.</p><a href="../proc/json_value_swap.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+All of the children are carried along as well.</p><a href="../proc/json_value_swap.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -17176,7 +17720,7 @@ a memory leak.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~25"></span>
+              <span class="anchor" id="variable-json~26"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -17250,7 +17794,7 @@ a memory leak.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~110"></span>
+              <span class="anchor" id="variable-json~111"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -17280,7 +17824,7 @@ a memory leak.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~24"></span>
+              <span class="anchor" id="variable-str~13"></span>
               character(kind=CK, len=:),
             </td>
 <td>intent(out),</td>
@@ -17327,7 +17871,7 @@ a memory leak.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~28"></span>
+              <span class="anchor" id="variable-json~29"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -17413,7 +17957,7 @@ a description of the problem</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~208"></span>
+              <span class="anchor" id="variable-json~209"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -17428,7 +17972,7 @@ a description of the problem</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-unit~6"></span>
+              <span class="anchor" id="variable-unit~7"></span>
               integer(kind=IK),
             </td>
 <td>intent(in)</td>
@@ -17443,7 +17987,7 @@ a description of the problem</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~36"></span>
+              <span class="anchor" id="variable-str~25"></span>
               character(kind=CK, len=*),
             </td>
 <td>intent(in)</td>
@@ -17498,7 +18042,7 @@ a description of the problem</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~210"></span>
+              <span class="anchor" id="variable-json~212"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -17513,7 +18057,7 @@ a description of the problem</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-unit~8"></span>
+              <span class="anchor" id="variable-unit~10"></span>
               integer(kind=IK),
             </td>
 <td>intent(in)</td>
@@ -17528,7 +18072,7 @@ a description of the problem</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~38"></span>
+              <span class="anchor" id="variable-str~28"></span>
               character(kind=CK, len=*),
             </td>
 <td>intent(in)</td>
@@ -17573,8 +18117,8 @@ a description of the problem</p>
     </dl>
 
   <p>Read a numerical value from the file (or string).
-  The routine will determine if it is an integer or a real, and
-  allocate the type accordingly.</p><a href="../proc/parse_number.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+The routine will determine if it is an integer or a real, and
+allocate the type accordingly.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -17589,7 +18133,7 @@ a description of the problem</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~211"></span>
+              <span class="anchor" id="variable-json~213"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -17604,7 +18148,7 @@ a description of the problem</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-unit~9"></span>
+              <span class="anchor" id="variable-unit~11"></span>
               integer(kind=IK),
             </td>
 <td>intent(in)</td>
@@ -17619,7 +18163,7 @@ a description of the problem</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~39"></span>
+              <span class="anchor" id="variable-str~29"></span>
               character(kind=CK, len=*),
             </td>
 <td>intent(in)</td>
@@ -17634,7 +18178,7 @@ a description of the problem</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~41"></span>
+              <span class="anchor" id="variable-value~43"></span>
               type(<a href='../type/json_value.html'>json_value</a>),
             </td>
 <td></td>
@@ -17674,7 +18218,7 @@ a description of the problem</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~207"></span>
+              <span class="anchor" id="variable-json~208"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -17689,7 +18233,7 @@ a description of the problem</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-unit~5"></span>
+              <span class="anchor" id="variable-unit~6"></span>
               integer(kind=IK),
             </td>
 <td>intent(in)</td>
@@ -17704,7 +18248,7 @@ a description of the problem</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~35"></span>
+              <span class="anchor" id="variable-str~24"></span>
               character(kind=CK, len=*),
             </td>
 <td>intent(in)</td>
@@ -17776,7 +18320,7 @@ for trailing delimiters.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~209"></span>
+              <span class="anchor" id="variable-json~211"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -17791,7 +18335,7 @@ for trailing delimiters.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-unit~7"></span>
+              <span class="anchor" id="variable-unit~9"></span>
               integer(kind=IK),
             </td>
 <td>intent(in)</td>
@@ -17807,7 +18351,7 @@ parsing from a file)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~37"></span>
+              <span class="anchor" id="variable-str~27"></span>
               character(kind=CK, len=*),
             </td>
 <td>intent(in)</td>
@@ -17845,11 +18389,11 @@ if necessary)</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-parse_value"></span> <h3>private recursive subroutine <a href='../proc/parse_value.html'>parse_value</a>(json, unit, str, value)  
+    <div class="card-header codesum"><span class="anchor" id="proc-parse_value_nonrecursive"></span> <h3>private  subroutine <a href='../proc/parse_value_nonrecursive.html'>parse_value_nonrecursive</a>(json, unit, str, value)  
 </h3></div>
     <div class="card-body">
           
-  <p>Core parsing routine.</p>
+  <p>Non-recursive, state-machine based <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> parser.</p><a href="../proc/parse_value_nonrecursive.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -17864,7 +18408,7 @@ if necessary)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~183"></span>
+              <span class="anchor" id="variable-json~210"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -17879,7 +18423,7 @@ if necessary)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-unit~4"></span>
+              <span class="anchor" id="variable-unit~8"></span>
               integer(kind=IK),
             </td>
 <td>intent(in)</td>
@@ -17894,7 +18438,7 @@ if necessary)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~33"></span>
+              <span class="anchor" id="variable-str~26"></span>
               character(kind=CK, len=*),
             </td>
 <td>intent(in)</td>
@@ -17904,13 +18448,12 @@ if necessary)</p>
             <td>::</td>
             <td><strong>str</strong></td>
             <td>
-<p>string containing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>
-data (only used if <code>unit=0</code>)</p>
+<p>string containing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> data</p>
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~40"></span>
+              <span class="anchor" id="variable-value~42"></span>
               type(<a href='../type/json_value.html'>json_value</a>),
             </td>
 <td></td>
@@ -17931,7 +18474,94 @@ data (only used if <code>unit=0</code>)</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-pop_char"></span> <h3>private  subroutine <a href='../proc/pop_char.html'>pop_char</a>(json, unit, str, skip_ws, skip_comments, eof, popped)  
+    <div class="card-header codesum"><span class="anchor" id="proc-parse_value_recursive"></span> <h3>private recursive subroutine <a href='../proc/parse_value_recursive.html'>parse_value_recursive</a>(json, unit, str, value)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Core parsing routine.
+This is the original recursive routine.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-json~184"></span>
+              class(<a href='../type/json_core.html'>json_core</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>json</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-unit~5"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>unit</strong></td>
+            <td>
+<p>file unit number</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-str~22"></span>
+              character(kind=CK, len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>str</strong></td>
+            <td>
+<p>string containing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>
+data (only used if <code>unit=0</code>)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-value~41"></span>
+              type(<a href='../type/json_value.html'>json_value</a>),
+            </td>
+<td></td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+            <td>
+<p><abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> data that is extracted</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-pop_char"></span> <h3>private  subroutine <a href='../proc/pop_char.html'>pop_char</a>(json, unit, str, skip_ws, skip_comments, eof, c)  
 </h3></div>
     <div class="card-body">
           
@@ -17950,7 +18580,7 @@ data (only used if <code>unit=0</code>)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~212"></span>
+              <span class="anchor" id="variable-json~214"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -17965,7 +18595,7 @@ data (only used if <code>unit=0</code>)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-unit~10"></span>
+              <span class="anchor" id="variable-unit~12"></span>
               integer(kind=IK),
             </td>
 <td>intent(in)</td>
@@ -17981,7 +18611,7 @@ from a file)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~40"></span>
+              <span class="anchor" id="variable-str~30"></span>
               character(kind=CK, len=*),
             </td>
 <td>intent(in)</td>
@@ -18027,7 +18657,7 @@ string) &ndash; only used if <code>unit=0</code></p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eof~8"></span>
+              <span class="anchor" id="variable-eof~9"></span>
               logical(kind=LK),
             </td>
 <td>intent(out)</td>
@@ -18043,7 +18673,7 @@ been reached.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-popped"></span>
+              <span class="anchor" id="variable-c~12"></span>
               character(kind=CK, len=1),
             </td>
 <td>intent(out)</td>
@@ -18051,7 +18681,7 @@ been reached.</p>
               
             </td>
             <td>::</td>
-            <td><strong>popped</strong></td>
+            <td><strong>c</strong></td>
             <td>
 <p>the popped character returned</p>
             </td>
@@ -18083,7 +18713,7 @@ been reached.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~213"></span>
+              <span class="anchor" id="variable-json~215"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -18141,7 +18771,7 @@ been reached.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~206"></span>
+              <span class="anchor" id="variable-json~207"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -18214,7 +18844,7 @@ been reached.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~201"></span>
+              <span class="anchor" id="variable-json~202"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -18303,7 +18933,7 @@ been reached.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~200"></span>
+              <span class="anchor" id="variable-json~201"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -18392,7 +19022,7 @@ been reached.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~204"></span>
+              <span class="anchor" id="variable-json~205"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -18465,7 +19095,7 @@ been reached.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~205"></span>
+              <span class="anchor" id="variable-json~206"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -18538,7 +19168,7 @@ been reached.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~202"></span>
+              <span class="anchor" id="variable-json~203"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -18627,7 +19257,7 @@ been reached.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~203"></span>
+              <span class="anchor" id="variable-json~204"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -18746,7 +19376,7 @@ been reached.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~49"></span>
+              <span class="anchor" id="variable-json~50"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -18791,7 +19421,7 @@ been reached.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~2"></span>
+              <span class="anchor" id="variable-value~3"></span>
               integer(kind=IK),
             </td>
 <td>intent(in)</td>
@@ -18861,7 +19491,7 @@ been reached.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~61"></span>
+              <span class="anchor" id="variable-json~62"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -18906,7 +19536,7 @@ been reached.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~14"></span>
+              <span class="anchor" id="variable-value~15"></span>
               integer(kind=IK),
             </td>
 <td>intent(in),</td>
@@ -18976,7 +19606,7 @@ been reached.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~55"></span>
+              <span class="anchor" id="variable-json~56"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -19021,7 +19651,7 @@ been reached.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~8"></span>
+              <span class="anchor" id="variable-value~9"></span>
               logical(kind=LK),
             </td>
 <td>intent(in)</td>
@@ -19091,7 +19721,7 @@ been reached.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~63"></span>
+              <span class="anchor" id="variable-json~64"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -19136,7 +19766,7 @@ been reached.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~16"></span>
+              <span class="anchor" id="variable-value~17"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -19206,7 +19836,7 @@ been reached.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~47"></span>
+              <span class="anchor" id="variable-json~48"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -19321,7 +19951,7 @@ been reached.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~53"></span>
+              <span class="anchor" id="variable-json~54"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -19366,7 +19996,7 @@ been reached.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~6"></span>
+              <span class="anchor" id="variable-value~7"></span>
               real(kind=real32),
             </td>
 <td>intent(in)</td>
@@ -19436,7 +20066,7 @@ been reached.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~67"></span>
+              <span class="anchor" id="variable-json~68"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -19481,7 +20111,7 @@ been reached.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~20"></span>
+              <span class="anchor" id="variable-value~21"></span>
               real(kind=real32),
             </td>
 <td>intent(in),</td>
@@ -19551,7 +20181,7 @@ been reached.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~51"></span>
+              <span class="anchor" id="variable-json~52"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -19596,7 +20226,7 @@ been reached.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~4"></span>
+              <span class="anchor" id="variable-value~5"></span>
               real(kind=RK),
             </td>
 <td>intent(in)</td>
@@ -19666,7 +20296,7 @@ been reached.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~65"></span>
+              <span class="anchor" id="variable-json~66"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -19711,7 +20341,7 @@ been reached.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~18"></span>
+              <span class="anchor" id="variable-value~19"></span>
               real(kind=RK),
             </td>
 <td>intent(in),</td>
@@ -19781,7 +20411,7 @@ been reached.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~57"></span>
+              <span class="anchor" id="variable-json~58"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -19826,7 +20456,7 @@ been reached.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~10"></span>
+              <span class="anchor" id="variable-value~11"></span>
               character(kind=CDK, len=*),
             </td>
 <td>intent(in)</td>
@@ -19926,7 +20556,7 @@ been reached.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~69"></span>
+              <span class="anchor" id="variable-json~70"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -19971,7 +20601,7 @@ been reached.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~22"></span>
+              <span class="anchor" id="variable-value~23"></span>
               character(kind=CDK, len=*),
             </td>
 <td>intent(in),</td>
@@ -20016,7 +20646,7 @@ been reached.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ilen~10"></span>
+              <span class="anchor" id="variable-ilen~9"></span>
               integer(kind=IK),
             </td>
 <td>intent(in),</td>
@@ -20089,7 +20719,7 @@ for each element.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~120"></span>
+              <span class="anchor" id="variable-json~121"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -20207,7 +20837,7 @@ specify by <code>path</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~171"></span>
+              <span class="anchor" id="variable-json~172"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -20267,7 +20897,7 @@ specify by <code>path</code></p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ilen~17"></span>
+              <span class="anchor" id="variable-ilen~16"></span>
               integer(kind=IK),
             </td>
 <td>intent(out),</td>
@@ -20355,7 +20985,7 @@ length of <code>default</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~175"></span>
+              <span class="anchor" id="variable-json~176"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -20455,7 +21085,7 @@ length of <code>default</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~129"></span>
+              <span class="anchor" id="variable-json~130"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -20555,7 +21185,7 @@ length of <code>default</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~136"></span>
+              <span class="anchor" id="variable-json~137"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -20600,7 +21230,7 @@ length of <code>default</code></p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~27"></span>
+              <span class="anchor" id="variable-value~28"></span>
               integer(kind=IK),
             </td>
 <td>intent(out)</td>
@@ -20670,7 +21300,7 @@ length of <code>default</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~140"></span>
+              <span class="anchor" id="variable-json~141"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -20785,7 +21415,7 @@ length of <code>default</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~156"></span>
+              <span class="anchor" id="variable-json~157"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -20830,7 +21460,7 @@ length of <code>default</code></p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~36"></span>
+              <span class="anchor" id="variable-value~37"></span>
               logical(kind=LK),
             </td>
 <td>intent(out)</td>
@@ -20900,7 +21530,7 @@ length of <code>default</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~160"></span>
+              <span class="anchor" id="variable-json~161"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -21015,7 +21645,7 @@ length of <code>default</code></p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~131"></span>
+              <span class="anchor" id="variable-json~132"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -21133,7 +21763,7 @@ separator (default is &lsquo;.&rsquo;)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~150"></span>
+              <span class="anchor" id="variable-json~151"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -21178,7 +21808,7 @@ separator (default is &lsquo;.&rsquo;)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~33"></span>
+              <span class="anchor" id="variable-value~34"></span>
               real(kind=real32),
             </td>
 <td>intent(out)</td>
@@ -21248,7 +21878,7 @@ separator (default is &lsquo;.&rsquo;)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~153"></span>
+              <span class="anchor" id="variable-json~154"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -21363,7 +21993,7 @@ separator (default is &lsquo;.&rsquo;)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~143"></span>
+              <span class="anchor" id="variable-json~144"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -21408,7 +22038,7 @@ separator (default is &lsquo;.&rsquo;)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~30"></span>
+              <span class="anchor" id="variable-value~31"></span>
               real(kind=RK),
             </td>
 <td>intent(out)</td>
@@ -21478,7 +22108,7 @@ separator (default is &lsquo;.&rsquo;)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~147"></span>
+              <span class="anchor" id="variable-json~148"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -21593,7 +22223,7 @@ separator (default is &lsquo;.&rsquo;)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~163"></span>
+              <span class="anchor" id="variable-json~164"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -21638,7 +22268,7 @@ separator (default is &lsquo;.&rsquo;)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-value~39"></span>
+              <span class="anchor" id="variable-value~40"></span>
               character(kind=CK, len=:),
             </td>
 <td>intent(out),</td>
@@ -21708,7 +22338,7 @@ separator (default is &lsquo;.&rsquo;)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~167"></span>
+              <span class="anchor" id="variable-json~168"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -21823,7 +22453,7 @@ separator (default is &lsquo;.&rsquo;)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~10"></span>
+              <span class="anchor" id="variable-json~11"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -21953,7 +22583,7 @@ separator (default is &lsquo;.&rsquo;)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~13"></span>
+              <span class="anchor" id="variable-json~14"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -22117,7 +22747,7 @@ cols if using row-major order)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~180"></span>
+              <span class="anchor" id="variable-json~181"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -22147,7 +22777,7 @@ cols if using row-major order)</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~31"></span>
+              <span class="anchor" id="variable-str~20"></span>
               character(kind=CDK, len=*),
             </td>
 <td>intent(in)</td>
@@ -22187,7 +22817,7 @@ cols if using row-major order)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~122"></span>
+              <span class="anchor" id="variable-json~123"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -22287,7 +22917,7 @@ cols if using row-major order)</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~18"></span>
+              <span class="anchor" id="variable-json~19"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -22360,7 +22990,7 @@ is ignored.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~38"></span>
+              <span class="anchor" id="variable-json~39"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -22460,7 +23090,7 @@ is ignored.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~32"></span>
+              <span class="anchor" id="variable-json~33"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -22560,7 +23190,7 @@ is ignored.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~34"></span>
+              <span class="anchor" id="variable-json~35"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -22660,7 +23290,7 @@ is ignored.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~36"></span>
+              <span class="anchor" id="variable-json~37"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -22760,7 +23390,7 @@ is ignored.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~40"></span>
+              <span class="anchor" id="variable-json~41"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -22893,7 +23523,7 @@ is ignored.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~83"></span>
+              <span class="anchor" id="variable-json~84"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -22978,7 +23608,7 @@ is ignored.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~85"></span>
+              <span class="anchor" id="variable-json~86"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -23063,7 +23693,7 @@ is ignored.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~87"></span>
+              <span class="anchor" id="variable-json~88"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -23148,7 +23778,7 @@ is ignored.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~89"></span>
+              <span class="anchor" id="variable-json~90"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -23233,7 +23863,7 @@ is ignored.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~81"></span>
+              <span class="anchor" id="variable-json~82"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -23303,7 +23933,7 @@ is ignored.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~73"></span>
+              <span class="anchor" id="variable-json~74"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -23388,7 +24018,7 @@ is ignored.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~77"></span>
+              <span class="anchor" id="variable-json~78"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -23473,7 +24103,7 @@ is ignored.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~79"></span>
+              <span class="anchor" id="variable-json~80"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -23558,7 +24188,7 @@ is ignored.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~75"></span>
+              <span class="anchor" id="variable-json~76"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -23643,7 +24273,7 @@ is ignored.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~91"></span>
+              <span class="anchor" id="variable-json~92"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -23758,7 +24388,7 @@ is ignored.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~95"></span>
+              <span class="anchor" id="variable-json~96"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -23878,7 +24508,7 @@ that is either of &lsquo;DEFAULT&rsquo; or &lsquo;ISO_10646&rsquo; character kin
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~199"></span>
+              <span class="anchor" id="variable-json~200"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -23953,7 +24583,7 @@ method may be called with either a &lsquo;DEFAULT&rsquo; or &lsquo;ISO_10646&rsq
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~187"></span>
+              <span class="anchor" id="variable-json~188"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -24042,7 +24672,7 @@ be called with name of character kind &lsquo;DEFAULT&rsquo; or &lsquo;ISO_10646&
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~185"></span>
+              <span class="anchor" id="variable-json~186"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -24132,7 +24762,7 @@ of &lsquo;DEFAULT&rsquo; or &lsquo;ISO_10646&rsquo; character kind.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~195"></span>
+              <span class="anchor" id="variable-json~196"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -24207,7 +24837,7 @@ either &lsquo;DEFAULT&rsquo; or &lsquo;ISO_10646&rsquo; character kind.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~197"></span>
+              <span class="anchor" id="variable-json~198"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -24282,7 +24912,7 @@ may be called with an actual argument corresponding to the dummy argument,
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~189"></span>
+              <span class="anchor" id="variable-json~190"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -24367,7 +24997,7 @@ may be called with an actual argument corresponding to the dummy argument,
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~191"></span>
+              <span class="anchor" id="variable-json~192"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -24457,7 +25087,7 @@ with actual character string arguments for <code>name</code> and <code>val</code
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~193"></span>
+              <span class="anchor" id="variable-json~194"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -24572,7 +25202,7 @@ with actual character string arguments for <code>name</code> and <code>val</code
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~109"></span>
+              <span class="anchor" id="variable-json~110"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -24672,7 +25302,7 @@ with actual character string arguments for <code>name</code> and <code>val</code
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~30"></span>
+              <span class="anchor" id="variable-json~31"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -24746,7 +25376,7 @@ with actual character string arguments for <code>name</code> and <code>val</code
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-json~15"></span>
+              <span class="anchor" id="variable-json~16"></span>
               class(<a href='../type/json_core.html'>json_core</a>),
             </td>
 <td>intent(inout)</td>
@@ -24812,14 +25442,14 @@ with actual character string arguments for <code>name</code> and <code>val</code
           <div class="col">
             <p>
               JSON-Fortran
- was developed by Jacob Williams<br>              &copy; 2025 
+ was developed by Jacob Williams<br>              &copy; 2026 
 </p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-09-18 06:20 +0000             </p>
+ on 2026-01-03 06:18 +0000             </p>
           </div>
         </div>
         <br>

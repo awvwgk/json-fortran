@@ -173,50 +173,34 @@
       <p><abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran kind definitions.</p>
 <h3 id="license">License</h3>
 <ul>
-<li><abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran is released under a BSD-style license.
+<li>
+<p><abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran is released under a BSD-style license.
     See the <a href="https://github.com/jacobwilliams/json-fortran/blob/master/LICENSE">LICENSE</a>
-    file for details.</li>
+    file for details.</p>
+<p>When present, Unicode support is enabled. Note that this
+  is currently only supported with the gfortran compiler.
+  Example: <code>gfortran -DUSE_UCS4 ...</code>
+  The documentation given here assumes <code>USE_UCS4</code> <strong>is</strong> defined.</p>
+<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="k">character</span><span class="w"> </span><span class="n">kind</span><span class="w"> </span><span class="n">respectively</span><span class="p">.</span><span class="w"> </span><span class="k">Client</span><span class="w"> </span><span class="k">code</span><span class="w"> </span><span class="o">**</span><span class="n">MUST</span><span class="o">**</span><span class="w"> </span><span class="n">ensure</span><span class="w"> </span><span class="n">characters</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n n-Quoted">`</span><span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">kind=CK</span><span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">`</span>
+<span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">used</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="k">character</span><span class="w"> </span><span class="k">variables</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">strings</span><span class="w"> </span><span class="n">passed</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="kt">JSON</span><span class="o">-</span><span class="n">Fortran</span>
+<span class="w"> </span><span class="n">library</span><span class="w"> </span><span class="o">*</span><span class="k">EXCEPT</span><span class="o">*</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="k">names</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="n">must</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n n-Quoted">`</span><span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">&#39;DEFAULT&#39;</span><span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">`</span><span class="w"> </span><span class="k">character</span><span class="w"> </span><span class="n">kind</span><span class="p">,</span>
+<span class="w"> </span><span class="n">provided</span><span class="w"> </span><span class="n">here</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n n-Quoted">`</span><span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">CDK</span><span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">`</span><span class="p">.</span><span class="w"> </span><span class="k">In</span><span class="w"> </span><span class="n">particular</span><span class="p">,</span><span class="w"> </span><span class="k">any</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">a</span><span class="o">:</span><span class="w"> </span><span class="kt">json</span><span class="w"> </span><span class="k">path</span><span class="p">,</span><span class="w"> </span><span class="k">string</span>
+<span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="k">name</span><span class="w"> </span><span class="n">passed</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="kt">JSON</span><span class="o">-</span><span class="n">Fortran</span><span class="w"> </span><span class="n">library</span><span class="w"> </span><span class="o">**</span><span class="n">MUST</span><span class="o">**</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="n n-Quoted">`</span><span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">CK</span><span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">`</span><span class="p">.</span>
+</code></pre></div>
+
+<p><abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran procedures since they have been overloaded to accept <code>intent(in)</code>
+  character arguments of the default (<code>CDK</code>) kind. If you find a procedure which does
+  not accept an <code>intent(in)</code> literal string argument of default kind, please
+  <a href="https://github.com/jacobwilliams/json-fortran/issues/new">file an issue</a> on GitHub.</p>
+<p>changed using optional preprocessor flags. This library was built with kinds:
+  real(kind=real64) [8 bytes]
+  and
+  integer(kind=int32) [4 bytes]
+  .</p>
+<p>the real kinds with less precision are also provided in the library,
+  but all are converted to <code>real(RK)</code> variables internally.</p>
+</li>
 </ul>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p><code>-DUSE_UCS4</code> is an optional preprocessor flag.
-      When present, Unicode support is enabled. Note that this
-      is currently only supported with the gfortran compiler.
-      Example: <code>gfortran -DUSE_UCS4 ...</code>
-      The documentation given here assumes <code>USE_UCS4</code> <strong>is</strong> defined.</p>
-</div>
-<div class="alert alert-warning">
-<p class="alert-title h4">Warning</p>
-<p><code>CK</code> and <code>CDK</code> are the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran character kind and <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran default
-         character kind respectively. Client code <strong>MUST</strong> ensure characters of <code>kind=CK</code>
-         are used for all character variables and strings passed to the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran
-         library <em>EXCEPT</em> for file names which must be of <code>'DEFAULT'</code> character kind,
-         provided here as <code>CDK</code>. In particular, any variable that is a: json path, string
-         value or object name passed to the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran library <strong>MUST</strong> be of type <code>CK</code>.</p>
-</div>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>Most string literal constants of default kind are fine to pass as arguments to
-      <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran procedures since they have been overloaded to accept <code>intent(in)</code>
-      character arguments of the default (<code>CDK</code>) kind. If you find a procedure which does
-      not accept an <code>intent(in)</code> literal string argument of default kind, please
-      <a href="https://github.com/jacobwilliams/json-fortran/issues/new">file an issue</a> on GitHub.</p>
-</div>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>The default real kind (<code>RK</code>) and the default integer kind (<code>IK</code>) can be
-      changed using optional preprocessor flags. This library was built with kinds:
-      real(kind=real64) [8 bytes]
-      and
-      integer(kind=int32) [4 bytes]
-      .</p>
-</div>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>In addition to the real kind specified by <code>RK</code>, interfaces for
-      the real kinds with less precision are also provided in the library,
-      but all are converted to <code>real(RK)</code> variables internally.</p>
-</div>
 <br>          <div class="card mb-4">
       <h3 class="card-header card-title bg-light">Uses</h3>
       <div class="card-body">
@@ -735,14 +719,14 @@ gfortran compiler AND UCS4 support requested:</p>
           <div class="col">
             <p>
               JSON-Fortran
- was developed by Jacob Williams<br>              &copy; 2025 
+ was developed by Jacob Williams<br>              &copy; 2026 
 </p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-09-18 06:20 +0000             </p>
+ on 2026-01-03 06:18 +0000             </p>
           </div>
         </div>
         <br>
