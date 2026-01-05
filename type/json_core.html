@@ -92,7 +92,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title="<p>67.5% of total for derived types.</p>Including implementation: 5788 statements, 84.6% of total for derived types.">228 statements</a>
+                 title="<p>67.7% of total for derived types.</p>Including implementation: 5959 statements, 84.9% of total for derived types.">231 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -141,18 +141,20 @@
             <a class="list-group-item" href="../type/json_core.html#variable-char_count">char_count</a>
             <a class="list-group-item" href="../type/json_core.html#variable-chunk">chunk</a>
             <a class="list-group-item" href="../type/json_core.html#variable-comment_char">comment_char</a>
-            <a class="list-group-item" href="../type/json_core.html#variable-compact_real~2">compact_real</a>
+            <a class="list-group-item" href="../type/json_core.html#variable-compact_real">compact_real</a>
             <a class="list-group-item" href="../type/json_core.html#variable-compress_vectors">compress_vectors</a>
             <a class="list-group-item" href="../type/json_core.html#variable-err_message">err_message</a>
-            <a class="list-group-item" href="../type/json_core.html#variable-escape_solidus~2">escape_solidus</a>
+            <a class="list-group-item" href="../type/json_core.html#variable-escape_solidus">escape_solidus</a>
             <a class="list-group-item" href="../type/json_core.html#variable-exception_thrown">exception_thrown</a>
             <a class="list-group-item" href="../type/json_core.html#variable-filesize">filesize</a>
             <a class="list-group-item" href="../type/json_core.html#variable-ichunk">ichunk</a>
-            <a class="list-group-item" href="../type/json_core.html#variable-ipos~2">ipos</a>
+            <a class="list-group-item" href="../type/json_core.html#variable-ipos">ipos</a>
             <a class="list-group-item" href="../type/json_core.html#variable-is_verbose">is_verbose</a>
             <a class="list-group-item" href="../type/json_core.html#variable-line_count">line_count</a>
             <a class="list-group-item" href="../type/json_core.html#variable-no_whitespace">no_whitespace</a>
-            <a class="list-group-item" href="../type/json_core.html#variable-non_normals_to_null~2">non_normals_to_null</a>
+            <a class="list-group-item" href="../type/json_core.html#variable-non_normals_to_null">non_normals_to_null</a>
+            <a class="list-group-item" href="../type/json_core.html#variable-null_to_integer_mode">null_to_integer_mode</a>
+            <a class="list-group-item" href="../type/json_core.html#variable-null_to_integer_value">null_to_integer_value</a>
             <a class="list-group-item" href="../type/json_core.html#variable-null_to_real_mode">null_to_real_mode</a>
             <a class="list-group-item" href="../type/json_core.html#variable-parse_value">parse_value</a>
             <a class="list-group-item" href="../type/json_core.html#variable-parser_initial_stack_size">parser_initial_stack_size</a>
@@ -161,7 +163,7 @@
             <a class="list-group-item" href="../type/json_core.html#variable-path_separator">path_separator</a>
             <a class="list-group-item" href="../type/json_core.html#variable-pushed_char">pushed_char</a>
             <a class="list-group-item" href="../type/json_core.html#variable-pushed_index">pushed_index</a>
-            <a class="list-group-item" href="../type/json_core.html#variable-real_fmt~2">real_fmt</a>
+            <a class="list-group-item" href="../type/json_core.html#variable-real_fmt">real_fmt</a>
             <a class="list-group-item" href="../type/json_core.html#variable-spaces_per_tab">spaces_per_tab</a>
             <a class="list-group-item" href="../type/json_core.html#variable-stop_on_error">stop_on_error</a>
             <a class="list-group-item" href="../type/json_core.html#variable-strict_integer_type_checking">strict_integer_type_checking</a>
@@ -169,7 +171,7 @@
             <a class="list-group-item" href="../type/json_core.html#variable-string_to_real">string_to_real</a>
             <a class="list-group-item" href="../type/json_core.html#variable-trailing_spaces_significant">trailing_spaces_significant</a>
             <a class="list-group-item" href="../type/json_core.html#variable-unescaped_strings">unescaped_strings</a>
-            <a class="list-group-item" href="../type/json_core.html#variable-use_quiet_nan~3">use_quiet_nan</a>
+            <a class="list-group-item" href="../type/json_core.html#variable-use_quiet_nan">use_quiet_nan</a>
         </div>
       </div>
     </div>
@@ -333,6 +335,7 @@
             <a class="list-group-item" href="../type/json_core.html#boundprocedure-json_value_add_string_vec_name_ascii">json_value_add_string_vec_name_ascii</a>
             <a class="list-group-item" href="../type/json_core.html#boundprocedure-json_value_add_string_vec_val_ascii">json_value_add_string_vec_val_ascii</a>
             <a class="list-group-item" href="../type/json_core.html#boundprocedure-json_value_clone_func">json_value_clone_func</a>
+            <a class="list-group-item" href="../type/json_core.html#boundprocedure-json_value_clone_func_nonrecursive">json_value_clone_func_nonrecursive</a>
             <a class="list-group-item" href="../type/json_core.html#boundprocedure-json_value_create_array">json_value_create_array</a>
             <a class="list-group-item" href="../type/json_core.html#boundprocedure-json_value_create_integer">json_value_create_integer</a>
             <a class="list-group-item" href="../type/json_core.html#boundprocedure-json_value_create_logical">json_value_create_logical</a>
@@ -724,7 +727,7 @@ Default is <code>CK_'/!#'</code>.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-compact_real~2"></span>
+              <span class="anchor" id="variable-compact_real"></span>
               logical(kind=LK),
             </td>
               <td>private</td>
@@ -782,7 +785,7 @@ this variable is not allocated.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-escape_solidus~2"></span>
+              <span class="anchor" id="variable-escape_solidus"></span>
               logical(kind=LK),
             </td>
               <td>private</td>
@@ -859,7 +862,7 @@ when <code>use_unformatted_stream=True</code></p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ipos~2"></span>
+              <span class="anchor" id="variable-ipos"></span>
               integer(kind=IK),
             </td>
               <td>private</td>
@@ -931,7 +934,7 @@ printed on one line.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-non_normals_to_null~2"></span>
+              <span class="anchor" id="variable-non_normals_to_null"></span>
               logical(kind=LK),
             </td>
               <td>private</td>
@@ -950,6 +953,51 @@ and -Infinity real values:</p>
 <li>If false : as strings (e.g., &ldquo;NaN&rdquo;,
   &ldquo;Infinity&rdquo;, &ldquo;-Infinity&rdquo;) [default]</li>
 </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-null_to_integer_mode"></span>
+              integer(kind=IK),
+            </td>
+              <td>private</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>null_to_integer_mode</strong></td>
+<td> =</td>
+                <td>1_IK</td>
+            <td>
+                <p>if <code>strict_type_checking=false</code>:</p>
+<ul>
+<li>1 : an exception will be raised if
+  try to retrieve a <code>null</code> as an integer. [default]</li>
+<li>2 : a <code>null</code> retrieved as an integer
+  will return a 0.</li>
+<li>3 : a <code>null</code> retrieved as an integer
+  will return the value specified in
+  <code>null_to_integer_value</code> (default is 0).</li>
+</ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-null_to_integer_value"></span>
+              integer(kind=IK),
+            </td>
+              <td>private</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>null_to_integer_value</strong></td>
+<td> =</td>
+                <td>0_IK</td>
+            <td>
+                <p>if <code>null_to_integer_mode=3</code>, this value
+will be returned when retrieving a <code>null</code>
+as an integer.</p>
             </td>
         </tr>
         <tr>
@@ -1117,7 +1165,7 @@ lines in file</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-real_fmt~2"></span>
+              <span class="anchor" id="variable-real_fmt"></span>
               character(kind=CDK, len=:),
             </td>
               <td>private,</td>
@@ -1275,7 +1323,7 @@ then the string is returned unescaped.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-use_quiet_nan~3"></span>
+              <span class="anchor" id="variable-use_quiet_nan"></span>
               logical(kind=LK),
             </td>
               <td>private</td>
@@ -1318,7 +1366,7 @@ and <a href="../type/json_core.html#variable-string_to_real">string_to_real</a> 
     <ul class="list-group">
           <li class="list-group-item">
                 <h3>
-    private  function <a href='../proc/initialize_json_core.html'>initialize_json_core</a>(verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode) result(json_core_object)  
+    private  function <a href='../proc/initialize_json_core.html'>initialize_json_core</a>(verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode, null_to_integer_mode, null_to_integer_value) result(json_core_object)  
 
     </h3>
         <dl class="dl-horizontal">
@@ -1597,7 +1645,7 @@ override this option if necessary].
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-escape_solidus~3"></span>
+              <span class="anchor" id="variable-escape_solidus~2"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -1609,7 +1657,7 @@ override this option if necessary].
             <td>
 <p>Note that this option does not affect parsing
 (both escaped and unescaped are still valid in
-all cases).</p><a href="../proc/initialize_json_core.html#variable-escape_solidus~3" class="pull-right"><emph>Read more&hellip;</emph></a>
+all cases).</p><a href="../proc/initialize_json_core.html#variable-escape_solidus~2" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -1661,7 +1709,7 @@ all cases).</p><a href="../proc/initialize_json_core.html#variable-escape_solidu
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-use_quiet_nan~5"></span>
+              <span class="anchor" id="variable-use_quiet_nan~3"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -1671,7 +1719,7 @@ all cases).</p><a href="../proc/initialize_json_core.html#variable-escape_solidu
             <td>::</td>
             <td><strong>use_quiet_nan</strong></td>
             <td>
-<a href="../proc/initialize_json_core.html#variable-use_quiet_nan~5" class="pull-right"><emph>Read more&hellip;</emph></a>
+<a href="../proc/initialize_json_core.html#variable-use_quiet_nan~3" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -1768,6 +1816,39 @@ to use when <code>parser_mode=2</code> (non-recursive parser).
             <td>
 <p>Which implementation to use for converting
 strings to real values:</p><a href="../proc/initialize_json_core.html#variable-string_to_real_mode" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-null_to_integer_mode~2"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>null_to_integer_mode</strong></td>
+            <td>
+<p>if <code>strict_type_checking=false</code>:</p><a href="../proc/initialize_json_core.html#variable-null_to_integer_mode~2" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-null_to_integer_value~2"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>null_to_integer_value</strong></td>
+            <td>
+<p>The integer value to return when retrieving
+a <code>null</code> as an integer and
+<code>null_to_integer_mode=3</code>.
+(default is 0).</p>
             </td>
         </tr>
     </tbody>
@@ -8181,7 +8262,7 @@ there were no errors)</p>
       <ul class="list-group">
           <li class="list-group-item">
                     <h3>
-    private  subroutine <a href='../proc/json_clone.html'>json_clone</a>(json, from, to)  
+    private  subroutine <a href='../proc/json_clone.html'>json_clone</a>(json, from, to, use_nonrecursive)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Jacob Williams</dd>
@@ -8246,6 +8327,22 @@ there were no errors)</p>
             <td>
 <p>the clone is put here
 (it must not already be associated)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              logical(kind=LK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>use_nonrecursive</strong></td>
+            <td>
+<p>if true, use the non-recursive
+clone function [Default is False]</p>
             </td>
         </tr>
     </tbody>
@@ -11041,7 +11138,7 @@ are equal</p>
       <ul class="list-group">
           <li class="list-group-item">
                     <h3>
-    private recursive function <a href='../proc/json_value_equals.html'>json_value_equals</a>(json, p1, p2) result(equals)  
+    private recursive function <a href='../proc/json_value_equals.html'>json_value_equals</a>(json, p1, p2, verbose) result(equals)  
 </h3>
     
 
@@ -11101,6 +11198,21 @@ are equal</p>
             <td><strong>p2</strong></td>
             <td>
 <p>second <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> structure</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              logical(kind=LK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>verbose</strong></td>
+            <td>
+<p>if true, print debug info. [default is false]</p>
             </td>
         </tr>
     </tbody>
@@ -16636,7 +16748,7 @@ If there is no tail, then a <code>null()</code> pointer is returned.</p>
       <ul class="list-group">
           <li class="list-group-item">
                     <h3>
-    private  subroutine <a href='../proc/json_initialize.html'>json_initialize</a>(me, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode)  
+    private  subroutine <a href='../proc/json_initialize.html'>json_initialize</a>(me, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode, null_to_integer_mode, null_to_integer_value)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Jacob Williams</dd>
@@ -16938,7 +17050,7 @@ override this option if necessary].
             <td>
 <p>Note that this option does not affect parsing
 (both escaped and unescaped are still valid in
-all cases).</p><a href="../proc/json_initialize.html#variable-escape_solidus~4" class="pull-right"><emph>Read more&hellip;</emph></a>
+all cases).</p><a href="../proc/json_initialize.html#variable-escape_solidus~3" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -17000,7 +17112,7 @@ all cases).</p><a href="../proc/json_initialize.html#variable-escape_solidus~4" 
             <td>::</td>
             <td><strong>use_quiet_nan</strong></td>
             <td>
-<a href="../proc/json_initialize.html#variable-use_quiet_nan~6" class="pull-right"><emph>Read more&hellip;</emph></a>
+<a href="../proc/json_initialize.html#variable-use_quiet_nan~4" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -17097,6 +17209,39 @@ to use when <code>parser_mode=2</code> (non-recursive parser).
             <td>
 <p>Which implementation to use for converting
 strings to real values:</p><a href="../proc/json_initialize.html#variable-string_to_real_mode~2" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>null_to_integer_mode</strong></td>
+            <td>
+<p>if <code>strict_type_checking=false</code>:</p><a href="../proc/json_initialize.html#variable-null_to_integer_mode~3" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>null_to_integer_value</strong></td>
+            <td>
+<p>The integer value to return when retrieving
+a <code>null</code> as an integer and
+<code>null_to_integer_mode=3</code>.
+(default is 0).</p>
             </td>
         </tr>
     </tbody>
@@ -27554,6 +27699,78 @@ must not already be associated)</p>
             <td>
 <p>if &ldquo;to&rdquo; is the tail of
 its parent&rsquo;s children</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+          </li>
+      </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-json_value_clone_func_nonrecursive"></span>
+      <h3>
+          procedure, private, nopass ::
+  <strong>json_value_clone_func_nonrecursive</strong>
+        
+      </h3>
+    </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
+    private  subroutine <a href='../proc/json_value_clone_func_nonrecursive.html'>json_value_clone_func_nonrecursive</a>(from, to)  
+</h3>
+    
+
+  <p>Non-recursive deep copy function that clones a <a href="../type/json_value.html">json_value</a> structure.
+  This is an alternative to <a href="../proc/json_value_clone_func.html">json_value_clone_func</a> that uses iteration
+  instead of recursion.</p><a href="../proc/json_value_clone_func_nonrecursive.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='json_value.html'>json_value</a>),
+            </td>
+<td></td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>from</strong></td>
+            <td>
+<p>this is the structure to clone</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              type(<a href='json_value.html'>json_value</a>),
+            </td>
+<td></td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>to</strong></td>
+            <td>
+<p>the clone is put here (it
+must not already be associated)</p>
             </td>
         </tr>
     </tbody>
@@ -42905,6 +43122,21 @@ with actual character string arguments for <code>name</code> and <code>val</code
 <span class="w">                            </span><span class="c">!! * If true [default], an exception will be raised if an integer</span>
 <span class="w">                            </span><span class="c">!!   value cannot be read when parsing JSON.</span>
 
+<span class="w">        </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">null_to_integer_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1_IK</span>
+<span class="w">                            </span><span class="c">!! if `strict_type_checking=false`:</span>
+<span class="w">                            </span><span class="c">!!</span>
+<span class="w">                            </span><span class="c">!! * 1 : an exception will be raised if</span>
+<span class="w">                            </span><span class="c">!!   try to retrieve a `null` as an integer. [default]</span>
+<span class="w">                            </span><span class="c">!! * 2 : a `null` retrieved as an integer</span>
+<span class="w">                            </span><span class="c">!!   will return a 0.</span>
+<span class="w">                            </span><span class="c">!! * 3 : a `null` retrieved as an integer</span>
+<span class="w">                            </span><span class="c">!!   will return the value specified in</span>
+<span class="w">                            </span><span class="c">!!   `null_to_integer_value` (default is 0).</span>
+<span class="w">        </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">null_to_integer_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0_IK</span>
+<span class="w">                            </span><span class="c">!! if `null_to_integer_mode=3`, this value</span>
+<span class="w">                            </span><span class="c">!! will be returned when retrieving a `null`</span>
+<span class="w">                            </span><span class="c">!! as an integer.</span>
+
 <span class="w">        </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">allow_trailing_comma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
 <span class="w">                            </span><span class="c">!! Allow a single trailing comma in arrays and objects.</span>
 
@@ -43539,6 +43771,7 @@ with actual character string arguments for <code>name</code> and <code>val</code
 <span class="w">        </span><span class="k">procedure</span><span class="w">        </span><span class="kd">::</span><span class="w"> </span><span class="n">to_object</span>
 <span class="w">        </span><span class="k">procedure</span><span class="w">        </span><span class="kd">::</span><span class="w"> </span><span class="n">to_array</span>
 <span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">nopass</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">json_value_clone_func</span>
+<span class="w">        </span><span class="k">procedure</span><span class="p">,</span><span class="k">nopass</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">json_value_clone_func_nonrecursive</span>
 <span class="w">        </span><span class="k">procedure</span><span class="w">        </span><span class="kd">::</span><span class="w"> </span><span class="n">is_vector</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">json_is_vector</span>
 
 <span class="w">    </span><span class="k">end type </span><span class="n">json_core</span>
@@ -43564,7 +43797,7 @@ with actual character string arguments for <code>name</code> and <code>val</code
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2026-01-04 18:18 +0000             </p>
+ on 2026-01-05 12:19 +0000             </p>
           </div>
         </div>
         <br>

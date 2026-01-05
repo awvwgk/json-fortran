@@ -94,7 +94,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title="<p>27.8% of total for derived types.</p>Including implementation: 1038 statements, 15.2% of total for derived types.">94 statements</a>
+                 title="<p>27.6% of total for derived types.</p>Including implementation: 1040 statements, 14.8% of total for derived types.">94 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -137,7 +137,7 @@
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
             <a class="list-group-item" href="../type/json_file.html#variable-core">core</a>
-            <a class="list-group-item" href="../type/json_file.html#variable-p~141">p</a>
+            <a class="list-group-item" href="../type/json_file.html#variable-p~142">p</a>
         </div>
       </div>
     </div>
@@ -504,7 +504,7 @@ factory used for this file.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-p~141"></span>
+              <span class="anchor" id="variable-p~142"></span>
               type(<a href='json_value.html'>json_value</a>),
             </td>
               <td>private,</td>
@@ -560,7 +560,7 @@ factory used for this file.</p>
     <ul class="list-group">
           <li class="list-group-item">
                 <h3>
-    private  function <a href='../proc/initialize_json_file.html'>initialize_json_file</a>(p, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode, nullify_pointer) result(file_object)  
+    private  function <a href='../proc/initialize_json_file.html'>initialize_json_file</a>(p, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode, null_to_integer_mode, null_to_integer_value, nullify_pointer) result(file_object)  
 
     </h3>
         <dl class="dl-horizontal">
@@ -589,7 +589,7 @@ It also calls the <code>initialize()</code> method.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-p~142"></span>
+              <span class="anchor" id="variable-p~143"></span>
               type(<a href='json_value.html'>json_value</a>),
             </td>
 <td></td>
@@ -606,7 +606,7 @@ will be nullified.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-verbose~4"></span>
+              <span class="anchor" id="variable-verbose~5"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -858,7 +858,7 @@ override this option if necessary].
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-escape_solidus~6"></span>
+              <span class="anchor" id="variable-escape_solidus~5"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -870,7 +870,7 @@ override this option if necessary].
             <td>
 <p>Note that this option does not affect parsing
 (both escaped and unescaped are still valid in
-all cases).</p><a href="../proc/initialize_json_file.html#variable-escape_solidus~6" class="pull-right"><emph>Read more&hellip;</emph></a>
+all cases).</p><a href="../proc/initialize_json_file.html#variable-escape_solidus~5" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -922,7 +922,7 @@ all cases).</p><a href="../proc/initialize_json_file.html#variable-escape_solidu
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-use_quiet_nan~8"></span>
+              <span class="anchor" id="variable-use_quiet_nan~6"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -932,7 +932,7 @@ all cases).</p><a href="../proc/initialize_json_file.html#variable-escape_solidu
             <td>::</td>
             <td><strong>use_quiet_nan</strong></td>
             <td>
-<a href="../proc/initialize_json_file.html#variable-use_quiet_nan~8" class="pull-right"><emph>Read more&hellip;</emph></a>
+<a href="../proc/initialize_json_file.html#variable-use_quiet_nan~6" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -1033,6 +1033,39 @@ strings to real values:</p><a href="../proc/initialize_json_file.html#variable-s
         </tr>
         <tr>
             <td>
+              <span class="anchor" id="variable-null_to_integer_mode~5"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>null_to_integer_mode</strong></td>
+            <td>
+<p>if <code>strict_type_checking=false</code>:</p><a href="../proc/initialize_json_file.html#variable-null_to_integer_mode~5" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-null_to_integer_value~5"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>null_to_integer_value</strong></td>
+            <td>
+<p>The integer value to return when retrieving
+a <code>null</code> as an integer and
+<code>null_to_integer_mode=3</code>.
+(default is 0).</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
               <span class="anchor" id="variable-nullify_pointer"></span>
               logical(kind=LK),
             </td>
@@ -1128,7 +1161,7 @@ as a <a href="../type/json_file.html">json_file</a> object.</p>
           </li>
           <li class="list-group-item">
                 <h3>
-    private  function <a href='../proc/initialize_json_file_from_string.html'>initialize_json_file_from_string</a>(str, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode) result(file_object)  
+    private  function <a href='../proc/initialize_json_file_from_string.html'>initialize_json_file_from_string</a>(str, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode, null_to_integer_mode, null_to_integer_value) result(file_object)  
 
     </h3>
         <dl class="dl-horizontal">
@@ -1162,7 +1195,7 @@ as a <a href="../type/json_file.html">json_file</a> object.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~38"></span>
+              <span class="anchor" id="variable-str~21"></span>
               character(kind=CK, len=*),
             </td>
 <td>intent(in)</td>
@@ -1177,7 +1210,7 @@ as a <a href="../type/json_file.html">json_file</a> object.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-verbose~5"></span>
+              <span class="anchor" id="variable-verbose~6"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -1429,7 +1462,7 @@ override this option if necessary].
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-escape_solidus~7"></span>
+              <span class="anchor" id="variable-escape_solidus~6"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -1441,7 +1474,7 @@ override this option if necessary].
             <td>
 <p>Note that this option does not affect parsing
 (both escaped and unescaped are still valid in
-all cases).</p><a href="../proc/initialize_json_file_from_string.html#variable-escape_solidus~7" class="pull-right"><emph>Read more&hellip;</emph></a>
+all cases).</p><a href="../proc/initialize_json_file_from_string.html#variable-escape_solidus~6" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -1493,7 +1526,7 @@ all cases).</p><a href="../proc/initialize_json_file_from_string.html#variable-e
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-use_quiet_nan~9"></span>
+              <span class="anchor" id="variable-use_quiet_nan~7"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -1503,7 +1536,7 @@ all cases).</p><a href="../proc/initialize_json_file_from_string.html#variable-e
             <td>::</td>
             <td><strong>use_quiet_nan</strong></td>
             <td>
-<a href="../proc/initialize_json_file_from_string.html#variable-use_quiet_nan~9" class="pull-right"><emph>Read more&hellip;</emph></a>
+<a href="../proc/initialize_json_file_from_string.html#variable-use_quiet_nan~7" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -1602,6 +1635,39 @@ to use when <code>parser_mode=2</code> (non-recursive parser).
 strings to real values:</p><a href="../proc/initialize_json_file_from_string.html#variable-string_to_real_mode~5" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-null_to_integer_mode~6"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>null_to_integer_mode</strong></td>
+            <td>
+<p>if <code>strict_type_checking=false</code>:</p><a href="../proc/initialize_json_file_from_string.html#variable-null_to_integer_mode~6" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-null_to_integer_value~6"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>null_to_integer_value</strong></td>
+            <td>
+<p>The integer value to return when retrieving
+a <code>null</code> as an integer and
+<code>null_to_integer_mode=3</code>.
+(default is 0).</p>
+            </td>
+        </tr>
     </tbody>
   </table>
 
@@ -1614,7 +1680,7 @@ strings to real values:</p><a href="../proc/initialize_json_file_from_string.htm
           </li>
           <li class="list-group-item">
                 <h3>
-    private  function <a href='../proc/wrap_initialize_json_file_from_string.html'>wrap_initialize_json_file_from_string</a>(str, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode) result(file_object)  
+    private  function <a href='../proc/wrap_initialize_json_file_from_string.html'>wrap_initialize_json_file_from_string</a>(str, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode, null_to_integer_mode, null_to_integer_value) result(file_object)  
 
     </h3>
     
@@ -1633,7 +1699,7 @@ strings to real values:</p><a href="../proc/initialize_json_file_from_string.htm
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~39"></span>
+              <span class="anchor" id="variable-str~22"></span>
               character(kind=CDK, len=*),
             </td>
 <td>intent(in)</td>
@@ -1648,7 +1714,7 @@ strings to real values:</p><a href="../proc/initialize_json_file_from_string.htm
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-verbose~6"></span>
+              <span class="anchor" id="variable-verbose~7"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -1900,7 +1966,7 @@ override this option if necessary].
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-escape_solidus~8"></span>
+              <span class="anchor" id="variable-escape_solidus~7"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -1912,7 +1978,7 @@ override this option if necessary].
             <td>
 <p>Note that this option does not affect parsing
 (both escaped and unescaped are still valid in
-all cases).</p><a href="../proc/wrap_initialize_json_file_from_string.html#variable-escape_solidus~8" class="pull-right"><emph>Read more&hellip;</emph></a>
+all cases).</p><a href="../proc/wrap_initialize_json_file_from_string.html#variable-escape_solidus~7" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -1964,7 +2030,7 @@ all cases).</p><a href="../proc/wrap_initialize_json_file_from_string.html#varia
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-use_quiet_nan~10"></span>
+              <span class="anchor" id="variable-use_quiet_nan~8"></span>
               logical(kind=LK),
             </td>
 <td>intent(in),</td>
@@ -1974,7 +2040,7 @@ all cases).</p><a href="../proc/wrap_initialize_json_file_from_string.html#varia
             <td>::</td>
             <td><strong>use_quiet_nan</strong></td>
             <td>
-<a href="../proc/wrap_initialize_json_file_from_string.html#variable-use_quiet_nan~10" class="pull-right"><emph>Read more&hellip;</emph></a>
+<a href="../proc/wrap_initialize_json_file_from_string.html#variable-use_quiet_nan~8" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2073,6 +2139,39 @@ to use when <code>parser_mode=2</code> (non-recursive parser).
 strings to real values:</p><a href="../proc/wrap_initialize_json_file_from_string.html#variable-string_to_real_mode~6" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-null_to_integer_mode~7"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>null_to_integer_mode</strong></td>
+            <td>
+<p>if <code>strict_type_checking=false</code>:</p><a href="../proc/wrap_initialize_json_file_from_string.html#variable-null_to_integer_mode~7" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-null_to_integer_value~7"></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>null_to_integer_value</strong></td>
+            <td>
+<p>The integer value to return when retrieving
+a <code>null</code> as an integer and
+<code>null_to_integer_mode=3</code>.
+(default is 0).</p>
+            </td>
+        </tr>
     </tbody>
   </table>
 
@@ -2109,7 +2208,7 @@ as a <a href="../type/json_file.html">json_file</a> object.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~40"></span>
+              <span class="anchor" id="variable-str~23"></span>
               character(kind=CK, len=*),
             </td>
 <td>intent(in)</td>
@@ -2168,7 +2267,7 @@ as a <a href="../type/json_file.html">json_file</a> object.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-str~41"></span>
+              <span class="anchor" id="variable-str~24"></span>
               character(kind=CDK, len=*),
             </td>
 <td>intent(in)</td>
@@ -9120,7 +9219,7 @@ length of <code>default</code></p>
       <ul class="list-group">
           <li class="list-group-item">
                     <h3>
-    private  subroutine <a href='../proc/initialize_json_core_in_file.html'>initialize_json_core_in_file</a>(me, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode)  
+    private  subroutine <a href='../proc/initialize_json_core_in_file.html'>initialize_json_core_in_file</a>(me, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode, null_to_integer_mode, null_to_integer_value)  
 </h3>
     
 
@@ -9419,7 +9518,7 @@ override this option if necessary].
             <td>
 <p>Note that this option does not affect parsing
 (both escaped and unescaped are still valid in
-all cases).</p><a href="../proc/initialize_json_core_in_file.html#variable-escape_solidus~5" class="pull-right"><emph>Read more&hellip;</emph></a>
+all cases).</p><a href="../proc/initialize_json_core_in_file.html#variable-escape_solidus~4" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -9481,7 +9580,7 @@ all cases).</p><a href="../proc/initialize_json_core_in_file.html#variable-escap
             <td>::</td>
             <td><strong>use_quiet_nan</strong></td>
             <td>
-<a href="../proc/initialize_json_core_in_file.html#variable-use_quiet_nan~7" class="pull-right"><emph>Read more&hellip;</emph></a>
+<a href="../proc/initialize_json_core_in_file.html#variable-use_quiet_nan~5" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -9578,6 +9677,39 @@ to use when <code>parser_mode=2</code> (non-recursive parser).
             <td>
 <p>Which implementation to use for converting
 strings to real values:</p><a href="../proc/initialize_json_core_in_file.html#variable-string_to_real_mode~3" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>null_to_integer_mode</strong></td>
+            <td>
+<p>if <code>strict_type_checking=false</code>:</p><a href="../proc/initialize_json_core_in_file.html#variable-null_to_integer_mode~4" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>null_to_integer_value</strong></td>
+            <td>
+<p>The integer value to return when retrieving
+a <code>null</code> as an integer and
+<code>null_to_integer_mode=3</code>.
+(default is 0).</p>
             </td>
         </tr>
     </tbody>
@@ -9656,7 +9788,7 @@ strings to real values:</p><a href="../proc/initialize_json_core_in_file.html#va
       <ul class="list-group">
           <li class="list-group-item">
                     <h3>
-    private  subroutine <a href='../proc/initialize_json_core_in_file.html'>initialize_json_core_in_file</a>(me, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode)  
+    private  subroutine <a href='../proc/initialize_json_core_in_file.html'>initialize_json_core_in_file</a>(me, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking, allow_trailing_comma, parser_mode, parser_initial_stack_size, parser_max_stack_size, string_to_real_mode, null_to_integer_mode, null_to_integer_value)  
 </h3>
     
 
@@ -9955,7 +10087,7 @@ override this option if necessary].
             <td>
 <p>Note that this option does not affect parsing
 (both escaped and unescaped are still valid in
-all cases).</p><a href="../proc/initialize_json_core_in_file.html#variable-escape_solidus~5" class="pull-right"><emph>Read more&hellip;</emph></a>
+all cases).</p><a href="../proc/initialize_json_core_in_file.html#variable-escape_solidus~4" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -10017,7 +10149,7 @@ all cases).</p><a href="../proc/initialize_json_core_in_file.html#variable-escap
             <td>::</td>
             <td><strong>use_quiet_nan</strong></td>
             <td>
-<a href="../proc/initialize_json_core_in_file.html#variable-use_quiet_nan~7" class="pull-right"><emph>Read more&hellip;</emph></a>
+<a href="../proc/initialize_json_core_in_file.html#variable-use_quiet_nan~5" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -10114,6 +10246,39 @@ to use when <code>parser_mode=2</code> (non-recursive parser).
             <td>
 <p>Which implementation to use for converting
 strings to real values:</p><a href="../proc/initialize_json_core_in_file.html#variable-string_to_real_mode~3" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>null_to_integer_mode</strong></td>
+            <td>
+<p>if <code>strict_type_checking=false</code>:</p><a href="../proc/initialize_json_core_in_file.html#variable-null_to_integer_mode~4" class="pull-right"><emph>Read more&hellip;</emph></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=IK),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>null_to_integer_value</strong></td>
+            <td>
+<p>The integer value to return when retrieving
+a <code>null</code> as an integer and
+<code>null_to_integer_mode=3</code>.
+(default is 0).</p>
             </td>
         </tr>
     </tbody>
@@ -23550,7 +23715,7 @@ cols if using row-major order)</p>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2026-01-04 18:18 +0000             </p>
+ on 2026-01-05 12:19 +0000             </p>
           </div>
         </div>
         <br>
