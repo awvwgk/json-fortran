@@ -140,6 +140,7 @@
 <li><a href="#changes-between-releases">Changes Between Releases</a><ul>
 <li><a href="#change-log">Change Log</a><ul>
 <li><a href="#unreleased">Unreleased</a></li>
+<li><a href="#920-2026-01-05">9.2.0 (2026-01-05)</a></li>
 <li><a href="#910-2026-01-02">9.1.0 (2026-01-02)</a></li>
 <li><a href="#905-2025-08-25">9.0.5 (2025-08-25)</a></li>
 <li><a href="#904-2025-08-02">9.0.4 (2025-08-02)</a></li>
@@ -202,7 +203,7 @@ of the <code>master</code> branch, please head back to the
 <a href="../../index.html">main page</a>.</p>
 <h2 id="latest-stable-release">Latest Stable Release</h2>
 <p><strong>Documentation:</strong>
-<a href="https://jacobwilliams.github.io/json-fortran/prev/9.1.0/index.html">9.1.0</a></p>
+<a href="https://jacobwilliams.github.io/json-fortran/prev/9.2.0/index.html">9.2.0</a></p>
 <p><strong>Download:</strong>
 <a href="https://github.com/jacobwilliams/json-fortran/releases/latest">https://github.com/jacobwilliams/json-fortran/releases/latest</a></p>
 <h2 id="past-releases">Past Releases</h2>
@@ -211,6 +212,11 @@ documentation from the documentation for official releases other than
 using the browser&rsquo;s back button. Feel free to bookmark this page, or
 the <a href="../../index.html">main project page</a> for convenient navigation.</p>
 <ul>
+<li><a href="https://jacobwilliams.github.io/json-fortran/prev/9.2.0/index.html">9.2.0</a>
+   (<a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a> generated documentation)<ul>
+<li><a href="https://github.com/jacobwilliams/json-fortran/releases/tag/9.2.0">Download</a></li>
+</ul>
+</li>
 <li><a href="https://jacobwilliams.github.io/json-fortran/prev/9.1.0/index.html">9.1.0</a>
    (<a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a> generated documentation)<ul>
 <li><a href="https://github.com/jacobwilliams/json-fortran/releases/tag/9.1.0">Download</a></li>
@@ -459,7 +465,7 @@ the <a href="../../index.html">main project page</a> for convenient navigation.<
 </ul>
 <h1 id="development-version">Development Version</h1>
 <p>Documentation for the latest development version may be found at
-<a href="https://jacobwilliams.github.io/json-fortran/prev/9.1.0/index.html">https://jacobwilliams.github.io/json-fortran/prev/9.1.0/index.html</a>
+<a href="https://jacobwilliams.github.io/json-fortran/prev/9.2.0/index.html">https://jacobwilliams.github.io/json-fortran/prev/9.2.0/index.html</a>
 or generated locally using the
 <a href="../development-resources/build.sh.html">build.sh</a> build
 script.</p>
@@ -471,6 +477,7 @@ implemented between each release.</p>
 <ul>
 <li><a href="#change-log">Change Log</a><ul>
 <li><a href="#unreleased">Unreleased</a></li>
+<li><a href="#920-2026-01-05">9.2.0 (2026-01-05)</a></li>
 <li><a href="#910-2026-01-02">9.1.0 (2026-01-02)</a></li>
 <li><a href="#905-2025-08-25">9.0.5 (2025-08-25)</a></li>
 <li><a href="#904-2025-08-02">9.0.4 (2025-08-02)</a></li>
@@ -524,7 +531,40 @@ implemented between each release.</p>
 </li>
 </ul>
 <h3 id="unreleased"><a href="https://github.com/jacobwilliams/json-fortran/tree/HEAD">Unreleased</a></h3>
-<p><a href="https://github.com/jacobwilliams/json-fortran/compare/9.1.0...HEAD">Complete Changeset</a></p>
+<p><a href="https://github.com/jacobwilliams/json-fortran/compare/9.2.0...HEAD">Complete Changeset</a></p>
+<h3 id="920-2026-01-05"><a href="https://github.com/jacobwilliams/json-fortran/tree/9.2.0">9.2.0</a> (2026-01-05)</h3>
+<p><a href="https://github.com/jacobwilliams/json-fortran/compare/9.1.0...9.2.0">Complete Changeset</a>
+or <a href="https://github.com/jacobwilliams/json-fortran/releases/tag/9.2.0">Download v9.2.0</a></p>
+<p><strong>Changes:</strong></p>
+<ul>
+<li>Added a non-recursive <code>clone</code> option (see the <code>use_nonrecursive</code> optional argument to <code>json_clone</code>). Also added an optional <code>verbose</code> argument to the <code>equals</code> function, for printing information about how the two structures differ. <a href="https://github.com/jacobwilliams/json-fortran/issues/602">#602</a> <a href="https://github.com/jacobwilliams/json-fortran/pull/610">#610</a> (<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
+<li>Added <code>null_to_integer_mode</code> and <code>null_to_integer_value</code> options, which allow for controlling the results if attempting to return a <code>null</code> value as an integer.
+<a href="https://github.com/jacobwilliams/json-fortran/issues/518">#518</a>
+<a href="https://github.com/jacobwilliams/json-fortran/pull/611">#611</a>
+(<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
+<li>Speed up printing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> to a string.
+<a href="https://github.com/jacobwilliams/json-fortran/issues/501">#501</a>
+<a href="https://github.com/jacobwilliams/json-fortran/pull/612">#612</a>
+(<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
+<li>Added some <code>iomsg</code> outputs for file open/close errors.
+<a href="https://github.com/jacobwilliams/json-fortran/issues/596">#596</a>
+<a href="https://github.com/jacobwilliams/json-fortran/pull/613">#613</a>
+(<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
+<li>Added <code>add_null_by_path</code> to <code>json_core</code> and <code>add_null</code> to <code>json_file</code>. Now, <code>null</code> values and vectors can more easily be added programmatically to <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> structures.
+<a href="https://github.com/jacobwilliams/json-fortran/issues/327">#327</a>
+<a href="https://github.com/jacobwilliams/json-fortran/pull/614">#614</a>
+(<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
+<li>Fixed some issues with the example Visual Studio solution for Visual Studio 2022. Removed a deprecated flag. Also increased the stack size to 3 MB, which was necessary for one of the tests to pass.
+<a href="https://github.com/jacobwilliams/json-fortran/issues/600">#600</a>
+<a href="https://github.com/jacobwilliams/json-fortran/pull/601">#601</a>
+<a href="https://github.com/jacobwilliams/json-fortran/issues/602">#602</a>
+<a href="https://github.com/jacobwilliams/json-fortran/pull/603">#603</a>
+(<a href="https://github.com/james-tullos">james-tullos</a>)</li>
+<li>Consolidate duplicated code for <code>json_add_*_by_path</code> routines
+<a href="https://github.com/jacobwilliams/json-fortran/issues/615">#615</a>
+<a href="https://github.com/jacobwilliams/json-fortran/pull/616">#616</a>
+(<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
+</ul>
 <h3 id="910-2026-01-02"><a href="https://github.com/jacobwilliams/json-fortran/tree/9.1.0">9.1.0</a> (2026-01-02)</h3>
 <p><a href="https://github.com/jacobwilliams/json-fortran/compare/9.0.5...9.1.0">Complete Changeset</a>
 or <a href="https://github.com/jacobwilliams/json-fortran/releases/tag/9.1.0">Download v9.1.0</a></p>
@@ -1477,7 +1517,7 @@ or <a href="https://github.com/jacobwilliams/json-fortran/releases/tag/2.0.0">Do
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2026-01-05 18:18 +0000             </p>
+ on 2026-01-06 00:18 +0000             </p>
           </div>
         </div>
         <br>
