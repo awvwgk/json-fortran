@@ -164,20 +164,29 @@
     
 
     <p>Returns the path to a <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> object that is part
-of a linked list structure.</p>
+  of a linked list structure.</p>
 <p>The path returned would be suitable for input to
-<a href="../proc/json_get_by_path.html">json_get_by_path</a> and related routines.</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">JSON</span><span class="w"> </span><span class="n">structure</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">exception</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">thrown</span><span class="p">,</span><span class="w"> </span><span class="n">unless</span>
-<span class="n n-Quoted">`found`</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">present</span><span class="p">,</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n n-Quoted">`false`</span><span class="p">.</span><span class="w"> </span><span class="n n-Quoted">`path`</span>
-<span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">blank</span><span class="w"> </span><span class="k">string</span><span class="p">.</span>
-
-<span class="k">and</span><span class="w"> </span><span class="n n-Quoted">`path_sep`</span><span class="w"> </span><span class="n">inputs</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">ignored</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">present</span><span class="p">.</span>
-
-<span class="n">does</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">specify</span><span class="w"> </span><span class="n">whether</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">keys</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="k">escaped</span><span class="w"> </span><span class="p">(</span><span class="n">this</span><span class="w"> </span><span class="k">routine</span>
-<span class="n">assumes</span><span class="w"> </span><span class="k">not</span><span class="p">,</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">does</span><span class="w"> </span><span class="n">http</span><span class="o">://</span><span class="n">jsonpath</span><span class="p">.</span><span class="n">com</span><span class="p">).</span>
-<span class="n">Also</span><span class="p">,</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="n">Fortran</span><span class="o">-</span><span class="n">style</span><span class="w"> </span><span class="mi">1</span><span class="o">-</span><span class="n">based</span><span class="w"> </span><span class="k">array</span><span class="w"> </span><span class="n">indices</span><span class="p">,</span>
-<span class="k">not</span><span class="w"> </span><span class="mi">0</span><span class="o">-</span><span class="n">based</span><span class="p">,</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">agree</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">assumption</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n n-Quoted">`path_mode=1`</span>
-</code></pre></div>
+  <a href="../proc/json_get_by_path.html">json_get_by_path</a> and related routines.</p>
+<div class="alert alert-info">
+<p class="alert-title h4">Note</p>
+<p>If an error occurs (which in this case means a malformed
+      <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> structure) then an exception will be thrown, unless
+      <code>found</code> is present, which will be set to <code>false</code>. <code>path</code>
+      will be a blank string.</p>
+</div>
+<div class="alert alert-info">
+<p class="alert-title h4">Note</p>
+<p>If <code>json%path_mode/=1</code>, then the <code>use_alt_array_tokens</code>
+      and <code>path_sep</code> inputs are ignored if present.</p>
+</div>
+<div class="alert alert-info">
+<p class="alert-title h4">Note</p>
+<p><a href="JSONPath">http://goessner.net/articles/JsonPath/</a> (<code>path_mode=3</code>)
+      does not specify whether or not the keys should be escaped (this routine
+      assumes not, as does http://jsonpath.com).
+      Also, we are using Fortran-style 1-based array indices,
+      not 0-based, to agree with the assumption in <code>path_mode=1</code></p>
+</div>
 
     <h3>Type Bound</h3>
     <p><a href='../type/json_core.html'>json_core</a></p>
@@ -3227,7 +3236,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2026-01-22 06:18 +0000             </p>
+ on 2026-02-23 00:19 +0000             </p>
           </div>
         </div>
         <br>
